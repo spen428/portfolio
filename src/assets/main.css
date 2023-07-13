@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --cv-dark-purple: 66 28 82;
+    --cv-purple: 115 44 123;
+    --cv-grey: 156 138 165;
+    --cv-light-grey: 189 174 198;
+    --cv-white: 255 255 255;
+    --default-text: 105 105 105;
+  }
+
+  em {
+    font-style: normal;
+    font-weight: bold;
+    background-color: initial;
+    color: rgb(var(--default-text));
+  }
+
+  a {
+    color: rgb(var(--cv-dark-purple));
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
+
+@layer components {
+  .small-caps {
+    font-variant-caps: small-caps;
+  }
+
+  .all-small-caps {
+    font-variant-caps: all-small-caps;
+  }
+
+  .all-caps {
+    text-transform: uppercase;
+  }
+
+  .disable-animation * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@media print {
+  a {
+    text-decoration: none;
+  }
+
+  /* Color overrides for printing in CMYK */
+  :root {
+    --default-text: 42 42 42 !important;
+  }
+
+  .text-default-text {
+    color: #2a2a2a !important;
+  }
+
+  .text-cv-grey {
+    color: #e7bdff !important;
+  }
+}

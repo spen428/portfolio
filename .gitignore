@@ -1,0 +1,7 @@
+dist
+bin
+node_modules
+*.pdf
+
+# Sensitive files
+src/services/DataService.ts
