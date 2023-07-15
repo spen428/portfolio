@@ -21,11 +21,22 @@
       </router-link>
       <div id="spacer" class="grow"></div>
       <div
-        class="hidden h-full items-center gap-6 py-6 xs:flex sm:gap-4 lg:py-2"
+        class="hidden h-full items-center gap-6 py-6 xs:flex sm:gap-4 lg:py-2.5"
       >
         <a
           class="aspect-square h-full transition hover:opacity-50"
-          href="https://github.com/spen428"
+          :href="personalInfo.linkedIn.url"
+          target="_blank"
+        >
+          <img
+            src="/icons/linkedin-outline.svg"
+            alt="Print"
+            class="inline h-full brightness-0 invert"
+          />
+        </a>
+        <a
+          class="aspect-square h-full transition hover:opacity-50"
+          :href="personalInfo.github.url"
           target="_blank"
         >
           <img
@@ -63,6 +74,7 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
+import DataService from "@/services/DataService";
 
 const currentRoute = computed(() => useRouter().currentRoute.value);
 const pageTitle = computed(() => currentRoute.value.name ?? "");
@@ -80,4 +92,6 @@ const isStylable = computed(() => currentRoute.value.meta.isStylable ?? false);
 const isPrintable = computed(
   () => currentRoute.value.meta.isPrintable ?? false
 );
+
+const personalInfo = DataService.getPersonalInfo();
 </script>
