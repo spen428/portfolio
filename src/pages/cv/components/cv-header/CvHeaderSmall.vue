@@ -24,12 +24,12 @@
         <a :href="personalInfo.location.url" target="_blank">
           <img src="/icons/map-pin.svg" alt="Location" />
         </a>
+        <a :href="personalInfo.linkedIn.url" target="_blank">
+          <img src="/icons/linkedin-outline.svg" alt="LinkedIn" />
+        </a>
         <a :href="personalInfo.github.url" target="_blank">
           <img src="/icons/github.svg" alt="GitHub" />
         </a>
-        <router-link to="/portfolio">
-          <img src="/icons/briefcase.svg" alt="Portfolio" />
-        </router-link>
       </div>
     </div>
   </div>
