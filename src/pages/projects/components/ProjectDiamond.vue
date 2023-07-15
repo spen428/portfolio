@@ -8,10 +8,11 @@
       v-on:mouseout="hover = false"
       :is-external="project.url.external"
       :href="project.url.url"
-      class="diamond pointer-events-auto z-10 border-cv-dark-purple bg-cv-white duration-1000"
+      class="diamond pointer-events-auto z-10 border-cv-dark-purple bg-none duration-1000"
       :class="{ 'border-opacity-80': hover }"
     >
       <img
+        v-if="project.thumbnailUrl"
         :src="project.thumbnailUrl"
         :alt="project.title"
         class="fit-to-diamond opacity-50 blur-[2px] duration-1000"
@@ -46,7 +47,7 @@
 <style scoped>
 .diamond {
   --diamond-ratio: 70.71067812%; /* x / (x sqrt 2) */
-  --border-width: 0.25rem;
+  --border-width: 1px;
 
   content: "";
   display: block;
