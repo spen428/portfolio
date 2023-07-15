@@ -6,6 +6,8 @@ export interface IDataService {
   getPersonalInfo(): PersonalInfo;
 
   getFullName(): string;
+
+  getCommercialExperience(): CommercialExperience;
 }
 
 export interface CvData {
@@ -44,4 +46,17 @@ export interface PersonalInfo {
   github: { url: string; username: string };
   longerTagLine: string;
   linkedIn: { url: string };
+}
+
+export interface CommercialExperience {
+  introduction: string;
+  articles: CommercialExperienceArticle[];
+}
+
+export interface CommercialExperienceArticle {
+  title: string;
+  logoUrl: string;
+  tags: string[];
+  introduction: string;
+  sections: { title: string; body: string }[];
 }
