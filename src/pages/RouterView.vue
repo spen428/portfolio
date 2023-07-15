@@ -1,10 +1,10 @@
 <template>
   <div
-    class="bg-rgb-blur flex min-h-screen flex-col items-center justify-between print:!bg-none"
+    class="bg-rgb-blur flex min-h-screen flex-col items-center print:!bg-none"
   >
     <HeaderBar />
 
-    <div class="flex w-full max-w-6xl grow overflow-x-hidden 2xl:max-w-7xl">
+    <div class="w-full grow">
       <router-view></router-view>
     </div>
 
