@@ -12,6 +12,7 @@ import ProjectsIndexPage from "@/pages/projects/ProjectsIndexPage.vue";
 import HomePage from "@/pages/home/HomePage.vue";
 import ConfigurationService from "@/services/ConfigurationService";
 import DataService from "@/services/DataService";
+import CommercialExperiencePage from "@/pages/commercial-experience/CommercialExperiencePage.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -31,7 +32,7 @@ const router = createRouter({
         },
         {
           path: "ce",
-          component: PortfolioCommercialExperienceCalorieMate,
+          component: CommercialExperiencePage,
           name: "Commercial Experience",
           meta: {
             isPrintable: true,

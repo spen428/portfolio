@@ -112,7 +112,7 @@
     </router-link>
     <router-link
       id="linkRight"
-      to="/portfolio"
+      to="/portfolio/ce"
       class="absolute right-0 block h-full w-1/3"
       v-on:mouseover="hoverIndex = 2"
       v-on:mouseout="hoverIndex = -1"
