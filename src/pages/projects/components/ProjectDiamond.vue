@@ -19,29 +19,17 @@
         v-if="project && project.thumbnailUrl"
         :src="project.thumbnailUrl"
         :alt="project.title"
-        class="fit-to-diamond opacity-40 blur-[2px] duration-1000"
-        :class="{
-          '!opacity-100': hover,
-          '!blur-0': hover,
-        }"
+        class="fit-to-diamond"
       />
     </a-or-router-link>
-
-    <img
-      v-if="project && project.url.url.includes('github')"
-      src="/icons/github.svg"
-      alt="GitHub"
-      class="pointer-events-none absolute bottom-4 left-[calc(50%-1rem)] z-10 h-8 rounded-full bg-cv-white opacity-0 duration-700"
-      :class="{ 'opacity-80': hover }"
-    />
 
     <h2
       v-if="project"
       class="pointer-events-none flex h-full items-center justify-center overflow-hidden"
     >
       <span
-        class="z-10 p-12 pt-28 text-center text-sm text-cv-dark-purple opacity-100 duration-700"
-        :class="{ 'text-shadow': hover, 'text-cv-white': hover }"
+        class="text-shadow z-10 p-12 text-center text-sm text-cv-white duration-500"
+        :style="{ opacity: hover ? 1 : 0 }"
       >
         {{ project.title }}
       </span>

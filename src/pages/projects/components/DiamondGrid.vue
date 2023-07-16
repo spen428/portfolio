@@ -118,7 +118,7 @@ const topMarginPx = computed(() => {
   const marginPx = (containerHeightPx.value - heightPx) / 2;
 
   if (isDesktopSize.value) {
-    return marginPx * 0.5;
+    return marginPx * 0.5 + xOffsetPx.value / 2;
   }
   return marginPx;
 });
