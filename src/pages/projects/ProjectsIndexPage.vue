@@ -1,5 +1,5 @@
 <template>
-  <DiamondGrid :projects="projects" :diamondSizeRem="16" :spacingRem="0.25" />
+  <DiamondGrid :projects="projects" :diamondSizeRem="16" :spacingRem="0.125" />
 </template>
 
 <style scoped></style>

@@ -120,42 +120,6 @@ export default new (class DataService implements IDataService {
         title: "AnColle",
         url: { url: "https://github.com/spen428/ancolle", external: true },
       },
-      {
-        id: 5,
-        thumbnailUrl: "",
-        title: "",
-        url: { url: "#", external: false },
-      },
-      {
-        id: 6,
-        thumbnailUrl: "",
-        title: "",
-        url: { url: "#", external: false },
-      },
-      {
-        id: 7,
-        thumbnailUrl: "",
-        title: "",
-        url: { url: "#", external: false },
-      },
-      {
-        id: 8,
-        thumbnailUrl: "",
-        title: "",
-        url: { url: "#", external: false },
-      },
-      {
-        id: 9,
-        thumbnailUrl: "",
-        title: "",
-        url: { url: "#", external: false },
-      },
-      {
-        id: 10,
-        thumbnailUrl: "",
-        title: "",
-        url: { url: "#", external: false },
-      },
     ];
   }
 
