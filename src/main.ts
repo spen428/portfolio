@@ -7,7 +7,6 @@ import CvPage from "@/pages/cv/CvPage.vue";
 import BusinessCardPage from "@/pages/business-card/BusinessCardPage.vue";
 import BreakpointTestPage from "@/pages/test/breakpoints/BreakpointTestPage.vue";
 import RouterView from "@/pages/RouterView.vue";
-import PortfolioCommercialExperienceCalorieMate from "@/pages/projects/components/PortfolioCommercialExperienceCalorieMate.vue";
 import ProjectsIndexPage from "@/pages/projects/ProjectsIndexPage.vue";
 import HomePage from "@/pages/home/HomePage.vue";
 import ConfigurationService from "@/services/ConfigurationService";
@@ -28,14 +27,6 @@ const router = createRouter({
           path: "projects",
           component: ProjectsIndexPage,
           name: "Project Showcase",
-        },
-        {
-          path: "ce",
-          component: PortfolioCommercialExperienceCalorieMate,
-          name: "Commercial Experience",
-          meta: {
-            isPrintable: true,
-          },
         },
         {
           path: "cv",
