@@ -46,7 +46,10 @@
         class="h-16 w-16 select-none"
       />
     </button>
-    <div class="fixed bottom-0 flex h-32 w-full justify-center">
+    <div
+      class="fixed bottom-0 flex h-32 w-full justify-center"
+      :class="{ hidden: !showDownArrow }"
+    >
       <button class="mt-4 w-12 animate-bounce">
         <img
           src="/icons/arrow-ios-downward-outline.svg"
@@ -72,6 +75,7 @@ p {
 <script setup lang="ts">
 import CenterRibbon from "@/pages/home/components/CenterRibbon.vue";
 import DataService from "@/services/DataService";
+import { onBeforeUnmount, onMounted, ref } from "vue";
 
 const personalInfo = DataService.getPersonalInfo();
 
@@ -79,8 +83,13 @@ const currentYear = new Date().getFullYear();
 const yearsExperience = currentYear - 2018;
 const yearsCoding = currentYear - 2006;
 
-const scrollToTop = () => {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
+const showDownArrow = ref(false);
+const detectScrolling = () => {
+  const documentRoot = document.getElementsByTagName("html")[0];
+  const scrollPosition = documentRoot.scrollTop;
+  const maxScroll = documentRoot.scrollHeight - window.innerHeight;
+  showDownArrow.value = scrollPosition < maxScroll - 100;
 };
+onMounted(() => document.addEventListener("scroll", detectScrolling));
+onBeforeUnmount(() => document.removeEventListener("scroll", detectScrolling));
 </script>
