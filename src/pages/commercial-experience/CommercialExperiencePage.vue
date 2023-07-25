@@ -10,7 +10,7 @@
         <img :src="article.logoUrl" class="mx-auto h-16" />
         <p class="text-balanced my-4 text-center text-sm">
           {{ article.tags.join(", ") }}
-        </p>KKK
+        </p>
         <p>{{ article.introduction }}</p>
         <section v-for="section in article.sections">
           <h2 class="mb-4 mt-6 text-lg">{{ section.title }}</h2>
@@ -21,11 +21,7 @@
   </div>
 </template>
 
-<style scoped>
-.text-balanced {
-  text-wrap: balance;
-}
-</style>
+<style scoped></style>
 
 <script setup lang="ts">
 import DataService from "@/services/DataService";
