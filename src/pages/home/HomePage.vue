@@ -12,7 +12,9 @@
     </h2>
     <CenterRibbon />
 
-    <p class="mt-12">{{ yearsExperience }} years' experience</p>
+    <p class="mt-12">
+      <strong>{{ yearsExperience }} years' experience</strong>
+    </p>
     <p>as a full-stack developer&hellip;</p>
     <p class="mt-12">&hellip;but writing code even as a child,</p>
     <p>
@@ -21,23 +23,18 @@
     <p class="mt-12">I specialise in&hellip;</p>
     <p class="mt-12">Angular with RxJS</p>
     <p>C# ASP.NET with EF Core</p>
-    <p>Java Spring Framework</p>
-    <p>Build and deployment pipelines</p>
-    <p>and cloud configuration.</p>
-    <p class="mt-12">I also have a passion for&hellip;</p>
-    <p class="mt-12">Awesome tooling</p>
-    <p>and clean architecture.</p>
+    <p>Linux and Docker</p>
+    <p class="mt-12">&hellip;but my knowledge is broad</p>
+    <p>and learning is my <strong>passion</strong>.</p>
     <p class="mt-12">
       Writing software <strong>isn't just</strong> work&hellip;
     </p>
-    <p class="mt-12">As a tech <strong>enthusiast</strong></p>
+    <p class="mt-12">&hellip;as a tech <strong>enthusiast</strong></p>
     <p>it extends to my leisure time too,</p>
-    <p><strong>amplifying</strong> my exposure to&hellip;</p>
-    <p class="mt-12">novel problems</p>
-    <p>design patterns</p>
-    <p class="mb-12">new paradigms</p>
+    <p><strong>amplifying</strong> my exposure to all.</p>
+    <p class="mt-12"><i>Available for hire.</i></p>
     <button
-      class="mb-12 flex animate-tease"
+      class="my-12 flex animate-tease"
       onclick="document.body.scrollTop = 0; document.documentElement.scrollTop = 0;"
     >
       <img
@@ -66,7 +63,7 @@
 }
 
 p {
-  font-size: 2rem;
+  font-size: 1.25rem;
   color: white;
   text-shadow: 0 0 2rem rgb(var(--cv-dark-purple));
 }
@@ -83,7 +80,7 @@ const currentYear = new Date().getFullYear();
 const yearsExperience = currentYear - 2018;
 const yearsCoding = currentYear - 2006;
 
-const showDownArrow = ref(false);
+const showDownArrow = ref(true);
 const detectScrolling = () => {
   const documentRoot = document.getElementsByTagName("html")[0];
   const scrollPosition = documentRoot.scrollTop;
