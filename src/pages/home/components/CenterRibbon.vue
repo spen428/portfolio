@@ -154,7 +154,7 @@
 
 #linkMiddle > div {
   clip-path: url(#maskMiddle);
-  background-image: url("/projects/projects.thumb.jpg");
+  background-image: url("/project-page.png");
   background-position: center;
   background-size: cover;
 }
