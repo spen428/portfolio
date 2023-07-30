@@ -86,21 +86,18 @@ export default new (class DataService implements IDataService {
     return [
       {
         id: 0,
-        thumbnailUrl: "/face0.svg",
-        title: "CV & Portfolio Website",
+        thumbnailUrl: "/projects/helix.jpg",
+        title: "HELIX Digital Twin",
         url: {
-          url: "/portfolio/cv",
-          external: false,
+          url: "https://binnies.com/sectors/digital/digital-products/helix/",
+          external: true,
         },
       },
       {
         id: 1,
-        thumbnailUrl: "/projects/jong.png",
-        title: "Jong",
-        url: {
-          url: "https://github.com/spen428/jong",
-          external: true,
-        },
+        thumbnailUrl: "/projects/footsteps2.png",
+        title: "Parenta EYFS Tracker",
+        url: { url: "https://www.parenta.com/eyfs-tracker/", external: true },
       },
       {
         id: 2,
@@ -110,50 +107,41 @@ export default new (class DataService implements IDataService {
       },
       {
         id: 3,
-        thumbnailUrl: "/face0.svg",
-        title: "This is a really damn long title, I wonder how it wraps!",
-        url: { url: "#", external: false },
+        thumbnailUrl: "/projects/cv.thumb.jpg",
+        title: "CV & Portfolio Website",
+        url: {
+          url: "https://github.com/spen428/portfolio",
+          external: true,
+        },
       },
       {
         id: 4,
+        thumbnailUrl: "/projects/jong.png",
+        title: "Jong",
+        url: {
+          url: "https://github.com/spen428/jong",
+          external: true,
+        },
+      },
+      {
+        id: 5,
         thumbnailUrl: "/projects/ancolle.png",
         title: "AnColle",
         url: { url: "https://github.com/spen428/ancolle", external: true },
       },
       {
-        id: 5,
-        thumbnailUrl: "",
-        title: "",
-        url: { url: "#", external: false },
-      },
-      {
         id: 6,
-        thumbnailUrl: "",
-        title: "",
-        url: { url: "#", external: false },
+        thumbnailUrl: "/projects/tenhou.png",
+        title: "Custom Tenhou.net Client",
+        url: {
+          url: "https://github.com/spen428/custom_tenhou_client",
+          external: true,
+        },
       },
       {
         id: 7,
-        thumbnailUrl: "",
-        title: "",
-        url: { url: "#", external: false },
-      },
-      {
-        id: 8,
-        thumbnailUrl: "",
-        title: "",
-        url: { url: "#", external: false },
-      },
-      {
-        id: 9,
-        thumbnailUrl: "",
-        title: "",
-        url: { url: "#", external: false },
-      },
-      {
-        id: 10,
-        thumbnailUrl: "",
-        title: "",
+        thumbnailUrl: "/projects/raffld.png",
+        title: "Raffl'd: The Experience Lottery",
         url: { url: "#", external: false },
       },
     ];
