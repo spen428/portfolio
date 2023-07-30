@@ -9,11 +9,12 @@
         v-on:mouseout="hover = false"
         :is-external="!!project?.url?.external"
         :href="project?.url?.url ?? ''"
-        class="diamond pointer-events-auto z-10 border-cv-dark-purple duration-1000"
+        class="diamond pointer-events-auto z-10 border-transparent duration-1000"
         :class="{
           'border-opacity-80': hover,
           'bg-black': !project,
           'bg-opacity-10': !project,
+          '!border-cv-dark-purple': hover,
         }"
       >
         <img
@@ -53,7 +54,7 @@
 
 .diamond {
   --diamond-ratio: 70.71067812%; /* x / (x sqrt 2) */
-  --border-width: 1px;
+  --border-width: 0.125rem;
 
   content: "";
   display: block;
