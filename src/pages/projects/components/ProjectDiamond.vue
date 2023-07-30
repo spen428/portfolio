@@ -1,39 +1,44 @@
 <template>
-  <div
-    class="pointer-events-none relative select-none"
-    :style="{ width: size, height: size }"
-  >
-    <a-or-router-link
-      v-on:mouseover="hover = true"
-      v-on:mouseout="hover = false"
-      :is-external="!!project?.url?.external"
-      :href="project?.url?.url ?? ''"
-      class="diamond pointer-events-auto z-10 border-cv-dark-purple duration-1000"
-      :class="{
-        'border-opacity-80': hover,
-        'bg-black': !project,
-        'bg-opacity-10': !project,
-      }"
+  <div>
+    <div
+      class="pointer-events-none relative select-none"
+      :style="{ width: size, height: size }"
     >
-      <img
-        v-if="project && project.thumbnailUrl"
-        :src="project.thumbnailUrl"
-        :alt="project.title"
-        class="fit-to-diamond"
-      />
-    </a-or-router-link>
-
-    <h2
-      v-if="project"
-      class="pointer-events-none flex h-full items-center justify-center overflow-hidden"
-    >
-      <span
-        class="text-shadow z-10 p-12 text-center text-sm text-cv-white duration-500"
-        :style="{ opacity: hover ? 1 : 0 }"
+      <a-or-router-link
+        v-on:mouseover="hover = true"
+        v-on:mouseout="hover = false"
+        :is-external="!!project?.url?.external"
+        :href="project?.url?.url ?? ''"
+        class="diamond pointer-events-auto z-10 border-cv-dark-purple duration-1000"
+        :class="{
+          'border-opacity-80': hover,
+          'bg-black': !project,
+          'bg-opacity-10': !project,
+        }"
       >
-        {{ project.title }}
-      </span>
-    </h2>
+        <img
+          v-if="project && project.thumbnailUrl"
+          :src="project.thumbnailUrl"
+          :alt="project.title"
+          class="fit-to-diamond bg-cv-white transition-opacity"
+          :style="{
+            opacity: hover ? 0.3 : 1,
+          }"
+        />
+      </a-or-router-link>
+
+      <h2
+        v-if="project"
+        class="pointer-events-none flex h-full items-center justify-center overflow-hidden"
+      >
+        <span
+          class="text-shadow z-10 p-12 text-center text-sm text-cv-white duration-500"
+          :style="{ opacity: hover ? 1 : 0 }"
+        >
+          {{ project.title }}
+        </span>
+      </h2>
+    </div>
   </div>
 </template>
 
@@ -73,6 +78,10 @@
 
   rotate: -45deg;
   scale: var(--2x-diamond-ratio);
+  object-fit: cover;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 </style>
 
