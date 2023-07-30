@@ -91,7 +91,7 @@
     </router-link>
     <router-link
       id="linkMiddle"
-      to="/portfolio"
+      to="/portfolio/projects"
       class="absolute left-1/4 block h-full w-1/2"
       v-on:mouseover="hoverIndex = 1"
       v-on:mouseout="hoverIndex = -1"
@@ -154,7 +154,7 @@
 
 #linkMiddle > div {
   clip-path: url(#maskMiddle);
-  background-image: url("/projects/projects.thumb.jpg");
+  background-image: url("/project-page.png");
   background-position: center;
   background-size: cover;
 }

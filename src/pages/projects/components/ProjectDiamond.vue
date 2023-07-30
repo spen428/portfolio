@@ -1,52 +1,60 @@
 <template>
-  <div
-    class="pointer-events-none relative select-none duration-100 ease-in-out"
-    :style="{ width: size, height: size }"
-  >
-    <a-or-router-link
-      v-on:mouseover="hover = true"
-      v-on:mouseout="hover = false"
-      :is-external="project.url.external"
-      :href="project.url.url"
-      class="diamond pointer-events-auto z-10 border-cv-dark-purple bg-cv-white duration-1000"
-      :class="{ 'border-opacity-80': hover }"
+  <div>
+    <div
+      class="pointer-events-none relative select-none"
+      :style="{ width: size, height: size }"
     >
-      <img
-        :src="project.thumbnailUrl"
-        :alt="project.title"
-        class="fit-to-diamond opacity-50 blur-[2px] duration-1000"
+      <a-or-router-link
+        v-on:mouseover="hover = true"
+        v-on:mouseout="hover = false"
+        :is-external="!!project?.url?.external"
+        :href="project?.url?.url ?? ''"
+        class="diamond pointer-events-auto z-10 border-transparent duration-1000"
         :class="{
-          '!opacity-100': hover,
-          '!blur-0': hover,
+          'border-opacity-80': hover,
+          'bg-black': !project,
+          'bg-opacity-10': !project,
+          '!border-cv-dark-purple': hover,
         }"
-      />
-    </a-or-router-link>
-
-    <img
-      v-if="project.url.url.includes('github')"
-      src="/icons/github.svg"
-      alt="GitHub"
-      class="pointer-events-none absolute bottom-4 left-[calc(50%-1rem)] z-10 h-8 rounded-full bg-cv-white opacity-0 duration-700"
-      :class="{ 'opacity-80': hover }"
-    />
-
-    <h2
-      class="pointer-events-none flex h-full items-center justify-center overflow-hidden"
-    >
-      <span
-        class="z-10 p-12 text-center font-bold text-cv-purple opacity-100 duration-700"
-        :class="{ '!opacity-0': hover }"
       >
-        {{ project.title }}
-      </span>
-    </h2>
+        <img
+          v-if="project && project.thumbnailUrl"
+          :src="project.thumbnailUrl"
+          :alt="project.title"
+          class="fit-to-diamond bg-cv-white transition-opacity"
+          :style="{
+            opacity: hover ? 0.3 : 1,
+          }"
+        />
+      </a-or-router-link>
+
+      <h2
+        v-if="project"
+        class="pointer-events-none flex h-full items-center justify-center overflow-hidden"
+      >
+        <span
+          class="text-shadow z-10 p-12 text-center text-sm text-cv-white duration-500"
+          :style="{ opacity: hover ? 1 : 0 }"
+        >
+          {{ project.title }}
+        </span>
+      </h2>
+    </div>
   </div>
 </template>
 
 <style scoped>
+.text-shadow {
+  --text-shadow-length: 0.25rem;
+  text-shadow: 1px 1px var(--text-shadow-length) rgb(var(--cv-dark-purple)),
+    -1px -1px var(--text-shadow-length) rgb(var(--cv-dark-purple)),
+    1px -1px var(--text-shadow-length) rgb(var(--cv-dark-purple)),
+    -1px 1px var(--text-shadow-length) rgb(var(--cv-dark-purple));
+}
+
 .diamond {
   --diamond-ratio: 70.71067812%; /* x / (x sqrt 2) */
-  --border-width: 0.25rem;
+  --border-width: 0.125rem;
 
   content: "";
   display: block;
@@ -58,7 +66,7 @@
   top: 0;
   left: 0;
 
-  transform: rotate(45deg);
+  rotate: 0 0 1 45deg;
   transform-origin: 0 0;
   translate: var(--diamond-ratio) 0;
 
@@ -71,6 +79,10 @@
 
   rotate: -45deg;
   scale: var(--2x-diamond-ratio);
+  object-fit: cover;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 </style>
 
@@ -81,7 +93,7 @@ import AOrRouterLink from "@/components/AOrRouterLink.vue";
 
 defineProps<{
   size: string;
-  project: Project;
+  project: Project | null;
 }>();
 
 const hover = ref(false);
