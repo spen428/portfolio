@@ -23,14 +23,14 @@
       </a>
     </div>
     <div
-      class="mb-0 flex h-full w-3/5 flex-col items-center justify-between text-center"
+      class="mb-0 flex h-full w-3/5 flex-col items-center justify-center text-center"
     >
       <h1
-        class="m-0 font-serif text-2xl font-bold text-cv-dark-purple print:!mt-3"
+        class="mt-8 font-serif text-3xl font-bold text-cv-dark-purple print:!mt-3"
       >
         {{ personalInfo.fullName }}
       </h1>
-      <span class="small-caps mb-0 mt-4 text-base italic print:!text-sm">
+      <span class="small-caps mt-2 text-base italic leading-4 print:!text-sm">
         {{ personalInfo.longerTagLine }}
       </span>
     </div>

@@ -43,4 +43,5 @@ export interface PersonalInfo {
   tagLine: string;
   github: { url: string; username: string };
   longerTagLine: string;
+  linkedIn: { url: string };
 }

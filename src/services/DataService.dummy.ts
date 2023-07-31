@@ -173,6 +173,7 @@ export default new (class DataService implements IDataService {
         url: "https://github.com/spen428",
       },
       longerTagLine: "Seriously profound and Enticing tagline",
+      linkedIn: { url: "https://www.linkedin.com/" },
     };
   }
 })();
