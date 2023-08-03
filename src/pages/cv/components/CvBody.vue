@@ -1,6 +1,10 @@
 <template>
+  <section class="mx-4 my-8 lg:m-8">
+    <p class="text-center italic lg:text-justify lg:text-sm">
+      {{ cvData.abstract }}
+    </p>
+  </section>
   <CvArticle
-    class="print:!pt-0 first-of-type:lg:pt-8"
     v-for="article in cvData.articles"
     :key="article.title"
     :title="article.title"

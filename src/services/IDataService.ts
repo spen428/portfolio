@@ -10,6 +10,7 @@ export interface IDataService {
 
 export interface CvData {
   articles: Article[];
+  abstract: string;
 }
 
 interface Article {
