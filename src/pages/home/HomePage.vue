@@ -49,7 +49,7 @@
       class="fixed bottom-0 flex h-32 w-full justify-center"
       :class="{ hidden: !showDownArrow }"
     >
-      <button class="mt-4 w-12 animate-bounce">
+      <button class="mt-4 w-12 animate-bounce" v-on:click="scrollDown()">
         <img
           src="/icons/arrow-ios-downward-outline.svg"
           alt="Scroll down to read more"
@@ -91,4 +91,10 @@ const detectScrolling = () => {
 };
 onMounted(() => document.addEventListener("scroll", detectScrolling));
 onBeforeUnmount(() => document.removeEventListener("scroll", detectScrolling));
+
+function scrollDown() {
+  window.scrollBy({
+    top: window.visualViewport?.height ?? 1000 / 2,
+  });
+}
 </script>
