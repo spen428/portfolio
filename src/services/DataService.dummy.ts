@@ -79,6 +79,8 @@ export default new (class DataService implements IDataService {
     };
     return {
       articles: [employment, education, skills],
+      abstract:
+        "This section introduces me and instantly convinces you that I am worth an interview. Everything below is supplementary.",
     };
   }
 
@@ -173,6 +175,7 @@ export default new (class DataService implements IDataService {
         url: "https://github.com/spen428",
       },
       longerTagLine: "Seriously profound and Enticing tagline",
+      linkedIn: { url: "https://www.linkedin.com/" },
     };
   }
 })();

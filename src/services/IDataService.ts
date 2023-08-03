@@ -10,6 +10,7 @@ export interface IDataService {
 
 export interface CvData {
   articles: Article[];
+  abstract: string;
 }
 
 interface Article {
@@ -43,4 +44,5 @@ export interface PersonalInfo {
   tagLine: string;
   github: { url: string; username: string };
   longerTagLine: string;
+  linkedIn: { url: string };
 }
