@@ -1,4 +1,5 @@
 import type {
+  CommercialExperience,
   CvData,
   IDataService,
   PersonalInfo,
@@ -176,6 +177,13 @@ export default new (class DataService implements IDataService {
       },
       longerTagLine: "Seriously profound and Enticing tagline",
       linkedIn: { url: "https://www.linkedin.com/" },
+    };
+  }
+
+  public getCommercialExperience(): CommercialExperience {
+    return {
+      articles: [],
+      introduction: "",
     };
   }
 })();

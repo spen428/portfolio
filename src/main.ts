@@ -47,6 +47,11 @@ const router = createRouter({
             isStylable: false,
           },
         },
+        {
+          path: "ce",
+          component: CommercialExperiencePage,
+          name: "Commercial Experience",
+        },
       ],
     },
     {

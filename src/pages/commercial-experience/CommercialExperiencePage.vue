@@ -5,14 +5,14 @@
     >
       <h1 class="mb-8 mt-4 text-xl font-bold">Commercial Experience</h1>
       <p v-html="data.introduction" class="mb-8 text-sm italic" />
-      <article v-for="article in data.articles">
+      <article v-for="article in data.articles" :key="article.title">
         <h1 class="my-4 text-xl">{{ article.title }}</h1>
         <img :src="article.logoUrl" class="mx-auto h-16" />
         <p class="text-balanced my-4 text-center text-sm">
           {{ article.tags.join(", ") }}
         </p>
         <p>{{ article.introduction }}</p>
-        <section v-for="section in article.sections">
+        <section v-for="section in article.sections" :key="section.title">
           <h2 class="mb-4 mt-6 text-lg">{{ section.title }}</h2>
           <p v-html="section.body" />
         </section>
