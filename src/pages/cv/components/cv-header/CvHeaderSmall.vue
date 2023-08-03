@@ -3,18 +3,18 @@
     <CvHeaderProfilePicture />
     <div class="m-0 flex w-full min-w-0 flex-row flex-wrap justify-between">
       <div
-        class="mb-8 flex w-full flex-col items-center justify-between text-center"
+        class="mb-4 flex w-full flex-col items-center justify-between text-center"
       >
         <h1
           class="mx-0 mt-3 font-serif text-3xl font-bold text-cv-dark-purple xs:text-4xl"
         >
           {{ personalInfo.fullName }}
         </h1>
-        <span class="small-caps mb-4 mt-8 text-lg italic">
-          Full-stack software and Devops engineer
+        <span class="mb-4 mt-8">
+          {{ personalInfo.longerTagLine }}
         </span>
       </div>
-      <div class="mv-4 flex w-full items-center justify-evenly">
+      <div class="my-2 flex w-full items-center justify-evenly md:my-4">
         <a :href="`tel:${personalInfo.phoneNumber.intl}`">
           <img src="/icons/phone.svg" alt="Phone" />
         </a>

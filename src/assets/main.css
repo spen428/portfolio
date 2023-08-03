@@ -12,13 +12,6 @@
     --default-text: 105 105 105;
   }
 
-  em {
-    font-style: normal;
-    font-weight: bold;
-    background-color: initial;
-    color: rgb(var(--default-text));
-  }
-
   a {
     color: rgb(var(--cv-dark-purple));
     text-decoration: none;
