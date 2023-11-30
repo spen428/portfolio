@@ -23,8 +23,12 @@
       <div
         class="hidden h-full items-center gap-6 py-6 xs:flex sm:gap-4 lg:py-2"
       >
+        <a v-if="showLabels" class="font-semibold text-cv-white"> Résumé </a>
+        <a v-if="showLabels" class="font-semibold text-cv-white"> Work </a>
+        <a v-if="showLabels" class="font-semibold text-cv-white"> Contact </a>
+        <a v-if="showLabels" class="font-semibold text-cv-white"> GitHub </a>
         <a
-          class="aspect-square h-full transition hover:opacity-50"
+          class="flex aspect-square h-full items-center gap-2 transition hover:opacity-50"
           href="https://github.com/spen428"
           target="_blank"
         >
@@ -80,4 +84,5 @@ const isStylable = computed(() => currentRoute.value.meta.isStylable ?? false);
 const isPrintable = computed(
   () => currentRoute.value.meta.isPrintable ?? false
 );
+const showLabels = computed(() => currentRoute.value.meta.showLabels ?? false);
 </script>
