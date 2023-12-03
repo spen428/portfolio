@@ -5,7 +5,7 @@
     :class="{ 'lg:to-gray-900': hasScrolled }"
   >
     <div
-      class="mx-auto flex h-20 max-w-6xl items-center px-4 lg:my-4 lg:h-12 lg:px-8"
+      class="mx-auto flex h-20 max-w-6xl items-center gap-4 px-4 lg:my-4 lg:h-12 lg:px-8"
     >
       <router-link to="/portfolio" class="h-full">
         <img
@@ -15,11 +15,31 @@
         />
       </router-link>
       <router-link to="/portfolio">
-        <h1 class="px-6 text-xl text-cv-white lg:px-4 lg:text-lg">
+        <h1 class="text-xl text-cv-white lg:text-lg">
           {{ pageTitle }}
         </h1>
       </router-link>
       <div id="spacer" class="grow"></div>
+      <div class="hidden h-full items-center gap-4 py-6 xs:flex lg:py-2">
+        <router-link to="/portfolio/cv" class="text-cv-white">
+          Résumé
+        </router-link>
+        <router-link to="/portfolio/projects" class="text-cv-white">
+          Portfolio
+        </router-link>
+        <a
+          class="group inline-flex items-center gap-1 text-cv-white"
+          href="https://github.com/spen428"
+          target="_blank"
+        >
+          GitHub
+          <img
+            src="/icons/external-link.svg"
+            alt="Opens an external site"
+            class="h-4 w-0 brightness-0 invert duration-200 group-hover:w-4"
+          />
+        </a>
+      </div>
       <button class="aspect-square h-full w-8 py-6 xs:hidden">
         <img
           src="/icons/menu.svg"
@@ -27,27 +47,9 @@
           class="inline h-full brightness-0 invert"
         />
       </button>
-      <div
-        class="hidden h-full items-center gap-6 py-6 xs:flex sm:gap-4 lg:py-2"
-      >
-        <router-link to="/portfolio/cv" class="font-semibold text-cv-white">
-          Résumé
-        </router-link>
-        <router-link
-          to="/portfolio/projects"
-          class="font-semibold text-cv-white"
-        >
-          Portfolio
-        </router-link>
-        <a
-          class="font-semibold text-cv-white"
-          href="https://github.com/spen428"
-          target="_blank"
-        >
-          GitHub
-        </a>
+      <div class="hidden h-7 gap-2 xs:flex">
         <button
-          v-if="isStylable"
+          v-if="isStyleable"
           class="aspect-square h-full transition hover:opacity-50"
         >
           <img
@@ -96,11 +98,12 @@ const detectScrolling = () => {
 onMounted(() => document.addEventListener("scroll", detectScrolling));
 onBeforeUnmount(() => document.removeEventListener("scroll", detectScrolling));
 
-const isStylable = computed(() => currentRoute.value.meta.isStylable ?? false);
+const isStyleable = computed(
+  () => currentRoute.value.meta.isStyleable ?? false
+);
 const isPrintable = computed(
   () => currentRoute.value.meta.isPrintable ?? false
 );
-const showLabels = computed(() => currentRoute.value.meta.showLabels ?? false);
 
 const languageId = ref(0);
 const languageIcon = computed(
