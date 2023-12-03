@@ -20,13 +20,25 @@
         </h1>
       </router-link>
       <div id="spacer" class="grow"></div>
+      <button class="aspect-square h-full w-8 py-6 sm:hidden">
+        <img
+          src="/icons/menu.svg"
+          alt="Menu"
+          class="inline h-full brightness-0 invert"
+        />
+      </button>
       <div
         class="hidden h-full items-center gap-6 py-6 xs:flex sm:gap-4 lg:py-2"
       >
-        <a v-if="showLabels" class="font-semibold text-cv-white"> Résumé </a>
-        <a v-if="showLabels" class="font-semibold text-cv-white"> Work </a>
-        <a v-if="showLabels" class="font-semibold text-cv-white"> Contact </a>
-        <a v-if="showLabels" class="font-semibold text-cv-white"> GitHub </a>
+        <router-link to="/portfolio/cv" class="font-semibold text-cv-white">
+          Résumé
+        </router-link>
+        <router-link
+          to="/portfolio/projects"
+          class="font-semibold text-cv-white"
+        >
+          Work
+        </router-link>
         <a
           class="flex aspect-square h-full items-center gap-2 transition hover:opacity-50"
           href="https://github.com/spen428"
