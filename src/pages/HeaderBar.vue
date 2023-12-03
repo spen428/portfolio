@@ -5,7 +5,7 @@
     :class="{ 'lg:to-gray-900': hasScrolled }"
   >
     <div
-      class="mx-auto flex h-20 max-w-6xl items-center gap-4 px-4 lg:my-4 lg:h-12 lg:px-8"
+      class="mx-auto flex h-20 max-w-6xl items-center gap-3 px-4 lg:my-4 lg:h-12 lg:px-8"
     >
       <router-link to="/portfolio" class="h-full">
         <img
@@ -50,7 +50,7 @@
       <div class="hidden h-7 gap-2 xs:flex">
         <button
           v-if="isStyleable"
-          class="aspect-square h-full transition hover:opacity-50"
+          class="aspect-square h-6 transition hover:opacity-50"
         >
           <img
             src="/icons/color-palette-outline.svg"
@@ -60,7 +60,7 @@
         </button>
         <button
           v-if="isPrintable"
-          class="aspect-square h-full transition hover:opacity-50"
+          class="aspect-square h-6 transition hover:opacity-50"
           onclick="print()"
         >
           <img
