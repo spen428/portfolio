@@ -71,6 +71,14 @@
             class="inline h-full brightness-0 invert"
           />
         </button>
+        <button class="aspect-square h-full transition">
+          <img
+            :src="languageIcon"
+            alt="Print"
+            class="inline h-full opacity-75 hover:opacity-100"
+            v-on:click="toggleLanguage()"
+          />
+        </button>
       </div>
     </div>
   </header>
@@ -97,4 +105,10 @@ const isPrintable = computed(
   () => currentRoute.value.meta.isPrintable ?? false
 );
 const showLabels = computed(() => currentRoute.value.meta.showLabels ?? false);
+
+const languageId = ref(0);
+const languageIcon = computed(
+  () => ["/icons/circle-en-GB.svg", "/icons/circle-ja-JP.svg"][languageId.value]
+);
+const toggleLanguage = () => (languageId.value = (languageId.value + 1) % 2);
 </script>
