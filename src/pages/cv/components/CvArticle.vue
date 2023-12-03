@@ -7,7 +7,7 @@
     >
       <span class="h-1 w-full bg-cv-dark-purple lg:!hidden"></span>
       <span
-        class="mx-4 bg-cv-white text-center text-2xl font-bold text-cv-dark-purple print:!text-[14pt] lg:m-0 lg:text-lg"
+        class="mx-4 text-center text-2xl font-bold text-cv-dark-purple print:!text-[14pt] lg:m-0 lg:text-lg"
       >
         {{ title }}
       </span>
