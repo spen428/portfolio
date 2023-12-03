@@ -20,7 +20,7 @@
         </h1>
       </router-link>
       <div id="spacer" class="grow"></div>
-      <button class="aspect-square h-full w-8 py-6 sm:hidden">
+      <button class="aspect-square h-full w-8 py-6 xs:hidden">
         <img
           src="/icons/menu.svg"
           alt="Menu"
