@@ -37,7 +37,7 @@
           to="/portfolio/projects"
           class="font-semibold text-cv-white"
         >
-          Work
+          Portfolio
         </router-link>
         <a
           class="font-semibold text-cv-white"

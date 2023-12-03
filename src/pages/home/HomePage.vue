@@ -17,9 +17,6 @@
       alt="Logo"
       class="w-[45vw] animate-sideToSide select-none xs:h-64 xs:w-[unset]"
     />
-    <h2 class="text-shadow mt-8 font-serif text-base text-cv-white">
-      Available for hire
-    </h2>
   </div>
 </template>
 
