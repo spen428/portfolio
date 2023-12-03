@@ -40,15 +40,11 @@
           Work
         </router-link>
         <a
-          class="flex aspect-square h-full items-center gap-2 transition hover:opacity-50"
+          class="font-semibold text-cv-white"
           href="https://github.com/spen428"
           target="_blank"
         >
-          <img
-            src="/icons/github.svg"
-            alt="Print"
-            class="inline h-full brightness-0 invert"
-          />
+          GitHub
         </a>
         <button
           v-if="isStylable"
