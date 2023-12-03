@@ -8,11 +8,20 @@
       &diamond; {{ personalInfo.fullName }} &diamond;
     </h1>
     <h2
-      class="text-shadow mb-20 font-serif text-[min(1.85rem,6vw)] font-bold italic text-cv-white"
+      class="text-shadow mb-8 font-serif text-[min(1.85rem,5vw)] font-bold italic text-cv-white"
     >
       {{ personalInfo.tagLine }}
     </h2>
-    <CenterRibbon />
+    <img
+      src="/logo-hollow.svg"
+      alt="Logo"
+      class="w-[60vw] animate-sideToSide select-none xs:h-64 xs:w-[unset]"
+    />
+    <h2
+      class="text-shadow mt-8 font-serif text-[min(1.85rem,4vw)] text-cv-white"
+    >
+      Available for hire
+    </h2>
   </div>
 </template>
 
@@ -23,7 +32,6 @@
 </style>
 
 <script setup lang="ts">
-import CenterRibbon from "@/pages/home/components/CenterRibbon.vue";
 import DataService from "@/services/DataService";
 
 const personalInfo = DataService.getPersonalInfo();
