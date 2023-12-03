@@ -15,7 +15,7 @@
     <img
       src="/logo-hollow.svg"
       alt="Logo"
-      class="w-[60vw] animate-sideToSide select-none xs:h-64 xs:w-[unset]"
+      class="w-[45vw] animate-sideToSide select-none xs:h-64 xs:w-[unset]"
     />
     <h2
       class="text-shadow mt-8 font-serif text-[min(1.85rem,4vw)] text-cv-white"
