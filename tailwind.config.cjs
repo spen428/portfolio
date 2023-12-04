@@ -12,6 +12,7 @@ module.exports = {
       sans: "Noto Sans",
       serif: "Noto Serif",
       mono: "Noto Sans Mono",
+      cursive: "Brush Script MT",
     },
     screens: {
       xs: "576px",

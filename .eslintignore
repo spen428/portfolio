@@ -3,3 +3,4 @@ dist/
 pnpm-lock.yaml
 visual_regressions/
 !visual_regressions/engine_scripts
+.cache/

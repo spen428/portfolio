@@ -5,16 +5,16 @@
       :style="{ width: size, height: size }"
     >
       <a-or-router-link
-        v-on:mouseover="hover = true"
-        v-on:mouseout="hover = false"
+        @mouseover="hovering = true"
+        @mouseout="hovering = false"
         :is-external="!!project?.url?.external"
         :href="project?.url?.url ?? ''"
         class="diamond pointer-events-auto z-10 border-transparent duration-1000"
         :class="{
-          'border-opacity-80': hover,
+          'border-opacity-80': isActive,
           'bg-black': !project,
           'bg-opacity-10': !project,
-          '!border-cv-dark-purple': hover,
+          '!border-cv-dark-purple': isActive,
         }"
       >
         <img
@@ -23,7 +23,7 @@
           :alt="project.title"
           class="fit-to-diamond bg-cv-white transition-opacity"
           :style="{
-            opacity: hover ? 0.3 : 1,
+            opacity: isActive ? 0.3 : 1,
           }"
         />
       </a-or-router-link>
@@ -34,7 +34,7 @@
       >
         <span
           class="text-shadow z-10 p-12 text-center text-sm text-cv-white duration-500"
-          :style="{ opacity: hover ? 1 : 0 }"
+          :style="{ opacity: isActive ? 1 : 0 }"
         >
           {{ project.title }}
         </span>
@@ -87,14 +87,16 @@
 </style>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import type { Project } from "@/services/IDataService";
 import AOrRouterLink from "@/components/AOrRouterLink.vue";
 
-defineProps<{
+const props = defineProps<{
   size: string;
   project: Project | null;
+  active: boolean;
 }>();
 
-const hover = ref(false);
+const hovering = ref(false);
+const isActive = computed(() => hovering.value || props.active);
 </script>

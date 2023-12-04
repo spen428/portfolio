@@ -5,7 +5,7 @@
         class="justify-content-between mb-1 mt-6 flex w-full items-center font-bold text-cv-grey print:!m-0 print:!text-sm lg:mb-2 lg:mt-0 lg:block"
       >
         <span class="h-[1pt] w-full bg-cv-grey lg:!hidden"></span>
-        <span class="mx-2 w-fit shrink-0 bg-cv-white lg:mx-0">
+        <span class="mx-2 w-fit shrink-0 lg:mx-0">
           {{ title }}
         </span>
         <span class="h-[1pt] w-full bg-cv-grey lg:!hidden"></span>

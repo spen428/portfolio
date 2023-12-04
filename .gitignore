@@ -1,6 +1,7 @@
 dist
 bin
 node_modules
+.cache
 *.pdf
 
 # Sensitive files
