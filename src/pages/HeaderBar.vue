@@ -40,13 +40,13 @@
           />
         </a>
       </div>
-      <button class="aspect-square h-full w-8 py-6 xs:hidden">
-        <img
-          src="/icons/menu.svg"
-          alt="Menu"
-          class="inline h-full brightness-0 invert"
-        />
-      </button>
+      <!--<button class="aspect-square h-full w-8 py-6 xs:hidden">-->
+      <!--  <img-->
+      <!--    src="/icons/menu.svg"-->
+      <!--    alt="Menu"-->
+      <!--    class="inline h-full brightness-0 invert"-->
+      <!--  />-->
+      <!--</button>-->
       <div class="hidden h-7 gap-2 xs:flex">
         <button
           v-if="isStyleable"
@@ -69,14 +69,14 @@
             class="inline h-full brightness-0 invert"
           />
         </button>
-        <button class="aspect-square h-full transition">
-          <img
-            :src="languageIcon"
-            alt="Print"
-            class="inline h-full opacity-75 hover:opacity-100"
-            v-on:click="toggleLanguage()"
-          />
-        </button>
+        <!--<button class="aspect-square h-full transition">-->
+        <!--  <img-->
+        <!--    :src="languageIcon"-->
+        <!--    alt="Print"-->
+        <!--    class="inline h-full opacity-75 hover:opacity-100"-->
+        <!--    v-on:click="toggleLanguage()"-->
+        <!--  />-->
+        <!--</button>-->
       </div>
     </div>
   </header>

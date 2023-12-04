@@ -17,6 +17,30 @@
       alt="Logo"
       class="w-[45vw] animate-sideToSide select-none xs:h-64 xs:w-[unset]"
     />
+    <div class="flex flex-col items-center gap-6 pt-10 xs:hidden">
+      <router-link to="/portfolio/cv" class="text-cv-white">
+        <button class="rounded-lg border px-4 py-2">View my résumé</button>
+      </router-link>
+      <router-link to="/portfolio/projects" class="text-cv-white">
+        <button class="rounded-lg border px-4 py-2">Browse my portfolio</button>
+      </router-link>
+      <a
+        class="text-cv-white"
+        href="https://github.com/spen428"
+        target="_blank"
+      >
+        <button
+          class="inline-flex items-center gap-2 rounded-lg border px-4 py-2"
+        >
+          Open my GitHub
+          <img
+            src="/icons/external-link.svg"
+            alt="Opens an external site"
+            class="h-4 brightness-0 invert"
+          />
+        </button>
+      </a>
+    </div>
   </div>
 </template>
 
