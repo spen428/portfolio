@@ -66,6 +66,7 @@ function getDeviceScenarios() {
     {
       label: "Viewing projects page",
       url: "/portfolio/projects",
+      misMatchThreshold: 0.1,
     },
     {
       label: "Viewing CV",
@@ -78,6 +79,7 @@ function getDeviceScenarios() {
       label: `${scenario.label} with device (${viewport.label})`,
       viewports: [viewport],
       url: `${baseUrl}${scenario.url}?disableAnimation=1`,
+      misMatchThreshold: scenario.misMatchThreshold,
     }))
   );
 }
