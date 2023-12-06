@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8fa3eb35-c64d-4f25-9970-a79b15d5246c" name="Changes" comment="Translate page titles too">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/components/CenterRibbon.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/components/CenterRibbon.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/components/ExplodingLogo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/components/ExplodingLogo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/ConfigurationService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/configuration.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/DataService.dummy.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/IDataService.ts" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="bugfix/cache-busting" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2WtgWtAYE57Jz7JWFDx8hmHnoqB" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "feature/japanese-localization",
+    "javascript.nodejs.core.library.configured.version": "20.10.0",
+    "javascript.nodejs.core.library.typings.version": "20.10.4",
+    "last_opened_file_path": "/home/samuel/Programming/portfolio",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "/home/samuel/.local/share/pnpm/pnpm",
+    "npm.install swagger-ui-express.executor": "Run",
+    "npm.install.executor": "Run",
+    "npm.prod (host).executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "/home/samuel/Programming/portfolio/web/node_modules/prettier",
+    "settings.editor.selected.configurable": "advanced.settings",
+    "ts.external.directory.path": "/home/samuel/Programming/portfolio/web/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "TEXT"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/services" />
+      <recent name="$PROJECT_DIR$/src/i18n/ja-JP" />
+      <recent name="$PROJECT_DIR$/src/i18n/en-GB" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/locales" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/web" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/i18n" />
+    </key>
+    <key name="es6.move.members.recent.items">
+      <recent name="$PROJECT_DIR$/src/i18n.ts" />
+      <recent name="$PROJECT_DIR$/src/18n.ts" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="npm run approve" />
+      <command value="npm run test" />
+      <command value="npm run prod" />
+      <command value="npm install" />
+    </option>
+  </component>
+  <component name="RunManager" selected="npm.prod (host)">
+    <configuration name="build:prod" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build:prod" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="prod (host)" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="prod" />
+      </scripts>
+      <arguments value="--host" />
+      <node-interpreter value="project" />
+      <package-manager value="$USER_HOME$/.local/share/pnpm/pnpm" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="prod" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="prod" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="npm.prod (host)" />
+      <item itemvalue="npm.prod" />
+      <item itemvalue="npm.build:prod" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.prod" />
+        <item itemvalue="npm.build:prod" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8fa3eb35-c64d-4f25-9970-a79b15d5246c" name="Changes" comment="" />
+      <created>1697557325557</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1697557325557</updated>
+      <workItem from="1697557326722" duration="25000" />
+      <workItem from="1697559261268" duration="482000" />
+      <workItem from="1697559744378" duration="27000" />
+      <workItem from="1697559781651" duration="169000" />
+      <workItem from="1697559957350" duration="691000" />
+      <workItem from="1697642733057" duration="614000" />
+      <workItem from="1697647225330" duration="65000" />
+      <workItem from="1697647297362" duration="2102000" />
+      <workItem from="1698528031351" duration="399000" />
+      <workItem from="1701201142821" duration="1454000" />
+      <workItem from="1701297376169" duration="5682000" />
+      <workItem from="1701336675818" duration="3024000" />
+      <workItem from="1701423540714" duration="1000" />
+      <workItem from="1701548156911" duration="5884000" />
+      <workItem from="1701642584014" duration="13446000" />
+      <workItem from="1701711912086" duration="846000" />
+      <workItem from="1701818650259" duration="4824000" />
+      <workItem from="1701823718270" duration="35000" />
+      <workItem from="1701823940966" duration="4446000" />
+      <workItem from="1701890023461" duration="7181000" />
+      <workItem from="1701912622592" duration="2199000" />
+      <workItem from="1701993525888" duration="466000" />
+      <workItem from="1701994990709" duration="4716000" />
+      <workItem from="1702154170890" duration="17000" />
+    </task>
+    <task id="LOCAL-00001" summary="Fix hollow logo fill">
+      <option name="closed" value="true" />
+      <created>1701303912483</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701303912484</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Change favicon">
+      <option name="closed" value="true" />
+      <created>1701305761798</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701305761798</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Update HeaderBar POC">
+      <option name="closed" value="true" />
+      <created>1701569849899</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1701569849899</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Update HeaderBar POC">
+      <option name="closed" value="true" />
+      <created>1701569869799</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1701569869799</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Update HeaderBar POC">
+      <option name="closed" value="true" />
+      <created>1701570033705</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701570033705</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Update HomePage POC">
+      <option name="closed" value="true" />
+      <created>1701570037709</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1701570037709</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add menu icon">
+      <option name="closed" value="true" />
+      <created>1701570045271</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701570045271</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add hover effect to anchors">
+      <option name="closed" value="true" />
+      <created>1701570069796</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701570069796</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Reduce width of logo for seamless responsiveness">
+      <option name="closed" value="true" />
+      <created>1701570206516</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701570206516</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Add language icon">
+      <option name="closed" value="true" />
+      <created>1701572887035</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701572887035</updated>
+    </task>
+    <task id="LOCAL-00011" summary="GitHub text instead of logo for consistency">
+      <option name="closed" value="true" />
+      <created>1701573087421</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1701573087421</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Remove white bg on text elements">
+      <option name="closed" value="true" />
+      <created>1701643020160</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1701643020160</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Add external link icon to github that appears on hover with a nice animation">
+      <option name="closed" value="true" />
+      <created>1701644711515</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1701644711515</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Tweak gaps">
+      <option name="closed" value="true" />
+      <created>1701646052639</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1701646052639</updated>
+    </task>
+    <task id="LOCAL-00015" summary="update lock">
+      <option name="closed" value="true" />
+      <created>1701646532014</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1701646532015</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Fix puppeteer">
+      <option name="closed" value="true" />
+      <created>1701648145356</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1701648145356</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Replace diamonds with centre dots">
+      <option name="closed" value="true" />
+      <created>1701648765617</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1701648765617</updated>
+    </task>
+    <task id="LOCAL-00018" summary="add new .cache dir to ingore">
+      <option name="closed" value="true" />
+      <created>1701648771480</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1701648771480</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Fix most of the VRs">
+      <option name="closed" value="true" />
+      <created>1701649983754</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1701649983754</updated>
+    </task>
+    <task id="LOCAL-00020" summary="IDE files">
+      <option name="closed" value="true" />
+      <created>1701649998464</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1701649998464</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Add a workaround for the flaky scenario with unknown cause">
+      <option name="closed" value="true" />
+      <created>1701650746185</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1701650746186</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Hide non-functional buttons and add temporary buttons for mobile to landing page">
+      <option name="closed" value="true" />
+      <created>1701651811816</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1701651811816</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Auto highlight diamonds on horizontal scroll for small screens because they cant hover">
+      <option name="closed" value="true" />
+      <created>1701655452470</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1701655452470</updated>
+    </task>
+    <task id="LOCAL-00024" summary="approve vr">
+      <option name="closed" value="true" />
+      <created>1701655608334</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1701655608334</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Don't cache index.html">
+      <option name="closed" value="true" />
+      <created>1701819923797</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1701819923797</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Begin using vue-i18n">
+      <option name="closed" value="true" />
+      <created>1701825895467</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1701825895467</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Added switcher logic but it doesn't work yet">
+      <option name="closed" value="true" />
+      <created>1701826895045</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1701826895045</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Roughly translate footer">
+      <option name="closed" value="true" />
+      <created>1701828151576</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1701828151576</updated>
+    </task>
+    <task id="LOCAL-00029" summary="that fixed it">
+      <option name="closed" value="true" />
+      <created>1701828299923</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1701828299923</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Extract to comp">
+      <option name="closed" value="true" />
+      <created>1701903051304</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1701903051304</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Update title tag and lang attribute on locale switch">
+      <option name="closed" value="true" />
+      <created>1701904593390</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1701904593390</updated>
+    </task>
+    <task id="LOCAL-00032" summary="globalInjection true">
+      <option name="closed" value="true" />
+      <created>1701905253648</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1701905253648</updated>
+    </task>
+    <task id="LOCAL-00033" summary="remove jp copyright">
+      <option name="closed" value="true" />
+      <created>1701910027231</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1701910027231</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Translate page titles too">
+      <option name="closed" value="true" />
+      <created>1701914278560</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1701914278560</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add language icon" />
+    <MESSAGE value="GitHub text instead of logo for consistency" />
+    <MESSAGE value="Remove white bg on text elements" />
+    <MESSAGE value="Add external link icon to github that appears on hover with a nice animation" />
+    <MESSAGE value="Tweak gaps" />
+    <MESSAGE value="update lock" />
+    <MESSAGE value="Fix puppeteer" />
+    <MESSAGE value="Replace diamonds with centre dots" />
+    <MESSAGE value="add new .cache dir to ingore" />
+    <MESSAGE value="Fix most of the VRs" />
+    <MESSAGE value="IDE files" />
+    <MESSAGE value="Add a workaround for the flaky scenario with unknown cause" />
+    <MESSAGE value="Hide non-functional buttons and add temporary buttons for mobile to landing page" />
+    <MESSAGE value="Auto highlight diamonds on horizontal scroll for small screens because they cant hover" />
+    <MESSAGE value="approve vr" />
+    <MESSAGE value="Don't cache index.html" />
+    <MESSAGE value="Begin using vue-i18n" />
+    <MESSAGE value="Added switcher logic but it doesn't work yet" />
+    <MESSAGE value="Roughly translate footer" />
+    <MESSAGE value="that fixed it" />
+    <MESSAGE value="Extract to comp" />
+    <MESSAGE value="Update title tag and lang attribute on locale switch" />
+    <MESSAGE value="globalInjection true" />
+    <MESSAGE value="remove jp copyright" />
+    <MESSAGE value="Translate page titles too" />
+    <option name="LAST_COMMIT_MESSAGE" value="Translate page titles too" />
+  </component>
+</project>

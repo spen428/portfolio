@@ -1,0 +1,29 @@
+{
+  "phoneNumber": {
+    "intl": "+44-7700-666616",
+    "local": "07700 666616"
+  },
+  "emailAddress": "matt@lukejohnson.example",
+  "cvUrl": {
+    "full": "https://lukejohnson.example",
+    "short": "lukejohnson.example"
+  },
+  "location": {
+    "url": "https://www.google.com/maps/place/Canary+Wharf",
+    "lines": [
+      "Canada Square",
+      "London E14 5AX",
+      "United Kingdom"
+    ]
+  },
+  "fullName": "Matthew M L Johnson",
+  "tagLine": "Profound and Enticing Tagline",
+  "github": {
+    "username": "spen428",
+    "url": "https://github.com/spen428"
+  },
+  "longerTagLine": "Seriously profound and Enticing tagline",
+  "linkedIn": {
+    "url": "https://www.linkedin.com/"
+  }
+}
