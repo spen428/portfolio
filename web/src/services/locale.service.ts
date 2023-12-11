@@ -14,7 +14,13 @@ export default new (class LocaleService {
   }
 
   public getDefaultLocaleFromLocalStorage(): string {
-    return localStorage.getItem(LOCAL_STORAGE_DEFAULT_LOCALE_KEY) ?? "en-GB";
+    const locale = localStorage.getItem(LOCAL_STORAGE_DEFAULT_LOCALE_KEY) ?? "";
+    const { availableLocales } = useI18n();
+    if (!availableLocales.includes(locale)) {
+      localStorage.removeItem(LOCAL_STORAGE_DEFAULT_LOCALE_KEY);
+      return "en-GB";
+    }
+    return locale;
   }
 
   public saveDefaultLocaleToLocalStorage(locale: string) {

@@ -11,6 +11,7 @@ export const i18n = createI18n({
   globalInjection: true,
   locale: "ja-JP",
   fallbackLocale: "en-GB",
+  availableLocales: ["en-GB", "ja-JP"],
   messages: {
     "en-GB": { ...enGbGlobal, routes: enGbRoutes },
     "ja-JP": { ...jaJpGlobal, routes: jaJpRoutes },
