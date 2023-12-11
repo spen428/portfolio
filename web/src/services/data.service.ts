@@ -46,7 +46,7 @@ export default new (class DataService {
   constructor() {}
 
   public initializeWatches() {
-    const locale = LocaleService.getCurrentLocaleRef();
+    const locale = LocaleService.getCurrentLocale();
     watch(
       locale,
       async () => {

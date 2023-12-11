@@ -4,13 +4,13 @@ import type { WritableComputedRef } from "vue";
 const LOCAL_STORAGE_DEFAULT_LOCALE_KEY = "defaultLocale";
 
 export default new (class LocaleService {
-  public getCurrentLocaleRef(): WritableComputedRef<string> {
+  public getCurrentLocale(): WritableComputedRef<string> {
     const { locale } = useI18n();
     return locale;
   }
 
-  public getCurrentLocale(): string {
-    return this.getCurrentLocaleRef().value;
+  public setCurrentLocale(value: string) {
+    this.getCurrentLocale().value = value;
   }
 
   public getDefaultLocaleFromLocalStorage(): string {

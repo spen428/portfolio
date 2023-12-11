@@ -14,7 +14,7 @@ import { computed } from "vue";
 import LocaleService from "@/services/locale.service";
 
 const { t } = useI18n();
-const locale = LocaleService.getCurrentLocaleRef();
+const locale = LocaleService.getCurrentLocale();
 const localeMetadata = [
   {
     locale: "en-GB",
