@@ -39,6 +39,7 @@ const toggleLocale = () => {
   const nextLocaleIndex = (localeIndex.value + 1) % localeMetadata.length;
   locale.value = localeMetadata[nextLocaleIndex].locale;
   updateIndexHtml();
+  LocaleService.saveDefaultLocaleToLocalStorage(locale.value);
 };
 
 updateIndexHtml();
