@@ -6,10 +6,8 @@
       class="text-shadow mb-2 font-serif text-[min(1.5rem,5vw)] font-bold text-cv-dark-purple text-opacity-80"
     >
       <ruby>
-        &centerdot;
-        {{ personalInfo.fullName }}
+        &centerdot; {{ personalInfo.fullName }} &centerdot;
         <rt>{{ personalInfo.fullNameRuby }}</rt>
-        &centerdot;
       </ruby>
     </h1>
     <h2
