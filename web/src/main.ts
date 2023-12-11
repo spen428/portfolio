@@ -10,8 +10,9 @@ import RouterView from "@/pages/RouterView.vue";
 import ProjectsIndexPage from "@/pages/projects/ProjectsIndexPage.vue";
 import HomePage from "@/pages/home/HomePage.vue";
 import ConfigurationService from "@/services/configuration.service";
-import { i18n } from "@/i18n.service";
 import AsyncComputed from "vue-async-computed";
+import { createI18n } from "vue-i18n";
+import { messages } from "@/services/locale.service";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -61,7 +62,16 @@ router.beforeEach((to, from, next) => {
 
 const app = createApp(App);
 app.use(router);
-app.use(i18n);
+app.use(
+  createI18n({
+    legacy: false,
+    globalInjection: true,
+    locale: "en-GB",
+    fallbackLocale: "en-GB",
+    availableLocales: ["en-GB", "ja-JP"],
+    messages,
+  })
+);
 app.use(AsyncComputed);
 
 app.mount("#root");

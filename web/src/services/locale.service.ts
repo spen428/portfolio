@@ -1,5 +1,14 @@
 import { useI18n } from "vue-i18n";
 import type { WritableComputedRef } from "vue";
+import enGbGlobal from "@/i18n/en-GB/global.json";
+import enGbRoutes from "@/i18n/en-GB/routes.json";
+import jaJpGlobal from "@/i18n/ja-JP/global.json";
+import jaJpRoutes from "@/i18n/ja-JP/routes.json";
+
+export const messages = {
+  "en-GB": { ...enGbGlobal, routes: enGbRoutes },
+  "ja-JP": { ...jaJpGlobal, routes: jaJpRoutes },
+};
 
 const LOCAL_STORAGE_DEFAULT_LOCALE_KEY = "defaultLocale";
 
