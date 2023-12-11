@@ -56,7 +56,7 @@
 </template>
 
 <script setup lang="ts">
-import DataService from "@/services/data.service";
+import type { PersonalInfo } from "@/services/data.model";
 
-const personalInfo = DataService.getPersonalInfo();
+defineProps<{ personalInfo: PersonalInfo }>();
 </script>

@@ -49,11 +49,9 @@
 </style>
 
 <script setup lang="ts">
-import CvDataService from "@/services/data.service";
 import CvArticle from "@/pages/cv/components/CvArticle.vue";
 import CvSection from "@/pages/cv/components/CvSection.vue";
-import { type Ref } from "vue";
 import type { CvData } from "@/services/data.model";
 
-const cvData: Ref<CvData> = CvDataService.getCvData();
+defineProps<{ cvData: CvData }>();
 </script>

@@ -81,16 +81,13 @@ import { computed, onBeforeUnmount, onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
 import { useI18n } from "vue-i18n";
 import LocaleSwitcher from "@/pages/LocaleSwitcher.vue";
-import DataService from "@/services/data.service";
 
 const { t, te } = useI18n();
-
-const fullName = DataService.getFullName();
 
 const currentRoute = computed(() => useRouter().currentRoute.value);
 const pageTitle = computed(() => {
   const routeName = currentRoute.value.name?.toString();
-  if (!routeName) return fullName.value;
+  if (!routeName) return props.fullName;
   const key = `routes.${routeName}`;
   return te(key) ? t(key) : routeName;
 });
@@ -113,4 +110,6 @@ onMounted(async () => {
   document.addEventListener("scroll", detectScrolling);
 });
 onBeforeUnmount(() => document.removeEventListener("scroll", detectScrolling));
+
+const props = defineProps<{ fullName: string }>();
 </script>

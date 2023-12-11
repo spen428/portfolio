@@ -2,13 +2,13 @@
   <div
     class="bg-rgb-blur flex min-h-screen flex-col items-center print:!bg-none"
   >
-    <HeaderBar />
+    <HeaderBar :full-name="fullName" />
 
     <div class="w-full grow">
       <router-view></router-view>
     </div>
 
-    <FooterBar class="print:hidden" />
+    <FooterBar class="print:hidden" :full-name="fullName" />
   </div>
 </template>
 
@@ -29,4 +29,6 @@ LocaleService.setCurrentLocale(
   LocaleService.getDefaultLocaleFromLocalStorage()
 );
 DataService.initializeWatches();
+
+const fullName = DataService.getFullName();
 </script>

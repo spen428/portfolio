@@ -21,7 +21,5 @@
 </template>
 
 <script setup lang="ts">
-import DataService from "@/services/data.service";
-
-const fullName = DataService.getFullName();
+defineProps<{ fullName: string }>();
 </script>

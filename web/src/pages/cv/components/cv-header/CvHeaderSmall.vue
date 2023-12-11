@@ -39,8 +39,8 @@
 </template>
 
 <script setup lang="ts">
-import DataService from "@/services/data.service";
 import CvHeaderProfilePicture from "@/pages/cv/components/cv-header/CvHeaderProfilePicture.vue";
+import type { PersonalInfo } from "@/services/data.model";
 
-const personalInfo = DataService.getPersonalInfo();
+defineProps<{ personalInfo: PersonalInfo }>();
 </script>
