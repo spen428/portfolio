@@ -64,3 +64,5 @@ dist
 .pnp.*
 docs/_book
 test/
+**/.idea/workspace.xml
+**/.idea/tasks.xml
