@@ -15,14 +15,7 @@ import LocaleService from "@/services/locale.service";
 
 const { t } = useI18n();
 const locale = LocaleService.getCurrentLocale();
-const localeMetadata = [
-  {
-    locale: "en-GB",
-    name: "English (United Kingdom)",
-    icon: "/icons/circle-en-GB.svg",
-  },
-  { locale: "ja-JP", name: "日本語", icon: "/icons/circle-ja-JP.svg" },
-];
+const localeMetadata = LocaleService.getLocaleMetadata();
 const localeIndex = computed(() => {
   return localeMetadata.findIndex((x) => x.locale === locale.value);
 });

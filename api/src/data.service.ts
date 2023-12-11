@@ -5,7 +5,7 @@ import type {
   Project,
 } from "./data.model";
 import * as fs from "fs";
-import { defaultLocale } from "./config";
+import { fallbackLocale } from "./config";
 
 export default new (class DataService {
   public getCvData(locale: string): CvData {
@@ -32,7 +32,7 @@ export default new (class DataService {
     let fullPath = `res/${basePath}.${locale}.json`;
     if (!fs.existsSync(fullPath)) {
       console.warn(`File does not exist: ${fullPath}`);
-      fullPath = `res/${basePath}.${defaultLocale}.json`;
+      fullPath = `res/${basePath}.${fallbackLocale}.json`;
       if (!fs.existsSync(fullPath)) {
         throw new Error(`No data for ${basePath}`);
       }

@@ -2,7 +2,7 @@ import express, { Express, Response } from "express";
 import dotenv from "dotenv";
 import { RequestWithLocale } from "./model";
 import DataService from "./data.service";
-import { defaultLocale } from "./config";
+import { fallbackLocale } from "./config";
 
 const cors = require("cors");
 
@@ -18,15 +18,15 @@ app.get("/", (_, res: Response) => {
 });
 
 app.get("/cv/data", (req: RequestWithLocale, res: Response) => {
-  const locale = req.query.locale?.toString() ?? defaultLocale;
+  const locale = req.query.locale?.toString() ?? fallbackLocale;
   return res.json(DataService.getCvData(locale));
 });
 app.get("/cv/projects", (req: RequestWithLocale, res: Response) => {
-  const locale = req.query.locale?.toString() ?? defaultLocale;
+  const locale = req.query.locale?.toString() ?? fallbackLocale;
   return res.json(DataService.getProjects(locale));
 });
 app.get("/cv/personal-info", (req: RequestWithLocale, res: Response) => {
-  const locale = req.query.locale?.toString() ?? defaultLocale;
+  const locale = req.query.locale?.toString() ?? fallbackLocale;
   return res.json(DataService.getPersonalInfo(locale));
 });
 

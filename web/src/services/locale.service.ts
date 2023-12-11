@@ -12,6 +12,12 @@ export const messages = {
 
 const LOCAL_STORAGE_DEFAULT_LOCALE_KEY = "defaultLocale";
 
+interface LocaleMetadata {
+  locale: string;
+  name: string;
+  icon: string;
+}
+
 export default new (class LocaleService {
   public getCurrentLocale(): WritableComputedRef<string> {
     const { locale } = useI18n();
@@ -34,5 +40,16 @@ export default new (class LocaleService {
 
   public saveDefaultLocaleToLocalStorage(locale: string) {
     localStorage.setItem(LOCAL_STORAGE_DEFAULT_LOCALE_KEY, locale);
+  }
+
+  public getLocaleMetadata(): LocaleMetadata[] {
+    return [
+      {
+        locale: "en-GB",
+        name: "English (United Kingdom)",
+        icon: "/icons/circle-en-GB.svg",
+      },
+      { locale: "ja-JP", name: "日本語", icon: "/icons/circle-ja-JP.svg" },
+    ];
   }
 })();

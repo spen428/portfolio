@@ -1,1 +1,1 @@
-export const defaultLocale = "en-GB";
+export const fallbackLocale = "en-GB";
