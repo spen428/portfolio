@@ -47,6 +47,7 @@
       <!--    class="inline h-full brightness-0 invert"-->
       <!--  />-->
       <!--</button>-->
+      <LocaleSwitcher class="w-10 xs:hidden" />
       <div class="hidden h-7 gap-2 xs:flex">
         <button
           v-if="isStyleable"
