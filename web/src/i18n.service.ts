@@ -9,7 +9,7 @@ import jaJpRoutes from "@/i18n/ja-JP/routes.json";
 export const i18n = createI18n({
   legacy: false,
   globalInjection: true,
-  locale: "ja-JP",
+  locale: "en-GB",
   fallbackLocale: "en-GB",
   availableLocales: ["en-GB", "ja-JP"],
   messages: {
