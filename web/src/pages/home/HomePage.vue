@@ -5,7 +5,12 @@
     <h1
       class="text-shadow mb-2 font-serif text-[min(1.5rem,5vw)] font-bold text-cv-dark-purple text-opacity-80"
     >
-      &centerdot; {{ personalInfo.fullName }} &centerdot;
+      <ruby>
+        &centerdot;
+        {{ personalInfo.fullName }}
+        <rt>{{ personalInfo.fullNameRuby }}</rt>
+        &centerdot;
+      </ruby>
     </h1>
     <h2
       class="text-shadow mb-8 font-serif text-[min(1.85rem,5vw)] font-bold italic text-cv-white"

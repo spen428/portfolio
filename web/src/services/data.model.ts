@@ -31,6 +31,7 @@ export interface PersonalInfo {
     lines: string[];
   };
   fullName: string;
+  fullNameRuby: string;
   tagLine: string;
   github: { url: string; username: string };
   longerTagLine: string;

@@ -31,6 +31,7 @@ export interface PersonalInfo {
     lines: string[];
   };
   fullName: string;
+  fullNameRuby: string;
   tagLine: string;
   github: { url: string; username: string };
   longerTagLine: string;
@@ -40,10 +41,10 @@ export interface PersonalInfo {
 export interface CommercialExperience {
   introduction: string;
   articles: {
-    title: string,
-    logoUrl: string,
-    tags: string[],
-    introduction: string,
-    sections: { title: string, body: string }[]
+    title: string;
+    logoUrl: string;
+    tags: string[];
+    introduction: string;
+    sections: { title: string; body: string }[];
   }[];
 }

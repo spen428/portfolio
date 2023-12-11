@@ -8,7 +8,10 @@
         <h1
           class="mx-0 mt-3 font-serif text-3xl font-bold text-cv-dark-purple xs:text-4xl"
         >
-          {{ personalInfo.fullName }}
+          <ruby>
+            {{ personalInfo.fullName }}
+            <rt>{{ personalInfo.fullNameRuby }}</rt>
+          </ruby>
         </h1>
         <span class="mb-4 mt-8">
           {{ personalInfo.longerTagLine }}

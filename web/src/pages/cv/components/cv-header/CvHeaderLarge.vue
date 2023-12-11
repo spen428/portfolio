@@ -30,7 +30,10 @@
       class="mb-0 flex h-full w-3/5 flex-col items-center justify-center text-center"
     >
       <h1 class="font-serif text-3xl font-bold text-cv-dark-purple print:!mt-3">
-        {{ personalInfo.fullName }}
+        <ruby>
+          {{ personalInfo.fullName }}
+          <rt>{{ personalInfo.fullNameRuby }}</rt>
+        </ruby>
       </h1>
       <span class="small-caps mt-4 text-base leading-4 print:!text-sm">
         {{ personalInfo.longerTagLine }}

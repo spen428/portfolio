@@ -6,9 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="8fa3eb35-c64d-4f25-9970-a79b15d5246c" name="Changes" comment="m">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/res/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/api/res/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/res/cv/personal-info.en-GB.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/res/cv/personal-info.ja-JP.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/data.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/data.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/pages/cv/components/cv-header/CvHeaderLarge.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/cv/components/cv-header/CvHeaderLarge.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/pages/cv/components/cv-header/CvHeaderSmall.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/cv/components/cv-header/CvHeaderSmall.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/pages/home/HomePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/home/HomePage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/services/data.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/services/data.model.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +38,16 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitRewordedCommitMessages">
+    <option name="commitMessagesMapping">
+      <RewordedCommitMessageMapping>
+        <option name="originalMessage" value="Begin using vue-i18n" />
+        <option name="rewordedMessage" value="Localization" />
+      </RewordedCommitMessageMapping>
+    </option>
+    <option name="currentCommit" value="1" />
+    <option name="onto" value="87e415461ce9ef6a08a37d06ae67eb2863b9d143" />
   </component>
   <component name="GithubProjectSettings">
     <option name="branchProtectionPatterns">
@@ -72,14 +85,15 @@
     "ignore_missing_gitignore": "true",
     "javascript.nodejs.core.library.configured.version": "20.10.0",
     "javascript.nodejs.core.library.typings.version": "20.10.4",
-    "last_opened_file_path": "/home/samuel/Programming/portfolio/api/res/dummy/cv",
+    "last_opened_file_path": "/home/samuel/Programming/portfolio/api/res/cv",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "/home/samuel/.local/share/pnpm/pnpm",
-    "npm.api > dev.executor": "Debug",
+    "npm.api > dev (prod:host).executor": "Run",
+    "npm.api > dev.executor": "Run",
     "npm.prod (host).executor": "Run",
     "npm.web > dev.executor": "Run",
     "npm.web > prod (host).executor": "Run",
@@ -97,8 +111,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/api/res/dummy/cv" />
       <recent name="$PROJECT_DIR$/api/res/cv" />
+      <recent name="$PROJECT_DIR$/api/res/dummy/cv" />
       <recent name="$PROJECT_DIR$/web/src/services" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/i18n/ja-JP" />
@@ -125,22 +139,24 @@
       <command value="npm run prod" />
     </option>
   </component>
-  <component name="RunManager" selected="npm.api &gt; dev">
-    <configuration name="api &gt; dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="npm.api &gt; dev (prod:host)">
+    <configuration name="api &gt; dev (prod:host)" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/api/package.json" />
       <command value="run" />
       <scripts>
         <script value="dev" />
       </scripts>
       <node-interpreter value="project" />
-      <envs />
+      <envs>
+        <env name="NODE_ENV" value="production" />
+      </envs>
       <method v="2" />
     </configuration>
-    <configuration name="web &gt; build:prod" type="js.build_tools.npm" temporary="true">
-      <package-json value="$PROJECT_DIR$/web/package.json" />
+    <configuration name="api &gt; dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/api/package.json" />
       <command value="run" />
       <scripts>
-        <script value="build:prod" />
+        <script value="dev" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -156,41 +172,15 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="web &gt; prod (host)" type="js.build_tools.npm">
-      <package-json value="$PROJECT_DIR$/web/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="prod" />
-      </scripts>
-      <arguments value="--host" />
-      <node-interpreter value="project" />
-      <package-manager value="$USER_HOME$/.local/share/pnpm/pnpm" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="web &gt; prod" type="js.build_tools.npm" temporary="true">
-      <package-json value="$PROJECT_DIR$/web/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="prod" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="npm.web &gt; prod (host)" />
+      <item itemvalue="npm.api &gt; dev (prod:host)" />
       <item itemvalue="npm.api &gt; dev" />
       <item itemvalue="npm.web &gt; dev" />
-      <item itemvalue="npm.web &gt; prod" />
-      <item itemvalue="npm.web &gt; build:prod" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.api &gt; dev" />
         <item itemvalue="npm.web &gt; dev" />
-        <item itemvalue="npm.web &gt; prod" />
-        <item itemvalue="npm.web &gt; build:prod" />
+        <item itemvalue="npm.api &gt; dev" />
       </list>
     </recent_temporary>
   </component>
@@ -603,7 +593,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="feature/japanese-localization" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
