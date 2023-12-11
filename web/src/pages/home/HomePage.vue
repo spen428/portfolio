@@ -22,7 +22,7 @@
       :alt="$t('logo')"
       class="w-[45vw] animate-sideToSide select-none xs:h-64 xs:w-[unset]"
     />
-    <div class="flex flex-col items-center gap-6 pt-10 xs:hidden">
+    <div class="mb-12 flex flex-col items-center gap-6 pt-10 xs:hidden">
       <router-link to="/portfolio/cv" class="text-cv-white">
         <button class="rounded-lg border px-4 py-2">
           {{ $t("view_my_cv") }}
