@@ -11,7 +11,7 @@ dotenv.config();
 const app: Express = express();
 const port = 5000;
 
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(cors({ origin: ["http://localhost:5173", "http://10.4.4.125:5173"] }));
 
 app.get("/", (_, res: Response) => {
   res.send("OK");

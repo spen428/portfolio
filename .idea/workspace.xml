@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8fa3eb35-c64d-4f25-9970-a79b15d5246c" name="Changes" comment="m">
+    <list default="true" id="8fa3eb35-c64d-4f25-9970-a79b15d5246c" name="Changes" comment="Support ruby text for full name">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/data.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/data.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/pages/cv/components/cv-header/CvHeaderLarge.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/cv/components/cv-header/CvHeaderLarge.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/pages/cv/components/cv-header/CvHeaderSmall.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/cv/components/cv-header/CvHeaderSmall.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/pages/home/HomePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/home/HomePage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/services/data.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/services/data.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/services/data.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/services/data.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,6 +91,7 @@
     "npm.api > dev (prod:host).executor": "Run",
     "npm.api > dev.executor": "Run",
     "npm.prod (host).executor": "Run",
+    "npm.web > dev --host.executor": "Run",
     "npm.web > dev.executor": "Run",
     "npm.web > prod (host).executor": "Run",
     "prettierjs.PrettierConfiguration.Package": "/home/samuel/Programming/portfolio/api/node_modules/prettier",
@@ -139,7 +136,7 @@
       <command value="npm run prod" />
     </option>
   </component>
-  <component name="RunManager" selected="npm.api &gt; dev (prod:host)">
+  <component name="RunManager" selected="npm.web &gt; dev --host">
     <configuration name="api &gt; dev (prod:host)" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/api/package.json" />
       <command value="run" />
@@ -162,12 +159,13 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="web &gt; dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="web &gt; dev --host" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/web/package.json" />
       <command value="run" />
       <scripts>
         <script value="dev" />
       </scripts>
+      <arguments value="--host" />
       <node-interpreter value="project" />
       <envs />
       <method v="2" />
@@ -175,11 +173,11 @@
     <list>
       <item itemvalue="npm.api &gt; dev (prod:host)" />
       <item itemvalue="npm.api &gt; dev" />
-      <item itemvalue="npm.web &gt; dev" />
+      <item itemvalue="npm.web &gt; dev --host" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.web &gt; dev" />
+        <item itemvalue="npm.web &gt; dev --host" />
         <item itemvalue="npm.api &gt; dev" />
       </list>
     </recent_temporary>
@@ -571,7 +569,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702320750931</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Support ruby text for full name">
+      <option name="closed" value="true" />
+      <created>1702322681289</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1702322681289</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -615,7 +621,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/web" />
     </ignored-roots>
-    <MESSAGE value="Fix most of the VRs" />
     <MESSAGE value="IDE files" />
     <MESSAGE value="Add a workaround for the flaky scenario with unknown cause" />
     <MESSAGE value="Hide non-functional buttons and add temporary buttons for mobile to landing page" />
@@ -640,7 +645,8 @@
     <MESSAGE value="PoC continued, it really works" />
     <MESSAGE value="Read data from json files" />
     <MESSAGE value="m" />
-    <option name="LAST_COMMIT_MESSAGE" value="m" />
+    <MESSAGE value="Support ruby text for full name" />
+    <option name="LAST_COMMIT_MESSAGE" value="Support ruby text for full name" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

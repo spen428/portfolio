@@ -32,6 +32,7 @@ export default new (class DataService {
       cvUrl: { full: "", short: "" },
       emailAddress: "",
       fullName: "",
+      fullNameRuby: "",
       github: { url: "", username: "" },
       linkedIn: { url: "" },
       location: { lines: [], url: "" },
@@ -74,7 +75,7 @@ export default new (class DataService {
   }
 
   private readonly httpClient = axios.create({
-    baseURL: "http://localhost:5000",
+    baseURL: "http://10.4.4.125:5000",
   });
 
   private readonly cacheForLocale: CacheContainer = {};
