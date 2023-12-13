@@ -2,16 +2,16 @@ import express, { Express, Response } from "express";
 import dotenv from "dotenv";
 import { RequestWithLocale } from "./model";
 import DataService from "./data.service";
-import { fallbackLocale } from "./config";
+import { corsOrigins, fallbackLocale, serverPort } from "./config";
 import cors from "cors";
 
 dotenv.config();
 
 const app: Express = express();
-const port = 5000;
+const port = serverPort;
 
-app.use(cors({ origin: ["http://localhost:5173", "http://10.4.4.125:5173"] }));
-
+app.use(cors({ origin: corsOrigins }));
+console.log(corsOrigins);
 app.get("/", (_, res: Response) => {
   res.send("OK");
 });
