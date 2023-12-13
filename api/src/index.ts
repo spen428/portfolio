@@ -3,8 +3,7 @@ import dotenv from "dotenv";
 import { RequestWithLocale } from "./model";
 import DataService from "./data.service";
 import { fallbackLocale } from "./config";
-
-const cors = require("cors");
+import cors from "cors";
 
 dotenv.config();
 
