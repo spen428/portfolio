@@ -5,7 +5,7 @@ import type {
   Project,
 } from "./data.model";
 import * as fs from "fs";
-import { fallbackLocale } from "./config";
+import { dataPath, fallbackLocale } from "./config";
 
 export default new (class DataService {
   public getCvData(locale: string): CvData {
@@ -25,13 +25,10 @@ export default new (class DataService {
   }
 
   private readFileForLocale<T>(path: string, locale: string): T {
-    const root =
-      process.env.NODE_ENV === "production" ? "res/data" : "res/dummy";
-
-    let fullPath = `${root}/${path}.${locale}.json`;
+    let fullPath = `${dataPath}/${path}.${locale}.json`;
     if (!fs.existsSync(fullPath)) {
       console.warn(`File does not exist: ${fullPath}`);
-      fullPath = `${root}/${path}.${fallbackLocale}.json`;
+      fullPath = `${dataPath}/${path}.${fallbackLocale}.json`;
       if (!fs.existsSync(fullPath)) {
         throw new Error(`No data for ${path}`);
       }
