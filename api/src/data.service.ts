@@ -9,32 +9,31 @@ import { fallbackLocale } from "./config";
 
 export default new (class DataService {
   public getCvData(locale: string): CvData {
-    return this.readFileForLocale("cv/cv-data", locale);
+    return this.readFileForLocale("cv-data", locale);
   }
 
   public getProjects(locale: string): Project[] {
-    return this.readFileForLocale("cv/projects", locale);
+    return this.readFileForLocale("projects", locale);
   }
 
   public getPersonalInfo(locale: string): PersonalInfo {
-    return this.readFileForLocale("cv/personal-info", locale);
+    return this.readFileForLocale("personal-info", locale);
   }
 
   public getCommercialExperience(locale: string): CommercialExperience {
-    return this.readFileForLocale("cv/commercial-experience", locale);
+    return this.readFileForLocale("commercial-experience", locale);
   }
 
-  private readFileForLocale<T>(basePath: string, locale: string): T {
-    if (process.env.NODE_ENV !== "production") {
-      basePath = `dummy/${basePath}`;
-    }
+  private readFileForLocale<T>(path: string, locale: string): T {
+    const root =
+      process.env.NODE_ENV === "production" ? "res/data" : "res/dummy";
 
-    let fullPath = `res/${basePath}.${locale}.json`;
+    let fullPath = `${root}/${path}.${locale}.json`;
     if (!fs.existsSync(fullPath)) {
       console.warn(`File does not exist: ${fullPath}`);
-      fullPath = `res/${basePath}.${fallbackLocale}.json`;
+      fullPath = `${root}/${path}.${fallbackLocale}.json`;
       if (!fs.existsSync(fullPath)) {
-        throw new Error(`No data for ${basePath}`);
+        throw new Error(`No data for ${path}`);
       }
     }
 

@@ -10,11 +10,7 @@
   },
   "location": {
     "url": "https://www.google.com/maps/place/Canary+Wharf",
-    "lines": [
-      "Canada Square",
-      "London E14 5AX",
-      "United Kingdom"
-    ]
+    "lines": ["Canada Square", "London E14 5AX", "United Kingdom"]
   },
   "fullName": "Matthew M L Johnson",
   "tagLine": "Profound and Enticing Tagline",
