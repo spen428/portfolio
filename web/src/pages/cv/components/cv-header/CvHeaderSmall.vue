@@ -12,7 +12,7 @@
             <rt>{{ personalInfo.fullNameRuby }}</rt>
           </ruby>
         </h1>
-        <span class="mb-4 mt-8">
+        <span class="balance mb-4 mt-8">
           {{ personalInfo.longerTagLine }}
         </span>
       </div>
