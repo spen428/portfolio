@@ -98,6 +98,7 @@ module.exports = {
   report: ["browser", "CI"],
   engine: "puppeteer",
   engineOptions: {
+    executablePath: process.env.PUPPETEER_EXE_PATH ?? undefined,
     args: ["--no-sandbox"],
     headless: "new",
   },
