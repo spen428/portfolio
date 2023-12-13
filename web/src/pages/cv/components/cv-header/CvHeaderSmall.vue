@@ -1,6 +1,5 @@
 <template>
   <div>
-    <CvHeaderProfilePicture />
     <div class="m-0 flex w-full min-w-0 flex-row flex-wrap justify-between">
       <div
         class="mb-4 flex w-full flex-col items-center justify-between text-center"
@@ -39,7 +38,6 @@
 </template>
 
 <script setup lang="ts">
-import CvHeaderProfilePicture from "@/pages/cv/components/cv-header/CvHeaderProfilePicture.vue";
 import type { PersonalInfo } from "@/services/data.model";
 
 defineProps<{ personalInfo: PersonalInfo }>();
