@@ -3,7 +3,6 @@ import puppeteer from "puppeteer";
 
 async function exportPdf(url, filename) {
   const browser = await puppeteer.launch({
-    executablePath: process.env.PUPPETEER_EXE_PATH ?? undefined,
     headless: "new",
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
