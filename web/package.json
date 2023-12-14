@@ -5,7 +5,6 @@
   "type": "module",
   "scripts": {
     "install-global": "pnpm install --global backstopjs@6.2.2",
-    "postinstall": "cd node_modules/puppeteer && npm run postinstall",
     "dev": "vite",
     "prod": "NODE_ENV=production vite",
     "build": "run-p type-check build-only",
@@ -16,11 +15,7 @@
     "lint": "prettier --check . && eslint . --ext .vue,.js,.ts",
     "lint:fix": "prettier --write . && eslint . --ext .vue,.js,.ts --fix",
     "test": "pnpm run pdf && bash scripts/generate-pngs-from-pdf.sh && backstop test --configPath=backstop.cjs",
-    "test:web": "backstop test --configPath=backstop.cjs --filter='device'",
-    "test:mobile": "backstop test --configPath=backstop.cjs --filter='phone|tablet'",
-    "approve": "backstop approve --configPath=backstop.cjs",
-    "approve:web": "backstop approve --configPath=backstop.cjs --filter='device'",
-    "approve:mobile": "backstop approve --configPath=backstop.cjs --filter='phone|tablet'"
+    "approve": "backstop approve --configPath=backstop.cjs"
   },
   "dependencies": {
     "@intlify/unplugin-vue-i18n": "1.5.0",

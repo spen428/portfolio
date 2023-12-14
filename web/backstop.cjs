@@ -1,7 +1,9 @@
 const fs = require("fs");
+const path = require("node:path");
+const vrRootPath = path.resolve(__dirname, "./visual_regressions");
 
 function getPdfScenarios() {
-  const baseUri = "./visual_regressions/pdf_test/png";
+  const baseUri = `${vrRootPath}/pdf_test/png`;
   const files = fs.readdirSync(baseUri).filter((f) => f.endsWith(".png"));
   return files.map((file) => ({
     label: file,
@@ -89,11 +91,11 @@ module.exports = {
   viewports: [],
   scenarios: getDeviceScenarios().concat(getPdfScenarios()),
   paths: {
-    bitmaps_reference: "visual_regressions/bitmaps_reference",
-    bitmaps_test: "visual_regressions/bitmaps_test",
-    html_report: "visual_regressions/html_report",
-    engine_scripts: "visual_regressions/engine_scripts",
-    ci_report: "visual_regressions/ci_report"
+    bitmaps_reference: `${vrRootPath}/bitmaps_reference`,
+    bitmaps_test: `${vrRootPath}/bitmaps_test`,
+    html_report: `${vrRootPath}/html_report`,
+    engine_scripts: `${vrRootPath}/engine_scripts`,
+    ci_report: `${vrRootPath}/ci_report`
   },
   report: ["browser", "CI"],
   engine: "puppeteer",

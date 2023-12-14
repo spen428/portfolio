@@ -2,11 +2,10 @@
   "name": "curriculum-vitae",
   "version": "1.0.0",
   "private": true,
-  "workspaces": [
-    "web",
-    "api"
-  ],
-  "dependencies": {
-    "vue-async-computed": "^4.0.1"
+  "scripts": {
+    "test-web": "pnpm run --filter web test"
+  },
+  "devDependencies": {
+    "backstopjs": "6.2.2"
   }
 }

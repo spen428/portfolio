@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+cd "$(dirname "$0")"
 pdfDir="./bin/"
 workDir="./visual_regressions/pdf_test"
 
