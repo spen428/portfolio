@@ -88,8 +88,8 @@
 
 <script setup lang="ts">
 import { ref, computed } from "vue";
-import type { Project } from "@/services/Idata.service";
 import AOrRouterLink from "@/components/AOrRouterLink.vue";
+import type { Project } from "@/services/data.model";
 
 const props = defineProps<{
   size: string;

@@ -22,10 +22,10 @@
 </template>
 
 <script setup lang="ts">
-import type { Project } from "@/services/Idata.service";
 import ProjectDiamond from "@/pages/projects/components/ProjectDiamond.vue";
 import type { Ref } from "vue";
 import { computed, onBeforeUnmount, onMounted, ref } from "vue";
+import type { Project } from "@/services/data.model";
 
 defineProps<{ projects: Project[] }>();
 

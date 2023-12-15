@@ -5,7 +5,8 @@
   "type": "commonjs",
   "scripts": {
     "build": "rm -rfv dist/ && tsc",
-    "start": "node dist/index.js",
+    "build:prod": "pnpm run build",
+    "prod": "NODE_ENV=production node dist/index.js",
     "dev": "concurrently \"tsc --watch\" \"nodemon -q dist/index.js\"",
     "lint": "prettier --check . && eslint . --ext .vue,.js,.ts",
     "lint:fix": "prettier --write . && eslint . --ext .vue,.js,.ts --fix"
