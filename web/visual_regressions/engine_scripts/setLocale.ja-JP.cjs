@@ -1,6 +1,4 @@
-module.exports = async (page, scenario, vp) => {
-  await page.goto("http://localhost:5173");
-  await page.evaluate(() => {
-    localStorage.setItem("defaultLocale", "ja-JP");
-  });
+module.exports = async (page, scenario, _vp) => {
+  await page.goto(scenario.url);
+  await page.evaluate(() => localStorage.setItem("defaultLocale", "ja-JP"));
 };
