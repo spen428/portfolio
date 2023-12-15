@@ -23,12 +23,6 @@
 import FooterBar from "@/pages/FooterBar.vue";
 import HeaderBar from "@/pages/HeaderBar.vue";
 import DataService from "@/services/data.service";
-import LocaleService from "@/services/locale.service";
-
-LocaleService.setCurrentLocale(
-  LocaleService.getDefaultLocaleFromLocalStorage()
-);
-DataService.initializeWatches();
 
 const fullName = DataService.getFullName();
 </script>

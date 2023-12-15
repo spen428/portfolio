@@ -10,7 +10,6 @@ import RouterView from "@/pages/RouterView.vue";
 import ProjectsIndexPage from "@/pages/projects/ProjectsIndexPage.vue";
 import HomePage from "@/pages/home/HomePage.vue";
 import ConfigurationService from "@/services/configuration.service";
-import AsyncComputed from "vue-async-computed";
 import { createI18n } from "vue-i18n";
 import { messages } from "@/services/locale.service";
 
@@ -72,6 +71,5 @@ app.use(
     messages,
   })
 );
-app.use(AsyncComputed);
 
 app.mount("#root");

@@ -8,7 +8,7 @@ async function exportPdf(url, filename) {
   });
   const page = await browser.newPage();
   await page.goto(url, {
-    waitUntil: "networkidle2",
+    waitUntil: "networkidle0",
   });
   if (!fs.existsSync("./bin")) {
     fs.mkdirSync("./bin");
