@@ -19,13 +19,6 @@ import type { CvData } from "@/services/data.model";
 import CvDataService from "@/services/data.service";
 import DataService from "@/services/data.service";
 
-// import { onBeforeMount, watch } from "vue";
-// onBeforeMount(() =>
-//   watch(fullName, () => {
-//     document.title = `${fullName} ― CV & Portfolio`;
-//   })
-// );
-
 const cvData: Ref<CvData> = CvDataService.getCvData();
 const personalInfo = DataService.getPersonalInfo();
 </script>
