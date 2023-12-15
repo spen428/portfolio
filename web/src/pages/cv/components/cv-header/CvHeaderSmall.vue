@@ -7,10 +7,11 @@
         <h1
           class="mx-0 mt-3 font-serif text-3xl font-bold text-cv-dark-purple xs:text-4xl"
         >
-          <ruby>
+          <ruby v-if="personalInfo.fullNameRuby">
             {{ personalInfo.fullName }}
-            <rt>{{ personalInfo.fullNameRuby }}</rt>
+            <rt> {{ personalInfo.fullNameRuby }}</rt>
           </ruby>
+          <span v-else>{{ personalInfo.fullName }}</span>
         </h1>
         <span class="balance mb-4 mt-8">
           {{ personalInfo.longerTagLine }}

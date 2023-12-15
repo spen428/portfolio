@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
-cd "$(dirname "$0")"
-pdfDir="./bin/"
-workDir="./visual_regressions/pdf_test"
+scriptDir="$(dirname "$0")"
+pdfDir="$scriptDir/../bin/"
+workDir="$scriptDir/../visual_regressions/pdf_test"
 
 rm -rfv "$workDir/png"
 mkdir -p "$workDir/png"
@@ -36,7 +36,7 @@ processIds=()
 while read -r pdf; do
   extractPngs "$pdf" &
   processIds+=($!)
-done < <(find $pdfDir -type f -iname "*.pdf")
+done < <(find "$pdfDir" -type f -iname "*.pdf")
 
 for pid in "${processIds[@]}"; do
   wait "$pid"

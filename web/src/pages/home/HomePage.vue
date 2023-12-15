@@ -5,10 +5,11 @@
     <h1
       class="text-shadow mb-2 font-serif text-[min(1.5rem,5vw)] font-bold text-cv-dark-purple text-opacity-80"
     >
-      <ruby>
+      <ruby v-if="personalInfo.fullNameRuby">
         &centerdot; {{ personalInfo.fullName }} &centerdot;
         <rt>{{ personalInfo.fullNameRuby }}</rt>
       </ruby>
+      <span v-else>&centerdot; {{ personalInfo.fullName }} &centerdot;</span>
     </h1>
     <h2
       class="text-shadow mb-8 font-serif text-[min(1.85rem,5vw)] font-bold italic text-cv-white"

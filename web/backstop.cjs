@@ -1,9 +1,10 @@
 const fs = require("fs");
 const path = require("node:path");
-const vrRootPath = path.resolve(__dirname, "./visual_regressions");
+
+const vrRootPath = path.resolve(__dirname, "visual_regressions");
 
 function getPdfScenarios() {
-  const baseUri = `${vrRootPath}/pdf_test/png`;
+  const baseUri = "./visual_regressions/pdf_test/png";
   const files = fs.readdirSync(baseUri).filter((f) => f.endsWith(".png"));
   return files.map((file) => ({
     label: file,
