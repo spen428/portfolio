@@ -1,10 +1,13 @@
 <template>
-  <button class="aspect-square h-full transition">
+  <button
+    id="locale-switcher"
+    class="aspect-square h-full transition"
+    @click="toggleLocale()"
+  >
     <img
       :src="currentLocale.icon"
       :alt="currentLocale.name"
       class="inline h-full opacity-75 hover:opacity-100"
-      v-on:click="toggleLocale()"
     />
   </button>
 </template>
