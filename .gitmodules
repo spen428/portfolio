@@ -1,0 +1,3 @@
+[submodule "api/res/data"]
+	path = api/res/data
+	url = git@github.com:spen428/portfolio-data.git
