@@ -85,7 +85,7 @@ export default new (class DataService {
     url: string,
     localeRef: WritableComputedRef<string>
   ): Promise<Ref<T>> {
-    let locale = localeRef.value;
+    const locale = localeRef.value;
     if (this.cacheForLocale[key] === locale) {
       return this.cache[key] as Ref<T>;
     }

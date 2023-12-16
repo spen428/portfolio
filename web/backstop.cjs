@@ -90,7 +90,7 @@ function getDeviceScenarios() {
     deviceScenarios.map((scenario) => ({
       ...scenario,
       label: `${scenario.label} in ja-JP`,
-      onBeforeScript: "setLocale.ja-JP.cjs"
+      onBeforeScript: "setLocale.ja-JP.cjs",
     }))
   );
 }
