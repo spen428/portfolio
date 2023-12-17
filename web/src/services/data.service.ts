@@ -75,7 +75,7 @@ export default new (class DataService {
   }
 
   private readonly httpClient = axios.create({
-    baseURL: process.env.API_URL ?? "http://localhost:15000",
+    baseURL: import.meta.env.VITE_API_URL,
   });
 
   private readonly cacheForLocale: CacheContainer = {};
