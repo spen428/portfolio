@@ -9,7 +9,6 @@ import {
   type WritableComputedRef,
 } from "vue";
 import LocaleService from "@/services/locale.service";
-import { apiUrl } from "../../vite.config";
 
 type CacheContainer = {
   cvData?: string;
@@ -76,7 +75,7 @@ export default new (class DataService {
   }
 
   private readonly httpClient = axios.create({
-    baseURL: apiUrl,
+    baseURL: process.env.API_URL ?? "http://localhost:15000",
   });
 
   private readonly cacheForLocale: CacheContainer = {};
