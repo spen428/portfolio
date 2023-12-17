@@ -1,17 +1,12 @@
 {
   "extends": "@vue/tsconfig/tsconfig.json",
-  "include": [
-    "env.d.ts",
-    "src/**/*"
-  ],
+  "include": ["env.d.ts", "src/**/*"],
   "compilerOptions": {
     "target": "es2022",
     "module": "es2022",
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"]
     }
   },
   "references": [
