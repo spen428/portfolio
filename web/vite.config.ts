@@ -9,6 +9,8 @@ import VueI18nPlugin from "@intlify/unplugin-vue-i18n/vite";
 const root = new URL("./src", import.meta.url);
 const isProduction = process.env.NODE_ENV === "production";
 
+export const apiUrl = process.env.API_URL ?? "http://localhost:15000";
+
 // https://vitejs.dev/config/
 export default defineConfig({
   server: {

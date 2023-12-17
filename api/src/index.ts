@@ -1,4 +1,4 @@
-import express, { Express, Response } from "express";
+import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
 import { RequestWithLocale } from "./model";
 import DataService from "./data.service";
@@ -11,10 +11,10 @@ const app: Express = express();
 const port = serverPort;
 
 app.use(cors({ origin: corsOrigins }));
+console.log("CORS policy is allowing requests from the following origins:");
 console.log(corsOrigins);
-app.get("/", (_, res: Response) => {
-  res.send("OK");
-});
+
+app.get("/", (_: Request, res: Response) => res.send("OK"));
 
 app.get("/cv/data", (req: RequestWithLocale, res: Response) => {
   const locale = req.query.locale?.toString() ?? fallbackLocale;
