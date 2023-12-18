@@ -35,5 +35,5 @@ if [ $result -ne 0 ]; then
   exit $result
 fi
 
-DATE=$(date '+%%Y-%%m-%%d')
+DATE=$(date '+%Y-%m-%d')
 mv web/bin/CV.pdf "web/bin/[${DATE}] CV.pdf"

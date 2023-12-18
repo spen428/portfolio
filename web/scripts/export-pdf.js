@@ -7,9 +7,9 @@ async function exportPdf(url, filename) {
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
   const page = await browser.newPage();
-  await page.goto(url, {
-    waitUntil: "networkidle0",
-  });
+  await page.goto(url, { waitUntil: "networkidle0" });
+  await page.waitForFunction(() => !document.querySelector("#skeleton"));
+
   if (!fs.existsSync("./bin")) {
     fs.mkdirSync("./bin");
   }
@@ -20,6 +20,12 @@ async function exportPdf(url, filename) {
     margin: { top: "10mm", left: "10mm", bottom: "10mm", right: "10mm" },
   });
   await browser.close();
+
+  const fileSizeBytes = fs.statSync(path).size;
+  if (fileSizeBytes < 51200) {
+    throw new Error("PDF is smaller than 50 kB which indicates a failure.");
+  }
+
   console.log("Exported PDF to " + path);
 }
 
