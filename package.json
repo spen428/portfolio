@@ -6,6 +6,7 @@
     "build": "pnpm run -r build",
     "build:prod": "pnpm run -r build:prod",
     "run:prod": "pnpm run -r prod",
+    "run:dev": "pnpm run -r dev",
     "lint": "pnpm run -r lint",
     "test": "pnpm run -r test",
     "test-web": "pnpm run --filter web test"
