@@ -2,7 +2,7 @@
   <div
     class="mx-auto mt-12 flex w-full max-w-6xl flex-col items-center justify-start 2xl:max-w-7xl"
   >
-    <Skeleton
+    <LoadingSkeleton
       v-if="!personalInfo.fullName"
       class="mb-2 !h-9 !w-[30vw] !bg-cv-dark-purple"
     />
@@ -17,7 +17,10 @@
       <span v-else>&centerdot; {{ personalInfo.fullName }} &centerdot;</span>
     </h1>
 
-    <Skeleton v-if="!personalInfo.tagLine" class="mb-8 !h-10 !w-[45vw]" />
+    <LoadingSkeleton
+      v-if="!personalInfo.tagLine"
+      class="mb-8 !h-10 !w-[45vw]"
+    />
     <h2
       v-else
       class="text-shadow mb-8 font-serif text-[min(1.85rem,5vw)] font-bold italic text-cv-white"
@@ -68,7 +71,7 @@
 </style>
 
 <script setup lang="ts">
-import Skeleton from "@/components/Skeleton.vue";
+import LoadingSkeleton from "@/components/LoadingSkeleton.vue";
 import DataService from "@/services/data.service";
 
 const personalInfo = DataService.getPersonalInfo();

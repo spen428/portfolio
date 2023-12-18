@@ -4,7 +4,10 @@
       <div
         class="mb-4 flex w-full flex-col items-center justify-between text-center"
       >
-        <Skeleton v-if="!personalInfo.fullName" class="mt-3 h-10 w-full" />
+        <LoadingSkeleton
+          v-if="!personalInfo.fullName"
+          class="mt-3 h-10 w-full"
+        />
         <h1
           v-else
           class="mx-0 mt-3 font-serif text-3xl font-bold text-cv-dark-purple xs:text-4xl"
@@ -16,7 +19,7 @@
           <span v-else>{{ personalInfo.fullName }}</span>
         </h1>
 
-        <Skeleton
+        <LoadingSkeleton
           v-if="!personalInfo.longerTagLine"
           class="mb-4 mt-8 h-8 w-full"
         />
@@ -25,7 +28,7 @@
         </span>
       </div>
 
-      <Skeleton
+      <LoadingSkeleton
         v-if="!personalInfo.emailAddress"
         class="h-12 w-full !bg-cv-dark-purple"
       />
@@ -52,7 +55,7 @@
 
 <script setup lang="ts">
 import type { PersonalInfo } from "@/services/data.model";
-import Skeleton from "@/components/Skeleton.vue";
+import LoadingSkeleton from "@/components/LoadingSkeleton.vue";
 
 defineProps<{ personalInfo: PersonalInfo }>();
 </script>
