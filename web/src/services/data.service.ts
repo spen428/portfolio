@@ -16,6 +16,8 @@ type CacheContainer = {
   personalInfo?: string;
 };
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 export default new (class DataService {
   private readonly cache: {
     personalInfo: Ref<PersonalInfo>;
@@ -75,7 +77,7 @@ export default new (class DataService {
   }
 
   private readonly httpClient = axios.create({
-    baseURL: import.meta.env.VITE_API_URL,
+    baseURL: apiUrl,
   });
 
   private readonly cacheForLocale: CacheContainer = {};

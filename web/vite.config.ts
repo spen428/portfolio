@@ -6,6 +6,7 @@ import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import VueI18nPlugin from "@intlify/unplugin-vue-i18n/vite";
 
+// @ts-ignore
 const root = new URL("./src", import.meta.url);
 const isProduction = process.env.NODE_ENV === "production";
 
@@ -20,6 +21,7 @@ export default defineConfig({
     vueJsx(),
     VueI18nPlugin({
       include: resolve(
+        // @ts-ignore
         dirname(fileURLToPath(import.meta.url)),
         "./src/i18n/**"
       ),
