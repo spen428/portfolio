@@ -14,7 +14,7 @@
 import CvBody from "@/pages/cv/components/CvBody.vue";
 import CvHeaderLarge from "@/pages/cv/components/cv-header/CvHeaderLarge.vue";
 import CvHeaderSmall from "@/pages/cv/components/cv-header/CvHeaderSmall.vue";
-import type { Ref } from "vue";
+import { type Ref } from "vue";
 import type { CvData } from "@/services/data.model";
 import CvDataService from "@/services/data.service";
 import DataService from "@/services/data.service";

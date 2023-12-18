@@ -2,7 +2,9 @@
   <div
     class="mx-auto mt-12 flex w-full max-w-6xl flex-col items-center justify-start 2xl:max-w-7xl"
   >
+    <Skeleton v-if="!personalInfo.fullName" class="mb-2 !h-8 !w-[30vw]" />
     <h1
+      v-else
       class="text-shadow mb-2 font-serif text-[min(1.5rem,5vw)] font-bold text-cv-dark-purple text-opacity-80"
     >
       <ruby v-if="personalInfo.fullNameRuby">
@@ -59,6 +61,7 @@
 </style>
 
 <script setup lang="ts">
+import Skeleton from "@/components/Skeleton.vue";
 import DataService from "@/services/data.service";
 
 const personalInfo = DataService.getPersonalInfo();

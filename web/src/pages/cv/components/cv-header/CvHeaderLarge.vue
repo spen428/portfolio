@@ -1,5 +1,7 @@
 <template>
+  <Skeleton v-if="!personalInfo.fullName" class="h-20 w-full" />
   <div
+    v-else
     class="mb-8 flex h-20 w-full min-w-[700px] flex-row flex-wrap items-center justify-between print:!mb-10"
   >
     <div
@@ -58,6 +60,7 @@
 
 <script setup lang="ts">
 import type { PersonalInfo } from "@/services/data.model";
+import Skeleton from "@/components/Skeleton.vue";
 
 defineProps<{ personalInfo: PersonalInfo }>();
 </script>

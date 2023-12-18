@@ -1,10 +1,14 @@
 <template>
   <section class="mx-4 my-8 lg:m-8">
-    <p class="text-center italic lg:text-justify lg:text-sm">
+    <Skeleton v-if="!cvData.abstract" class="h-6 w-full" />
+    <p v-else class="text-center italic lg:text-justify lg:text-sm">
       {{ cvData.abstract }}
     </p>
   </section>
+
+  <Skeleton v-if="!cvData.articles" class="h-64 w-full" />
   <CvArticle
+    v-else
     v-for="article in cvData.articles"
     :key="article.title"
     :title="article.title"
@@ -52,6 +56,7 @@
 import CvArticle from "@/pages/cv/components/CvArticle.vue";
 import CvSection from "@/pages/cv/components/CvSection.vue";
 import type { CvData } from "@/services/data.model";
+import Skeleton from "@/components/Skeleton.vue";
 
 defineProps<{ cvData: CvData }>();
 </script>
