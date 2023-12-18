@@ -2,7 +2,7 @@
 export DEBUG=express:router
 export DATA_PATH=data
 export NODE_ENV=production
-export SERVER_PORT=14390
+export SERVER_PORT=15000
 pnpm run run:prod &
 pid=$!
 
