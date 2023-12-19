@@ -4,7 +4,6 @@ This is an SPA and backend for my portfolio and CV (curriculum vitae; résumé),
 **Tailwind CSS**, **Vite** and **Express**.
 
 <div style="text-align: center"><img alt="Home page preview" src="doc/landing-page-loading.png" /></div>
-<div style="text-align: center"><img alt="Logo" src="web/public/logo.svg" height="128" /></div>
 
 ## Getting started
 
