@@ -9,6 +9,7 @@ This project uses the **pnpm** package manager.
 ```shell
 # npm install -g pnpm
 pnpm install
+pnpm run install-global
 pnpm run lint
 pnpm run test
 pnpm run build
