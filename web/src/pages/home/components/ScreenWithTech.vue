@@ -31,7 +31,7 @@
       >
         <img
           :src="tech.logoUrl"
-          :alt="tech.name"
+          alt=""
           class="h-[min(4rem,5vw)] w-[min(4rem,5vw)]"
         />
         <span

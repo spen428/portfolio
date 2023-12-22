@@ -6,12 +6,12 @@
     <h2 class="mx-4 self-end text-right" v-html="subtitleHtml" />
     <ScreenWithTech
       image-position="left"
-      image-url="/projects/raffld.png"
+      :image-url="imageUrls[0]"
       :technologies="technologies.slice(0, 4)"
     />
     <ScreenWithTech
       image-position="right"
-      image-url="/projects/tenhou.png"
+      :image-url="imageUrls[1]"
       :technologies="technologies.slice(4, 8)"
     />
   </div>
@@ -26,5 +26,6 @@ defineProps<{
   titleHtml: string;
   subtitleHtml: string;
   technologies: TechnologyWithIcon[];
+  imageUrls: string[];
 }>();
 </script>

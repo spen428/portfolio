@@ -86,21 +86,60 @@
     <TechScreen
       title-html="<em>Responsive</em> and <em>reactive</em> web pages"
       subtitle-html="using tried and tested <em>industry-favourite</em> technologies."
-      :technologies="tech1"
+      :image-urls="['/projects/raffld.png', '/projects/tenhou.png']"
+      :technologies="[
+        {
+          name: ' Angular ',
+          logoUrl: '/tech-logos/angular.svg',
+          color: 'rgb(220 38 38)',
+        },
+        {
+          name: 'JavaScript',
+          logoUrl: '/tech-logos/javascript.svg',
+          color: 'rgb(253 224 71)',
+        },
+        {
+          name: 'TypeScript',
+          logoUrl: '/tech-logos/typescript.svg',
+          color: 'rgb(37 99 235)',
+        },
+        {
+          name: 'React',
+          logoUrl: '/tech-logos/react.svg',
+          color: 'rgb(103 232 249)',
+        },
+        { name: 'RxJS', logoUrl: '/tech-logos/rxjs.svg' },
+        { name: 'NgRx', logoUrl: '/tech-logos/ngrx.svg' },
+        { name: 'Tailwind CSS', logoUrl: '/tech-logos/tailwind.svg' },
+        { name: 'PrimeFaces', logoUrl: '/tech-logos/primeng.svg' },
+      ]"
     />
     <img
       src="/logo-hollow.svg"
-      :alt="$t('separator')"
+      alt=""
       class="mx-auto w-8 brightness-0 invert"
     />
     <TechScreen
       title-html="<em>Robust</em> client-server applications"
       subtitle-html="crafted with care using <em>test-driven development</em>."
-      :technologies="tech2"
+      :image-urls="['/projects/raffld.png', '/projects/tenhou.png']"
+      :technologies="[
+        { name: 'Kotlin', logoUrl: '/tech-logos/kotlin.svg' },
+        {
+          name: 'Java',
+          logoUrl: '/tech-logos/java.svg',
+        },
+        { name: 'Python', logoUrl: '/tech-logos/python.svg' },
+        { name: 'C#', logoUrl: '/tech-logos/csharp.svg' },
+        { name: '.NET Core', logoUrl: '/tech-logos/netcore.svg' },
+        { name: 'Spring', logoUrl: '/tech-logos/spring.svg' },
+        { name: 'Swagger', logoUrl: '/tech-logos/swagger.svg' },
+        { name: 'xUnit', logoUrl: '/tech-logos/xunit.svg' },
+      ]"
     />
     <img
       src="/logo-hollow.svg"
-      :alt="$t('separator')"
+      alt=""
       class="mx-auto w-8 brightness-0 invert"
     />
     <div class="text-cv-white">
@@ -157,83 +196,8 @@
 import DataService from "@/services/data.service";
 import { onBeforeUnmount, onMounted, ref } from "vue";
 import TechScreen from "@/pages/home/components/TechScreen.vue";
-import type { TechnologyWithIcon } from "@/pages/home/components/ScreenWithTech.vue";
 
 const personalInfo = DataService.getPersonalInfo();
-
-const tech1: TechnologyWithIcon[] = [
-  {
-    name: "Angular",
-    logoUrl: "/tech-logos/angular.svg",
-    color: "rgb(220 38 38)",
-  },
-  {
-    name: "JavaScript",
-    logoUrl: "/tech-logos/javascript.svg",
-    color: "rgb(253 224 71)",
-  },
-  {
-    name: "TypeScript",
-    logoUrl: "/tech-logos/typescript.svg",
-    color: "rgb(37 99 235)",
-  },
-  {
-    name: "React",
-    logoUrl: "/tech-logos/react.svg",
-    color: "rgb(103 232 249)",
-  },
-  {
-    name: "RxJS",
-    logoUrl: "/tech-logos/rxjs.svg",
-  },
-  {
-    name: "NgRx",
-    logoUrl: "/tech-logos/ngrx.svg",
-  },
-  {
-    name: "Tailwind CSS",
-    logoUrl: "/tech-logos/tailwind.svg",
-  },
-  {
-    name: "PrimeFaces",
-    logoUrl: "/tech-logos/primeng.svg",
-  },
-];
-
-const tech2: TechnologyWithIcon[] = [
-  {
-    name: "Kotlin",
-    logoUrl: "/tech-logos/kotlin.svg",
-  },
-  {
-    name: "Java",
-    logoUrl: "/tech-logos/java.svg",
-  },
-  {
-    name: "Python",
-    logoUrl: "/tech-logos/python.svg",
-  },
-  {
-    name: "C#",
-    logoUrl: "/tech-logos/csharp.svg",
-  },
-  {
-    name: ".NET Core",
-    logoUrl: "/tech-logos/netcore.svg",
-  },
-  {
-    name: "Spring",
-    logoUrl: "/tech-logos/spring.svg",
-  },
-  {
-    name: "Swagger",
-    logoUrl: "/tech-logos/swagger.svg",
-  },
-  {
-    name: "xUnit",
-    logoUrl: "/tech-logos/xunit.svg",
-  },
-];
 
 const scrollTop = ref(0);
 const container = ref();
