@@ -32,6 +32,11 @@
     display: inline;
     line-height: 1.25rem;
   }
+
+  em {
+    font-style: normal;
+    font-weight: bold;
+  }
 }
 
 @layer components {

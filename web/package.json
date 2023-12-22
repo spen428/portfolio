@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "install-global": "pnpm install --global backstopjs@6.2.2",
-    "dev": "vite",
+    "dev": "vite --host",
     "prod": "NODE_ENV=production vite",
     "build:prod": "NODE_ENV=production vue-tsc --noEmit && vite build",
     "pdf": "node scripts/export-pdf.js --url=http://localhost:5173/cv bin/CV.pdf",

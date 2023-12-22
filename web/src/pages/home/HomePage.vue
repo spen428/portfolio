@@ -83,86 +83,63 @@
         What can I do?
       </h1>
     </div>
-    <ScreenOne />
+    <TechScreen
+      title-html="<em>Responsive</em> and <em>reactive</em> web pages"
+      subtitle-html="using tried and tested <em>industry-favourite</em> technologies."
+      :technologies="tech1"
+    />
     <img
       src="/logo-hollow.svg"
       :alt="$t('separator')"
       class="mx-auto w-8 brightness-0 invert"
     />
-    <div class="mx-auto max-w-5xl text-cv-white">
-      <h1 class="text-[min(1.85rem,5vw)]">
-        <em>Robust</em> client-server applications
+    <TechScreen
+      title-html="<em>Robust</em> client-server applications"
+      subtitle-html="crafted with care using <em>test-driven development</em>."
+      :technologies="tech2"
+    />
+    <img
+      src="/logo-hollow.svg"
+      :alt="$t('separator')"
+      class="mx-auto w-8 brightness-0 invert"
+    />
+    <div class="text-cv-white">
+      <h1 class="ml-4 mr-4 text-[min(1.85rem,5vw)]">
+        Cloud configuration on <em>Azure</em> and <em>AWS</em>
       </h1>
-      <h2 class="mb-12 ml-[40%] mt-4">
-        crafted with care using
-        <em>test-driven development</em>.
+      <h2 class="mx-4 self-end text-right">
+        for automated build and release pipelines, on-demand scaling, and health
+        monitoring.
       </h2>
-      <div class="flex justify-around">
-        <img
-          src="/project-page.png"
-          alt=""
-          class="w-1/2 rounded-lg border-2 border-cv-white"
-        />
-        <div class="flex w-1/4 flex-col gap-4">
-          <div class="inline-flex items-center gap-4">
-            <img src="/tech-logos/kotlin.svg" alt="Kotlin" class="h-16 w-16" />
-            <span class="font-bold">Kotlin</span>
-          </div>
-          <div class="inline-flex items-center gap-4 self-end">
-            <span class="font-bold">Java</span>
-            <img src="/tech-logos/java.svg" alt="Java" class="h-16 w-16" />
-          </div>
-          <div class="inline-flex items-center gap-4">
-            <img src="/tech-logos/python.svg" alt="Python" class="h-16 w-16" />
-            <span class="font-bold">Python</span>
-          </div>
-          <div class="inline-flex items-center gap-4 self-end">
-            <span class="font-bold">C#</span>
-            <img src="/tech-logos/csharp.svg" alt="C-Sharp" class="h-16 w-16" />
-          </div>
-        </div>
-      </div>
-      <div class="mt-16 flex justify-around">
-        <div class="flex w-1/4 flex-col gap-4">
-          <div class="inline-flex items-center gap-4">
-            <img
-              src="/tech-logos/netcore.svg"
-              alt="DOTNET Core"
-              class="h-16 w-16"
-            />
-            <span class="font-bold">.NET Core</span>
-          </div>
-          <div class="inline-flex items-center gap-4 self-end">
-            <span class="font-bold">Spring</span>
-            <img src="/tech-logos/spring.svg" alt="Spring" class="h-16 w-16" />
-          </div>
-          <div class="inline-flex items-center gap-4">
-            <img
-              src="/tech-logos/swagger.svg"
-              alt="Swagger"
-              class="h-16 w-16"
-            />
-            <span class="font-bold">Swagger</span>
-          </div>
-          <div class="inline-flex items-center gap-4 self-end">
-            <span class="font-bold">xUnit</span>
-            <img src="/tech-logos/xunit.svg" alt="xUnit" class="h-16 w-16" />
-          </div>
-        </div>
-        <img
-          src="/project-page.png"
-          alt=""
-          class="w-1/2 rounded-lg border-2 border-cv-white"
-        />
-      </div>
     </div>
-    <img
-      src="/logo-hollow.svg"
-      :alt="$t('separator')"
-      class="mx-auto w-8 brightness-0 invert"
-    />
-    <div class="border"><h1>Pipelines</h1></div>
-    <div class="h-[80vh] border">Call to action</div>
+    <div class="mb-16 flex flex-col items-center gap-6">
+      <router-link to="/portfolio/cv" class="text-cv-white">
+        <button class="rounded-lg border px-4 py-2">
+          {{ $t("view_my_cv") }}
+        </button>
+      </router-link>
+      <router-link to="/portfolio/projects" class="text-cv-white">
+        <button class="rounded-lg border px-4 py-2">
+          {{ $t("browse_my_portfolio") }}
+        </button>
+      </router-link>
+      <a
+        class="text-cv-white"
+        href="https://github.com/spen428"
+        target="_blank"
+      >
+        <button
+          class="inline-flex items-center gap-2 rounded-lg border px-4 py-2"
+        >
+          {{ $t("open_my_github") }}
+          <img
+            src="/icons/external-link.svg"
+            :alt="$t('opens_an_external_site')"
+            class="h-4 brightness-0 invert"
+          />
+        </button>
+      </a>
+    </div>
   </div>
 </template>
 
@@ -174,19 +151,89 @@
 .text-shadow-cv-white {
   text-shadow: 0 0 2rem rgb(var(--cv-white));
 }
-
-em {
-  font-style: normal;
-  font-weight: bold;
-}
 </style>
 
 <script setup lang="ts">
 import DataService from "@/services/data.service";
 import { onBeforeUnmount, onMounted, ref } from "vue";
-import ScreenOne from "@/pages/home/components/ScreenOne.vue";
+import TechScreen from "@/pages/home/components/TechScreen.vue";
+import type { TechnologyWithIcon } from "@/pages/home/components/ScreenWithTech.vue";
 
 const personalInfo = DataService.getPersonalInfo();
+
+const tech1: TechnologyWithIcon[] = [
+  {
+    name: "Angular",
+    logoUrl: "/tech-logos/angular.svg",
+    color: "rgb(220 38 38)",
+  },
+  {
+    name: "JavaScript",
+    logoUrl: "/tech-logos/javascript.svg",
+    color: "rgb(253 224 71)",
+  },
+  {
+    name: "TypeScript",
+    logoUrl: "/tech-logos/typescript.svg",
+    color: "rgb(37 99 235)",
+  },
+  {
+    name: "React",
+    logoUrl: "/tech-logos/react.svg",
+    color: "rgb(103 232 249)",
+  },
+  {
+    name: "RxJS",
+    logoUrl: "/tech-logos/rxjs.svg",
+  },
+  {
+    name: "NgRx",
+    logoUrl: "/tech-logos/ngrx.svg",
+  },
+  {
+    name: "Tailwind CSS",
+    logoUrl: "/tech-logos/tailwind.svg",
+  },
+  {
+    name: "PrimeFaces",
+    logoUrl: "/tech-logos/primeng.svg",
+  },
+];
+
+const tech2: TechnologyWithIcon[] = [
+  {
+    name: "Kotlin",
+    logoUrl: "/tech-logos/kotlin.svg",
+  },
+  {
+    name: "Java",
+    logoUrl: "/tech-logos/java.svg",
+  },
+  {
+    name: "Python",
+    logoUrl: "/tech-logos/python.svg",
+  },
+  {
+    name: "C#",
+    logoUrl: "/tech-logos/csharp.svg",
+  },
+  {
+    name: ".NET Core",
+    logoUrl: "/tech-logos/netcore.svg",
+  },
+  {
+    name: "Spring",
+    logoUrl: "/tech-logos/spring.svg",
+  },
+  {
+    name: "Swagger",
+    logoUrl: "/tech-logos/swagger.svg",
+  },
+  {
+    name: "xUnit",
+    logoUrl: "/tech-logos/xunit.svg",
+  },
+];
 
 const scrollTop = ref(0);
 const container = ref();
