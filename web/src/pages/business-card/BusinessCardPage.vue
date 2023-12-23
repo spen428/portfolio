@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="pointer-events-none mx-auto mt-8 flex w-fit select-none flex-col items-center gap-8"
-  >
+  <div class="mx-auto mt-8 flex w-fit select-none flex-col items-center gap-8">
     <BusinessCardFront
       :style="{ height: '55mm', width: cardWidth }"
       :personal-info="personalInfo"
