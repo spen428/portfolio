@@ -124,6 +124,7 @@
       class="mx-auto w-8 brightness-0 invert"
     />
     <TechScreen
+      class="mx-auto"
       title-html="<em>Robust</em> client-server applications"
       subtitle-html="crafted with care using <em>test-driven development</em>."
       :image-urls="['/projects/ce.thumb.jpg', '/projects/cv.thumb.jpg']"

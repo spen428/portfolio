@@ -3,11 +3,19 @@
     class="flex w-full flex-col items-center justify-center gap-10 overflow-hidden md:h-72 md:flex-row md:gap-4 lg:mx-8 lg:gap-16"
     :class="{ 'md:flex-row-reverse': imagePosition === 'right' }"
   >
-    <div class="mx-4 h-full md:static">
+    <div
+      class="mx-4 md:static md:w-1/2"
+      :class="{
+        'md:ml-4': imagePosition === 'left',
+        'md:mr-4': imagePosition === 'right',
+      }"
+    >
       <img
         :src="imageUrl"
         alt=""
-        class="h-full rounded-lg border-2 border-cv-white"
+        class="rounded-lg border-2 border-cv-white object-cover"
+        width="480"
+        height="270"
       />
     </div>
 
