@@ -48,6 +48,12 @@ const router = createRouter({
             isStyleable: false,
           },
         },
+        {
+          path: "business-card",
+          component: BusinessCardPage,
+          name: "Business Card",
+          meta: { isPrintable: true },
+        },
       ],
     },
     {
