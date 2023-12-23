@@ -41,34 +41,7 @@
         class="w-[45vw] animate-sideToSide select-none xs:h-64 xs:w-[unset]"
       />
 
-      <div class="flex flex-col items-center gap-6 xs:hidden">
-        <router-link to="/portfolio/cv" class="text-cv-white">
-          <button class="rounded-lg border px-4 py-2">
-            {{ $t("view_my_cv") }}
-          </button>
-        </router-link>
-        <router-link to="/portfolio/projects" class="text-cv-white">
-          <button class="rounded-lg border px-4 py-2">
-            {{ $t("browse_my_portfolio") }}
-          </button>
-        </router-link>
-        <a
-          class="text-cv-white"
-          href="https://github.com/spen428"
-          target="_blank"
-        >
-          <button
-            class="inline-flex items-center gap-2 rounded-lg border px-4 py-2"
-          >
-            {{ $t("open_my_github") }}
-            <img
-              src="/icons/external-link.svg"
-              :alt="$t('opens_an_external_site')"
-              class="h-4 brightness-0 invert"
-            />
-          </button>
-        </a>
-      </div>
+      <LandingPageLinks class="xs:hidden" />
 
       <button class="w-8">
         <img
@@ -146,34 +119,7 @@
         { name: 'Proxmox', logoUrl: '/tech-logos/proxmox.png' },
       ]"
     />
-    <div class="mb-16 flex flex-col items-center gap-6">
-      <router-link to="/portfolio/cv" class="text-cv-white">
-        <button class="rounded-lg border px-4 py-2">
-          {{ $t("view_my_cv") }}
-        </button>
-      </router-link>
-      <router-link to="/portfolio/projects" class="text-cv-white">
-        <button class="rounded-lg border px-4 py-2">
-          {{ $t("browse_my_portfolio") }}
-        </button>
-      </router-link>
-      <a
-        class="text-cv-white"
-        href="https://github.com/spen428"
-        target="_blank"
-      >
-        <button
-          class="inline-flex items-center gap-2 rounded-lg border px-4 py-2"
-        >
-          {{ $t("open_my_github") }}
-          <img
-            src="/icons/external-link.svg"
-            :alt="$t('opens_an_external_site')"
-            class="h-4 brightness-0 invert"
-          />
-        </button>
-      </a>
-    </div>
+    <LandingPageLinks />
   </div>
 </template>
 
@@ -188,6 +134,7 @@ import DataService from "@/services/data.service";
 import { onBeforeUnmount, onMounted, ref } from "vue";
 import TechScreen from "@/pages/home/components/TechScreen.vue";
 import LoadingSkeleton from "@/components/LoadingSkeleton.vue";
+import LandingPageLinks from "@/pages/home/LandingPageLinks.vue";
 
 const personalInfo = DataService.getPersonalInfo();
 
