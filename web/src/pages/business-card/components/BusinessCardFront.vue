@@ -1,5 +1,5 @@
 <template>
-  <div class="relative">
+  <div class="relative border-2 border-cv-white bg-cv-white">
     <svg
       width="100%"
       height="100%"
@@ -17,22 +17,22 @@
     <div
       class="absolute inset-0 flex h-full w-full flex-col items-center justify-center p-2"
     >
-      <div class="text-center text-sm">
+      <div class="text-center">
         <h1 class="mt-1 text-lg text-cv-dark-purple">
           {{ personalInfo.fullName }}
         </h1>
-        <h2 class="small-caps mb-4 mt-1 text-xs italic">
-          Software &amp; Devops engineer
+        <h2 class="mb-4 mt-1 font-serif text-xs italic">
+          {{ personalInfo.tagLine }}
         </h2>
       </div>
-      <div class="flex flex-col items-center text-sm">
-        <span class="flex">
+      <div class="flex flex-col items-center gap-1">
+        <span class="flex text-xs">
           <img src="/icons/globe.svg" alt="Site:" class="mr-1 inline w-4" />
           {{ personalInfo.cvUrl.short }}
         </span>
-        <span class="flex">
+        <span class="flex text-xs">
           <img src="/icons/phone.svg" alt="Phone:" class="mr-1 inline w-4" />
-          {{ personalInfo.phoneNumber.local }}
+          {{ personalInfo.phoneNumber.intl }}
         </span>
       </div>
     </div>

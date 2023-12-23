@@ -1,5 +1,5 @@
 <template>
-  <div class="relative">
+  <div class="relative border-2 border-cv-white bg-cv-white">
     <svg
       width="100%"
       height="100%"
