@@ -45,17 +45,12 @@
 
       <div id="separator" />
 
-      <button
-        class="absolute top-[calc(100dvh-4rem)] w-8 duration-300"
+      <img
+        src="/icons/arrow-ios-downward-outline.svg"
+        :alt="$t('scrollDown')"
+        class="absolute top-[calc(100dvh-4rem)] w-8 animate-bounce invert duration-300"
         :style="{ opacity: scrollTop == 0 ? 1 : 0 }"
-        @click="scrollToSecondPage()"
-      >
-        <img
-          src="/icons/arrow-ios-downward-outline.svg"
-          :alt="$t('scrollDown')"
-          class="animate-bounce invert"
-        />
-      </button>
+      />
     </div>
     <div class="">
       <h1
@@ -126,6 +121,12 @@
       ]"
     />
     <LandingPageLinks />
+    <button
+      class="mx-auto mb-8 flex animate-tease"
+      onclick="document.body.scrollTop = 0; document.documentElement.scrollTop = 0;"
+    >
+      <img src="/logo.svg" :alt="$t('logo')" class="h-16 w-16 select-none" />
+    </button>
   </div>
 </template>
 
@@ -143,11 +144,6 @@ import LoadingSkeleton from "@/components/LoadingSkeleton.vue";
 import LandingPageLinks from "@/pages/home/LandingPageLinks.vue";
 
 const personalInfo = DataService.getPersonalInfo();
-
-function scrollToSecondPage() {
-  const documentRoot = document.querySelector("html")!;
-  documentRoot.scrollTop = window.innerHeight;
-}
 
 const scrollTop = ref(0);
 const container = ref();

@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-16 flex flex-col items-center gap-6">
+  <div class="flex flex-col items-center gap-6">
     <router-link to="/portfolio/cv" class="text-cv-white">
       <button
         class="rounded-lg border px-4 py-2 duration-500 hover:bg-cv-white hover:bg-opacity-30"
