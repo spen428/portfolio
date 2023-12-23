@@ -12,7 +12,7 @@
     </div>
 
     <div
-      class="flex h-full w-3/5 grow flex-wrap justify-between gap-4 md:static md:w-auto md:shrink md:flex-col md:flex-nowrap"
+      class="flex h-full w-9/12 grow flex-wrap justify-between gap-4 xs:w-3/5 md:static md:w-auto md:shrink md:flex-col md:flex-nowrap"
       :class="{
         'md:mr-8': imagePosition === 'left',
         'md:ml-8': imagePosition === 'right',
@@ -21,11 +21,19 @@
       <div
         v-for="(tech, index) in technologies"
         :key="tech.name"
-        class="inline-flex items-center gap-4"
+        class="inline-flex basis-[calc(50%-1rem)] items-center gap-4"
         :class="{ 'md:self-end': index % 2 == 1 }"
       >
-        <img :src="tech.logoUrl" alt="" class="h-12 w-12" />
-        <span class="font-bold" :style="{ color: '#fff' }" v-text="tech.name" />
+        <img
+          :src="tech.logoUrl"
+          alt=""
+          class="h-[min(3rem,8vw)] w-[min(3rem,8vw)]"
+        />
+        <span
+          class="text-[min(1rem,4vw)] font-bold xs:text-base"
+          :style="{ color: '#fff' }"
+          v-text="tech.name"
+        />
       </div>
     </div>
   </div>
