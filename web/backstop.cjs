@@ -75,6 +75,10 @@ function getDeviceScenarios() {
       label: "Viewing CV",
       url: "/portfolio/cv",
     },
+    {
+      label: "Viewing business card",
+      url: "/portfolio/business-card",
+    },
   ];
 
   const deviceScenarios = deviceViewports.flatMap((viewport) =>
