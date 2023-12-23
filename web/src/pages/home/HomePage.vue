@@ -125,7 +125,11 @@
       class="mx-auto mb-16 flex animate-tease"
       onclick="document.body.scrollTop = 0; document.documentElement.scrollTop = 0;"
     >
-      <img src="/logo.svg" :alt="$t('logo')" class="h-16 w-16 select-none" />
+      <img
+        src="/logo-outline.svg"
+        :alt="$t('logo')"
+        class="h-16 w-16 select-none"
+      />
     </button>
   </div>
 </template>

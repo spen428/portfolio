@@ -16,11 +16,11 @@ module.exports = {
     },
     screens: {
       xs: "576px",
-      'sm': '640px',
-      'md': '768px',
+      sm: "640px",
+      md: "768px",
       lg: printOrMinWidth("960px"),
-      xl: printOrMinWidth('1280px'),
-      "2xl": printOrMinWidth('1536px'),
+      xl: printOrMinWidth("1280px"),
+      "2xl": printOrMinWidth("1536px"),
     },
     extend: {
       colors: {
