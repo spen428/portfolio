@@ -1,8 +1,8 @@
 <template>
   <div class="flex w-full max-w-5xl flex-col items-center gap-12 text-cv-white">
-    <div class="mx-4 flex w-full max-w-4xl flex-col gap-4">
-      <h1 class="ml-4 text-[min(1.85rem,5vw)]" v-html="titleHtml" />
-      <h2 class="mr-4 self-end text-right" v-html="subtitleHtml" />
+    <div class="flex w-full max-w-4xl flex-col gap-4">
+      <h1 class="mx-4 text-[min(1.85rem,5vw)]" v-html="titleHtml" />
+      <h2 class="mx-4 self-end text-right" v-html="subtitleHtml" />
     </div>
     <ScreenWithTech
       image-position="left"

@@ -3,86 +3,88 @@
     class="mx-auto flex max-w-6xl flex-col gap-16 2xl:max-w-7xl"
     ref="container"
   >
-    <!--    <div class="flex flex-col items-center justify-between gap-8 py-12">-->
-    <!--      <div-->
-    <!--        class="flex flex-col items-center gap-2 whitespace-nowrap duration-1000 ease-in-out"-->
-    <!--      >-->
-    <!--        <LoadingSkeleton-->
-    <!--          v-if="!personalInfo.fullName"-->
-    <!--          class="!h-9 !w-[30vw] !bg-cv-dark-purple"-->
-    <!--        />-->
-    <!--        <h1-->
-    <!--          v-else-->
-    <!--          class="text-shadow-cv-dark-purple font-serif text-[min(1.5rem,5vw)] font-bold text-cv-dark-purple text-opacity-80"-->
-    <!--        >-->
-    <!--          <ruby v-if="personalInfo.fullNameRuby">-->
-    <!--            &centerdot; {{ personalInfo.fullName }} &centerdot;-->
-    <!--            <rt>{{ personalInfo.fullNameRuby }}</rt>-->
-    <!--          </ruby>-->
-    <!--          <span v-else-->
-    <!--            >&centerdot; {{ personalInfo.fullName }} &centerdot;</span-->
-    <!--          >-->
-    <!--        </h1>-->
+    <div
+      class="flex h-[calc(100vh-5rem)] flex-col items-center justify-between gap-8 py-12"
+    >
+      <div
+        class="flex flex-col items-center gap-2 whitespace-nowrap duration-1000 ease-in-out"
+      >
+        <LoadingSkeleton
+          v-if="!personalInfo.fullName"
+          class="!h-9 !w-[30vw] !bg-cv-dark-purple"
+        />
+        <h1
+          v-else
+          class="text-shadow-cv-dark-purple font-serif text-[min(1.5rem,5vw)] font-bold text-cv-dark-purple text-opacity-80"
+        >
+          <ruby v-if="personalInfo.fullNameRuby">
+            &centerdot; {{ personalInfo.fullName }} &centerdot;
+            <rt>{{ personalInfo.fullNameRuby }}</rt>
+          </ruby>
+          <span v-else
+            >&centerdot; {{ personalInfo.fullName }} &centerdot;</span
+          >
+        </h1>
 
-    <!--        <LoadingSkeleton v-if="!personalInfo.tagLine" class="!h-10 !w-[45vw]" />-->
-    <!--        <h2-->
-    <!--          v-else-->
-    <!--          class="text-shadow-cv-dark-purple font-serif text-[min(1.85rem,5vw)] font-bold italic text-cv-white"-->
-    <!--        >-->
-    <!--          {{ personalInfo.tagLine }}-->
-    <!--        </h2>-->
-    <!--      </div>-->
+        <LoadingSkeleton v-if="!personalInfo.tagLine" class="!h-10 !w-[45vw]" />
+        <h2
+          v-else
+          class="text-shadow-cv-dark-purple font-serif text-[min(1.85rem,5vw)] font-bold italic text-cv-white"
+        >
+          {{ personalInfo.tagLine }}
+        </h2>
+      </div>
 
-    <!--      <img-->
-    <!--        src="/logo-hollow.svg"-->
-    <!--        :alt="$t('logo')"-->
-    <!--        class="w-[45vw] animate-sideToSide select-none xs:h-64 xs:w-[unset]"-->
-    <!--      />-->
+      <img
+        src="/logo-hollow.svg"
+        :alt="$t('logo')"
+        class="w-[45vw] animate-sideToSide select-none xs:h-64 xs:w-[unset]"
+      />
 
-    <!--      <div class="flex flex-col items-center gap-6 xs:hidden">-->
-    <!--        <router-link to="/portfolio/cv" class="text-cv-white">-->
-    <!--          <button class="rounded-lg border px-4 py-2">-->
-    <!--            {{ $t("view_my_cv") }}-->
-    <!--          </button>-->
-    <!--        </router-link>-->
-    <!--        <router-link to="/portfolio/projects" class="text-cv-white">-->
-    <!--          <button class="rounded-lg border px-4 py-2">-->
-    <!--            {{ $t("browse_my_portfolio") }}-->
-    <!--          </button>-->
-    <!--        </router-link>-->
-    <!--        <a-->
-    <!--          class="text-cv-white"-->
-    <!--          href="https://github.com/spen428"-->
-    <!--          target="_blank"-->
-    <!--        >-->
-    <!--          <button-->
-    <!--            class="inline-flex items-center gap-2 rounded-lg border px-4 py-2"-->
-    <!--          >-->
-    <!--            {{ $t("open_my_github") }}-->
-    <!--            <img-->
-    <!--              src="/icons/external-link.svg"-->
-    <!--              :alt="$t('opens_an_external_site')"-->
-    <!--              class="h-4 brightness-0 invert"-->
-    <!--            />-->
-    <!--          </button>-->
-    <!--        </a>-->
-    <!--      </div>-->
+      <div class="flex flex-col items-center gap-6 xs:hidden">
+        <router-link to="/portfolio/cv" class="text-cv-white">
+          <button class="rounded-lg border px-4 py-2">
+            {{ $t("view_my_cv") }}
+          </button>
+        </router-link>
+        <router-link to="/portfolio/projects" class="text-cv-white">
+          <button class="rounded-lg border px-4 py-2">
+            {{ $t("browse_my_portfolio") }}
+          </button>
+        </router-link>
+        <a
+          class="text-cv-white"
+          href="https://github.com/spen428"
+          target="_blank"
+        >
+          <button
+            class="inline-flex items-center gap-2 rounded-lg border px-4 py-2"
+          >
+            {{ $t("open_my_github") }}
+            <img
+              src="/icons/external-link.svg"
+              :alt="$t('opens_an_external_site')"
+              class="h-4 brightness-0 invert"
+            />
+          </button>
+        </a>
+      </div>
 
-    <!--      <button class="w-8">-->
-    <!--        <img-->
-    <!--          src="/icons/arrow-ios-downward-outline.svg"-->
-    <!--          :alt="$t('scrollDown')"-->
-    <!--          class="animate-bounce invert"-->
-    <!--        />-->
-    <!--      </button>-->
-    <!--    </div>-->
-    <!--    <div class="">-->
-    <!--      <h1-->
-    <!--        class="text-shadow-cv-white pb-16 text-center font-serif text-[min(1.85rem,5vw)] font-bold italic text-cv-white"-->
-    <!--      >-->
-    <!--        What can I do?-->
-    <!--      </h1>-->
-    <!--    </div>-->
+      <button class="w-8">
+        <img
+          src="/icons/arrow-ios-downward-outline.svg"
+          :alt="$t('scrollDown')"
+          class="animate-bounce invert"
+        />
+      </button>
+    </div>
+    <div class="">
+      <h1
+        class="text-shadow-cv-dark-purple pb-16 text-center font-serif text-[min(1.85rem,5vw)] font-bold italic text-cv-white"
+      >
+        So, what can you do?
+      </h1>
+    </div>
     <TechScreen
       class="mx-auto"
       title-html="<em>Responsive</em> and <em>reactive</em> web pages"
@@ -111,7 +113,7 @@
       class="mx-auto"
       title-html="<em>Robust</em> client-server applications"
       subtitle-html="crafted with care using <em>test-driven development</em>."
-      :image-urls="['/projects/jbooru.png', '/projects/tenhou.png']"
+      :image-urls="['/projects/jbooru-270.jpg', '/projects/tenhou.png']"
       :technologies="[
         { name: 'Kotlin', logoUrl: '/tech-logos/kotlin.svg' },
         { name: 'Java', logoUrl: '/tech-logos/java.svg' },
@@ -128,15 +130,22 @@
       alt=""
       class="mx-auto w-8 brightness-0 invert"
     />
-    <div class="text-cv-white">
-      <h1 class="ml-4 mr-4 text-[min(1.85rem,5vw)]">
-        Cloud configuration on <em>Azure</em> and <em>AWS</em>
-      </h1>
-      <h2 class="mx-4 self-end text-right">
-        for automated build and release pipelines, on-demand scaling, and health
-        monitoring.
-      </h2>
-    </div>
+    <TechScreen
+      class="mx-auto"
+      title-html="Cloud configuration and system administration"
+      subtitle-html="for continuous build and release pipelines, on-demand scaling, and disaster recovery."
+      :image-urls="['/projects/portainer.jpg', '/projects/pipelines.png']"
+      :technologies="[
+        { name: 'Amazon Web Services', logoUrl: '/tech-logos/aws.svg' },
+        { name: 'Microsoft Azure', logoUrl: '/tech-logos/azure.svg' },
+        { name: 'Linux', logoUrl: '/tech-logos/linux.svg' },
+        { name: 'Windows Server', logoUrl: '/tech-logos/windows-server.svg' },
+        { name: 'Docker', logoUrl: '/tech-logos/docker.svg' },
+        { name: 'PostgreSQL', logoUrl: '/tech-logos/postgresql.svg' },
+        { name: 'Portainer', logoUrl: '/tech-logos/portainer.svg' },
+        { name: 'Proxmox', logoUrl: '/tech-logos/proxmox.png' },
+      ]"
+    />
     <div class="mb-16 flex flex-col items-center gap-6">
       <router-link to="/portfolio/cv" class="text-cv-white">
         <button class="rounded-lg border px-4 py-2">
@@ -172,16 +181,13 @@
 .text-shadow-cv-dark-purple {
   text-shadow: 0 0 2rem rgb(var(--cv-dark-purple));
 }
-
-.text-shadow-cv-white {
-  text-shadow: 0 0 2rem rgb(var(--cv-white));
-}
 </style>
 
 <script setup lang="ts">
 import DataService from "@/services/data.service";
 import { onBeforeUnmount, onMounted, ref } from "vue";
 import TechScreen from "@/pages/home/components/TechScreen.vue";
+import LoadingSkeleton from "@/components/LoadingSkeleton.vue";
 
 const personalInfo = DataService.getPersonalInfo();
 
