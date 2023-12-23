@@ -4,7 +4,7 @@
     ref="container"
   >
     <div
-      class="flex h-[calc(100vh-5rem)] flex-col items-center justify-between gap-8 py-12"
+      class="flex h-[calc(100vh-9rem)] flex-col items-center justify-between gap-8 py-12"
     >
       <div
         class="flex flex-col items-center gap-2 whitespace-nowrap duration-1000 ease-in-out"
@@ -43,7 +43,13 @@
 
       <LandingPageLinks class="xs:hidden" />
 
-      <button class="w-8">
+      <div id="separator" />
+
+      <button
+        class="absolute top-[calc(100dvh-4rem)] w-8 duration-300"
+        :style="{ opacity: scrollTop == 0 ? 1 : 0 }"
+        @click="scrollToSecondPage()"
+      >
         <img
           src="/icons/arrow-ios-downward-outline.svg"
           :alt="$t('scrollDown')"
@@ -138,13 +144,18 @@ import LandingPageLinks from "@/pages/home/LandingPageLinks.vue";
 
 const personalInfo = DataService.getPersonalInfo();
 
+function scrollToSecondPage() {
+  const documentRoot = document.querySelector("html")!;
+  documentRoot.scrollTop = window.innerHeight;
+}
+
 const scrollTop = ref(0);
 const container = ref();
 const containerHeightPx = ref(0);
 const containerWidthPx = ref(0);
 
 const updateScrollPosition = () => {
-  const documentRoot = document.getElementsByTagName("html")[0];
+  const documentRoot = document.querySelector("html")!;
   scrollTop.value = documentRoot.scrollTop;
 };
 
