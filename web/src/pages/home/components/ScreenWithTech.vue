@@ -1,25 +1,29 @@
 <template>
   <div
-    class="flex items-center justify-center overflow-hidden md:gap-8 lg:gap-16"
+    class="flex h-72 w-full items-center justify-center overflow-hidden md:gap-4 lg:mx-8 lg:gap-16"
     :class="{ 'flex-row-reverse': imagePosition === 'right' }"
   >
-    <img
-      :src="imageUrl"
-      alt=""
-      class="relative h-fit rounded-lg border-2 border-cv-white md:static md:w-1/2"
-      :class="{
-        'right-[calc(45%+1rem)] xs:right-[calc(35%+1rem)]':
-          imagePosition === 'left',
-        'left-[calc(45%+1rem)] xs:left-[calc(35%+1rem)]':
-          imagePosition === 'right',
-      }"
-    />
     <div
-      class="absolute flex w-[calc(45%-3rem)] flex-col gap-8 xs:w-[calc(35%-3rem)] md:static md:w-1/4 md:gap-4"
+      class="relative mx-4 h-full md:static"
       :class="{
-        'left-[calc(55%+1rem)] xs:left-[calc(65%+1rem)]':
-          imagePosition === 'left',
-        'right-[calc(55%+1rem)] xs:right-[calc(65%+1rem)]':
+        'right-3/5': imagePosition === 'left',
+        'xs:right-1/3': imagePosition === 'left',
+        'left-3/5': imagePosition === 'right',
+        'xs:left-1/3': imagePosition === 'right',
+      }"
+    >
+      <img
+        :src="imageUrl"
+        alt=""
+        class="h-full rounded-lg border-2 border-cv-white"
+      />
+    </div>
+
+    <div
+      class="flex h-full shrink grow flex-col justify-between md:static"
+      :class="{
+        'left-[calc(55%+1rem)] xs:left-[calc(70%)]': imagePosition === 'left',
+        'right-[calc(55%+1rem)] xs:right-[calc(70%)]':
           imagePosition === 'right',
       }"
     >
@@ -29,18 +33,12 @@
         class="inline-flex items-center gap-4"
         :class="{ 'self-end': index % 2 == 1 }"
       >
-        <img
-          :src="tech.logoUrl"
-          alt=""
-          class="h-[min(4rem,5vw)] w-[min(4rem,5vw)]"
-        />
-        <span
-          class="font-bold"
-          :style="{ color: tech.color ?? '#fff' }"
-          v-text="tech.name"
-        />
+        <img :src="tech.logoUrl" alt="" class="h-12 w-12" />
+        <span class="font-bold" :style="{ color: '#fff' }" v-text="tech.name" />
       </div>
     </div>
+
+    <div id="spacer" class="shrink grow bg-pink-500">.</div>
   </div>
 </template>
 
