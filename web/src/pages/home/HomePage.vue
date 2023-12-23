@@ -92,26 +92,10 @@
         '/projects/raffld-270.jpg',
       ]"
       :technologies="[
-        {
-          name: ' Angular ',
-          logoUrl: '/tech-logos/angular.svg',
-          color: '#e23237',
-        },
-        {
-          name: 'React',
-          logoUrl: '/tech-logos/react.svg',
-          color: '#61dafb',
-        },
-        {
-          name: 'JavaScript',
-          logoUrl: '/tech-logos/javascript.svg',
-          color: '#f7df1e',
-        },
-        {
-          name: 'TypeScript',
-          logoUrl: '/tech-logos/typescript.svg',
-          color: '#007acc',
-        },
+        { name: 'Angular', logoUrl: '/tech-logos/angular.svg' },
+        { name: 'Vue.js', logoUrl: '/tech-logos/vue.svg' },
+        { name: 'JavaScript', logoUrl: '/tech-logos/javascript.svg' },
+        { name: 'TypeScript', logoUrl: '/tech-logos/typescript.svg' },
         { name: 'RxJS', logoUrl: '/tech-logos/rxjs.svg' },
         { name: 'NgRx', logoUrl: '/tech-logos/ngrx.svg' },
         { name: 'Tailwind CSS', logoUrl: '/tech-logos/tailwind.svg' },
@@ -127,13 +111,10 @@
       class="mx-auto"
       title-html="<em>Robust</em> client-server applications"
       subtitle-html="crafted with care using <em>test-driven development</em>."
-      :image-urls="['/projects/ce.thumb.jpg', '/projects/cv.thumb.jpg']"
+      :image-urls="['/projects/jbooru.png', '/projects/tenhou.png']"
       :technologies="[
         { name: 'Kotlin', logoUrl: '/tech-logos/kotlin.svg' },
-        {
-          name: 'Java',
-          logoUrl: '/tech-logos/java.svg',
-        },
+        { name: 'Java', logoUrl: '/tech-logos/java.svg' },
         { name: 'Python', logoUrl: '/tech-logos/python.svg' },
         { name: 'C#', logoUrl: '/tech-logos/csharp.svg' },
         { name: '.NET Core', logoUrl: '/tech-logos/netcore.svg' },

@@ -39,7 +39,7 @@
         />
         <span
           class="text-[min(1rem,4vw)] font-bold xs:text-base"
-          :style="{ color: '#fff' }"
+          :style="{ color: tech.color ?? '#fff' }"
           v-text="tech.name"
         />
       </div>
