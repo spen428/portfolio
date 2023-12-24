@@ -33,6 +33,7 @@ async function exportPdf(url, filename) {
   await pageToPdf(page, url, filename, browser);
 }
 
+// eslint-disable-next-line no-undef
 const args = process.argv.slice(2);
 const urlArg = args.find((arg) => arg.startsWith("--url="));
 const url = urlArg ? urlArg.split("=")[1] : null;
