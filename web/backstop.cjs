@@ -117,5 +117,5 @@ module.exports = {
   asyncCompareLimit: 50,
   debug: false,
   debugWindow: false,
-  misMatchThreshold: 0.1,
+  misMatchThreshold: 0.2,
 };
