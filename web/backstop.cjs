@@ -19,7 +19,7 @@ function getPdfScenarios() {
   }));
 }
 
-const baseUrl = "http://localhost:5173";
+const baseUrl = process.env.BASE_URL ?? "http://localhost:5173";
 
 const deviceViewports = [
   {

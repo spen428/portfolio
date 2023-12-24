@@ -1,0 +1,22 @@
+services:
+  web:
+    image: nginxinc/nginx-unprivileged
+    volumes:
+      - ./web/dist:/usr/share/nginx/html:ro
+      - ./web/nginx:/etc/nginx/conf.d:ro
+    ports:
+      - '5173:8080/tcp'
+  api:
+    image: api:latest
+    user: node
+    environment:
+      - CORS_ORIGINS="http://web"
+      - SERVER_PORT=15000
+  vr:
+    image: backstopjs/backstopjs:6.3.2
+    volumes:
+      - ./web:/src
+    depends_on:
+      - web
+      - api
+    command: "test --configPath=backstop.cjs"

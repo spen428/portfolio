@@ -1,14 +1,43 @@
 services:
   web:
-    image: nginxinc/nginx-unprivileged
+    image: node:20.10
     volumes:
-      - ./web/dist:/usr/share/nginx/html:ro
-      - ./web/nginx:/etc/nginx/conf.d:ro
-    ports:
-      - '5173:8080/tcp'
-  api:
-    image: api:latest
-    user: node
+      - ./web:/app
+    working_dir: /app
     environment:
-      - CORS_ORIGINS="http://web"
+      - VITE_API_URL=http://api:15000
+    healthcheck:
+      test: [ "CMD-SHELL", "curl -f http://localhost:5173/ || exit 1" ]
+      interval: 1s
+      timeout: 1s
+      retries: 60
+      start_period: 10s
+    command: /bin/bash -c "npm install -g vite && vite --host"
+  api:
+    image: node:20.10
+    volumes:
+      - ./api:/app
+    working_dir: /app
+    environment:
+      - CORS_ORIGINS=http://web:5173
+      - SERVER_HOSTNAME=0.0.0.0
       - SERVER_PORT=15000
+    healthcheck:
+      test: ["CMD-SHELL", "curl -s http://localhost:15000/ | grep 'OK' || exit 1"]
+      interval: 1s
+      timeout: 1s
+      retries: 60
+      start_period: 10s
+    command: /bin/bash -c "npm install express && node dist/index.js"
+  vr:
+    image: backstopjs/backstopjs:6.3.2
+    volumes:
+      - ./web:/src
+    environment:
+      - BASE_URL=http://web:5173
+    depends_on:
+      web:
+        condition: service_healthy
+      api:
+        condition: service_healthy
+    command: "test --configPath=backstop.cjs"

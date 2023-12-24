@@ -2,13 +2,19 @@ import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
 import { RequestWithLocale } from "./model";
 import DataService from "./data.service";
-import { corsOrigins, fallbackLocale, serverPort } from "./config";
+import {
+  corsOrigins,
+  fallbackLocale,
+  serverHostname,
+  serverPort,
+} from "./config";
 import cors from "cors";
 
 dotenv.config();
 
 const app: Express = express();
 const port = serverPort;
+const hostname = serverHostname;
 
 app.use(cors({ origin: corsOrigins }));
 console.log("CORS policy is allowing requests from the following origins:");
@@ -29,6 +35,6 @@ app.get("/cv/personal-info", (req: RequestWithLocale, res: Response) => {
   return res.json(DataService.getPersonalInfo(locale));
 });
 
-app.listen(port, () => {
-  console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
+app.listen(port, hostname, () => {
+  console.log(`⚡️[server]: Server is running at http://${hostname}:${port}`);
 });
