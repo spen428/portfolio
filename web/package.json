@@ -11,7 +11,7 @@
     "lint": "prettier --check . && eslint . --ext .vue,.js,.ts",
     "lint:fix": "prettier --write . && eslint . --ext .vue,.js,.ts --fix",
     "test-local": "pnpm run pdf && bash scripts/generate-pngs-from-pdf.sh && BASE_URL=foo backstop test --configPath=backstop.cjs",
-    "test": "cd ../docker && docker-compose -f compose.test.yml up --abort-on-container-exit vr",
+    "test": "cd ../docker && docker-compose -f compose.test.yml up --abort-on-container-exit vr; docker-compose -f compose.test.yml down",
     "approve": "backstop approve --configPath=backstop.cjs"
   },
   "dependencies": {
