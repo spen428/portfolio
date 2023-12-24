@@ -35,6 +35,7 @@ services:
     image: backstopjs/backstopjs:6.3.2
     volumes:
       - ../web:/src
+      - ./scripts/backstop-command.sh:/backstop-command.sh:ro
     environment:
       - BASE_URL=http://web:5173
     depends_on:
@@ -42,4 +43,4 @@ services:
         condition: service_healthy
       api:
         condition: service_healthy
-    command: "test --configPath=backstop.cjs"
+    entrypoint: /bin/bash /backstop-command.sh

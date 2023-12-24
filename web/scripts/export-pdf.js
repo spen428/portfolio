@@ -1,12 +1,7 @@
 import fs from "fs";
 import puppeteer from "puppeteer";
 
-async function exportPdf(url, filename) {
-  const browser = await puppeteer.launch({
-    headless: "new",
-    args: ["--no-sandbox", "--disable-setuid-sandbox"],
-  });
-  const page = await browser.newPage();
+async function pageToPdf(page, url, filename, browser) {
   await page.goto(url, { waitUntil: "networkidle0" });
   await page.waitForFunction(() => !document.querySelector("#skeleton"));
 
@@ -29,7 +24,23 @@ async function exportPdf(url, filename) {
   console.log("Exported PDF to " + path);
 }
 
+async function exportPdf(url, filename) {
+  const browser = await puppeteer.launch({
+    headless: "new",
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+  });
+  const page = await browser.newPage();
+  await pageToPdf(page, url, filename, browser);
+}
+
+const args = process.argv.slice(2);
+const urlArg = args.find((arg) => arg.startsWith("--url="));
+const url = urlArg ? urlArg.split("=")[1] : null;
+if (!url) {
+  throw new Error("--url=<base_url> argument is required but was not found");
+}
+
 (async () => {
-  await exportPdf("http://localhost:5173/cv", "CV");
-  await exportPdf("http://localhost:5173/test/breakpoints", "breakpoints");
+  await exportPdf(`${url}/cv`, "CV");
+  await exportPdf(`${url}/test/breakpoints`, "breakpoints");
 })();
