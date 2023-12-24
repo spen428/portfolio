@@ -14,7 +14,7 @@ services:
       interval: 1s
       timeout: 1s
       retries: 60
-      start_period: 1s
+      start_period: 10s
     command: /bin/bash /api-command.sh
   web:
     image: node:20.10
@@ -29,7 +29,7 @@ services:
       interval: 1s
       timeout: 1s
       retries: 60
-      start_period: 1s
+      start_period: 10s
     command: /bin/bash /web-command.sh
   vr:
     image: backstopjs/backstopjs:6.3.2
