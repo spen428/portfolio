@@ -26,7 +26,7 @@
       </div>
       <div class="flex flex-col items-center gap-1">
         <span class="flex text-xs">
-          <img src="/icons/globe.svg" alt="Site:" class="mr-1 inline w-4" />
+          <img src="/icons/globe.svg" alt="Web:" class="mr-1 inline w-4" />
           {{ personalInfo.cvUrl.short }}
         </span>
         <span class="flex text-xs">

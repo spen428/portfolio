@@ -6,7 +6,7 @@
     />
     <BusinessCardBack
       :style="{ height: '55mm', width: cardWidth }"
-      :personal-info="personalInfo"
+      :cv-data="cvData"
     />
   </div>
 </template>
@@ -19,6 +19,7 @@ import LocaleService from "@/services/locale.service";
 import { computed } from "vue";
 
 const personalInfo = DataService.getPersonalInfo();
+const cvData = DataService.getCvData();
 const cardWidth = computed(() => {
   const locale = LocaleService.getCurrentLocale();
   return locale.value === "ja-JP" ? "99mm" : "85mm";
