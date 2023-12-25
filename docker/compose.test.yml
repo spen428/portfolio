@@ -1,9 +1,11 @@
+version: '3.9'
+
 services:
   api:
     image: node:20.10
     volumes:
       - ../api:/src:ro
-      - ./scripts:/scripts:ro
+      - ./scripts/api-command.sh:/api-command.sh:ro
     working_dir: /app
     environment:
       - CORS_ORIGINS=http://web:5173
@@ -15,12 +17,12 @@ services:
       timeout: 5s
       retries: 10
       start_period: 10s
-    command: /bin/bash /scripts/api-command.sh
+    command: /bin/bash /api-command.sh
   web:
     image: node:20.10
     volumes:
       - ../web:/src:ro
-      - ./scripts:/scripts:ro
+      - ./scripts/web-command.sh:/web-command.sh:ro
     working_dir: /app
     environment:
       - VITE_API_URL=http://api:15000
@@ -30,12 +32,12 @@ services:
       timeout: 5s
       retries: 10
       start_period: 10s
-    command: /bin/bash /scripts/web-command.sh
+    command: /bin/bash /web-command.sh
   vr:
     image: backstopjs/backstopjs:6.3.2
     volumes:
       - ../web:/src
-      - ./scripts:/scripts:ro
+      - ./scripts/backstop-command.sh:/backstop-command.sh:ro
     environment:
       - BASE_URL=http://web:5173
     healthcheck:
@@ -48,4 +50,4 @@ services:
         condition: service_healthy
       api:
         condition: service_healthy
-    entrypoint: /bin/bash /scripts/backstop-command.sh
+    entrypoint: /bin/bash /backstop-command.sh

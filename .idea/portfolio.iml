@@ -9,6 +9,7 @@
       <excludeFolder url="file://$MODULE_DIR$/web/.cache" />
       <excludeFolder url="file://$MODULE_DIR$/web/bin" />
       <excludeFolder url="file://$MODULE_DIR$/web/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/web/.pnpm-store" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
