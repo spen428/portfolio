@@ -1,6 +1,9 @@
 #!/bin/bash
+
+projectName=$(< /proc/sys/kernel/random/uuid)
+
 function dc() {
-  docker-compose -f compose.test.yml "$@"
+  docker-compose --project-name $projectName -f compose.test.yml "$@"
 }
 
 cd "$(dirname "$0")/../../docker" || exit 4
