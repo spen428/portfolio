@@ -7,6 +7,7 @@ composeFile="compose.test.yml"
 
 #pnpm run test
 cd docker || exit 4
+find ../web
 docker-compose -f $composeFile build && \
   docker-compose -f $composeFile up --abort-on-container-exit vr
 result=$?
