@@ -8,20 +8,14 @@ services:
     image: web
     build: ../web
   vr:
-    image: backstopjs/backstopjs:6.3.2
-    volumes:
-      - ../web:/src
-      - ./scripts/backstop-command.sh:/backstop-command.sh:ro
-    environment:
-      - BASE_URL=http://web:5173
-    healthcheck:
-      test: [ "CMD-SHELL", "true" ]
-      interval: 10s
-      timeout: 5s
-      retries: 3
+    image: vr
+    build:
+      context: ../web
+      dockerfile: Backstop.Dockerfile
     depends_on:
       web:
         condition: service_healthy
       api:
         condition: service_healthy
-    entrypoint: /bin/bash -c "apt-get update && apt-get install -y ghostscript && npm install -g pnpm && pnpm install && node scripts/export-pdf.js --url=http://web:5173 && . scripts/generate-pngs-from-pdf.sh && backstop test --configPath=backstop.cjs"
+    volumes:
+      - ../web:/src
