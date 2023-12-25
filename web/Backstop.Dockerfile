@@ -4,7 +4,8 @@ RUN apt-get update && \
     apt-get install -y ghostscript bash && \
     npm install -g pnpm
 
-WORKDIR /app
+WORKDIR /src
+VOLUME /src
 
 COPY package.json pnpm-lock.yaml ./
 RUN pnpm install

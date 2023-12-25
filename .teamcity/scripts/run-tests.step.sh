@@ -6,11 +6,11 @@ function dc() {
 cd "$(dirname "$0")/../../docker" || exit 4
 
 dc build && \
-  dc up --abort-on-container-exit vr && \
-  dc run --rm -detach --name=pre_vr --entrypoint "sleep infinity" vr && \
-  docker cp pre_vr:/app/visual_regressions/ci_report    ../web/visual_regressions && \
-  docker cp pre_vr:/app/visual_regressions/html_report  ../web/visual_regressions && \
-  docker cp pre_vr:/app/visual_regressions/bitmaps_test ../web/visual_regressions && \
+  dc up --abort-on-container-exit vr || true && \
+  dc run --rm --detach --name=post_vr --volume=vr_volume --entrypoint "sleep infinity" vr && \
+  docker cp post_vr:/src/visual_regressions/ci_report    ../web/visual_regressions && \
+  docker cp post_vr:/src/visual_regressions/html_report  ../web/visual_regressions && \
+  docker cp post_vr:/src/visual_regressions/bitmaps_test ../web/visual_regressions && \
   dc down
 result=$?
 
