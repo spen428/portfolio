@@ -7,13 +7,11 @@ COPY . .
 RUN npm install -g pnpm && chown -R node:node /opt/app
 
 USER node
-ENV CORS_ORIGINS=http://web:5173
-ENV SERVER_HOSTNAME=0.0.0.0
-ENV SERVER_PORT=15000
+ENV VITE_API_URL=http://api:15000
 
 RUN pnpm install && pnpm run build:prod
 
 HEALTHCHECK --interval=10s --timeout=5s \
-    CMD curl -s http://localhost:$SERVER_PORT | grep 'OK' || exit 1
+    CMD curl -f http://localhost:5173 || exit 1
 
 ENTRYPOINT pnpm run prod
