@@ -5,8 +5,8 @@ export DEBUG=express:router
 export SERVER_PORT=15000
 composeFile="compose.test.yml"
 
-find .
 #pnpm run test
+cd docker || exit 4
 docker-compose -f $composeFile build && \
   docker-compose -f $composeFile up --abort-on-container-exit vr
 result=$?
