@@ -12,6 +12,7 @@ COPY . .
 ENV CORS_ORIGINS=http://web:5173
 ENV SERVER_HOSTNAME=0.0.0.0
 ENV SERVER_PORT=15000
+ENV DEBUG=express:router
 RUN pnpm run build:prod
 
 HEALTHCHECK --interval=10s --timeout=5s \

@@ -1,6 +1,5 @@
 node_modules/
 dist/
-visual_regressions/
 .cache/
 .pnpm-store/
 bin/
