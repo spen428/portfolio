@@ -17,5 +17,3 @@ services:
         condition: service_healthy
       api:
         condition: service_healthy
-    volumes:
-      - ../web:/src
