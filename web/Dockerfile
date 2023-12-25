@@ -5,7 +5,7 @@ RUN npm install -g pnpm && chown -R node:node /opt/app
 USER node
 
 FROM pnpm
-COPY package.json pnpm-lock.yaml
+COPY package.json pnpm-lock.yaml /opt/app/
 RUN pnpm install
 
 COPY . .
