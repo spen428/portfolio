@@ -10,29 +10,33 @@
         'md:mr-4': mediaPosition === 'right',
       }"
     >
-      <LoadingSkeleton v-if="mediaLoading" class="h-[270px] w-[480px]" />
+      <LoadingSkeleton
+        v-if="mediaLoading"
+        class="h-[270px] w-[480px] rounded-lg"
+      />
       <video
         v-if="mediaUrl.endsWith('.webm')"
         v-show="!mediaLoading"
         @canplaythrough="mediaLoading = false"
-        class="rounded-lg border-2 border-cv-white"
-        width="480"
-        height="270"
+        class="h-[270px] w-[480px] rounded-lg border-2 border-cv-white object-cover"
         loop
+        muted
+        playsinline
         :autoplay="autoplayVideos"
       >
-        <source :src="mediaUrl" type="video/webm" />
+        <source
+          :src="autoplayVideos ? mediaUrl : `${mediaUrl}#t=0.01`"
+          type="video/webm"
+        />
       </video>
       <img
         v-else
         v-show="!mediaLoading"
-        height="270"
         @load="mediaLoading = false"
         @error="mediaLoading = false"
         :src="mediaUrl"
         alt=""
-        class="rounded-lg border-2 border-cv-white object-cover"
-        width="480"
+        class="h-[270px] w-[480px] rounded-lg border-2 border-cv-white object-cover"
       />
     </div>
 

@@ -11,6 +11,7 @@
     "lint": "prettier --check . && eslint . --ext .vue,.js,.ts",
     "lint:fix": "prettier --write . && eslint . --ext .vue,.js,.ts --fix",
     "test": "bash ../.teamcity/scripts/run-tests.step.sh",
+    "test-local": "backstop test --configPath=backstop.cjs",
     "approve": "backstop approve --configPath=backstop.cjs"
   },
   "dependencies": {
