@@ -16,14 +16,13 @@ module.exports = {
     },
     screens: {
       xs: "576px",
-      ...defaultTheme.screens,
+      sm: "640px",
+      md: "768px",
+      lg: printOrMinWidth("960px"),
+      xl: printOrMinWidth("1280px"),
+      "2xl": printOrMinWidth("1536px"),
     },
     extend: {
-      screens: {
-        lg: printOrMinWidth("960px"),
-        xl: printOrMinWidth(defaultTheme.screens.xl),
-        "2xl": printOrMinWidth(defaultTheme.screens["2xl"]),
-      },
       colors: {
         "default-text": "#696969",
         "cv-dark-purple": "#421c52",

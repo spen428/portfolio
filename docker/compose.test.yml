@@ -1,0 +1,27 @@
+version: '3.9'
+
+services:
+  api:
+    image: api
+    build: ../api
+    environment:
+      - DATA_PATH=$DATA_PATH
+  web:
+    image: web
+    build: ../web
+  vr:
+    image: vr
+    build:
+      context: ../web
+      dockerfile: Backstop.Dockerfile
+    depends_on:
+      web:
+        condition: service_healthy
+      api:
+        condition: service_healthy
+    volumes:
+      - vr_volume:/src
+
+volumes:
+  vr_volume:
+    name: $VR_VOLUME_NAME

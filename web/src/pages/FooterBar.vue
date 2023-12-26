@@ -3,7 +3,8 @@
     <div class="mx-auto max-w-7xl px-2 lg:px-8">
       <p class="all-caps p-4 text-justify text-[0.6rem] text-cv-white">
         <i18n-t keypath="copyright_notice">
-          <span>{{ fullName }}</span>
+          <LoadingSkeleton v-if="!fullName" class="inline-block !h-2 !w-32" />
+          <span v-else>{{ fullName }}</span>
           <a
             href="https://www.npmjs.com/package/license-checker"
             class="text-cv-white underline"
@@ -21,5 +22,7 @@
 </template>
 
 <script setup lang="ts">
+import LoadingSkeleton from "@/components/LoadingSkeleton.vue";
+
 defineProps<{ fullName: string }>();
 </script>

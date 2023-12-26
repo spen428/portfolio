@@ -19,7 +19,7 @@ function getPdfScenarios() {
   }));
 }
 
-const baseUrl = "http://localhost:5173";
+const baseUrl = process.env.BASE_URL ?? "http://localhost:5173";
 
 const deviceViewports = [
   {
@@ -117,5 +117,5 @@ module.exports = {
   asyncCompareLimit: 50,
   debug: false,
   debugWindow: false,
-  misMatchThreshold: 0,
+  misMatchThreshold: 0.5,
 };

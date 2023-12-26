@@ -12,3 +12,11 @@ services:
     environment:
       - CORS_ORIGINS="http://web"
       - SERVER_PORT=15000
+  vr:
+    image: backstopjs/backstopjs:6.3.2
+    volumes:
+      - ./web:/src
+    depends_on:
+      - web
+      - api
+    command: "test --configPath=backstop.cjs"

@@ -1,14 +1,43 @@
 #!/bin/bash
-source "$(dirname "$0")/common.step.sh"
 
-export DEBUG=express:router
-export SERVER_PORT=15000
+dc() {
+  docker-compose --project-name "$PROJECT_NAME" -f compose.test.yml "$@"
+}
 
-start_services $SERVER_PORT 5173
+start_stack() {
+  dc build || exit 5
+  docker volume rm "$VR_VOLUME_NAME" || echo "It is safe to ignore the above error."
+  dc up --abort-on-container-exit vr || exit 6
+}
 
-pnpm run test
-result=$?
+stop_stack() {
+  dc down || exit 9
+  docker volume rm "$VR_VOLUME_NAME" || exit 10
+}
 
-stop_services
+copy_results_to_host() {
+  rm -rfv ../web/{bin,html_report,ci_report,pdf_test}
+  container=$(dc run --rm --detach --volume="$VR_VOLUME_NAME" --entrypoint "sleep infinity" vr || exit 7)
+  docker cp $container:/src/visual_regressions/ci_report ../web/visual_regressions && \
+    docker cp $container:/src/visual_regressions/html_report ../web/visual_regressions && \
+    docker cp $container:/src/visual_regressions/bitmaps_test ../web/visual_regressions && \
+    docker cp $container:/src/visual_regressions/pdf_test ../web/visual_regressions && \
+    docker cp $container:/src/bin ../web || exit 8
+}
 
-exit $result
+# shellcheck disable=SC2155
+export PROJECT_NAME="$(< /proc/sys/kernel/random/uuid)"
+# shellcheck disable=SC2155
+export VR_VOLUME_NAME="$(< /proc/sys/kernel/random/uuid)"
+export DATA_PATH="${DATA_PATH:-dummy}"
+
+cd "$(dirname "$0")/../../docker" || exit 4
+
+start_stack
+copy_results_to_host
+stop_stack
+
+if [ ! -r "../web/visual_regressions/ci_report/xunit.xml" ]; then
+  echo "No test report could be found after running the tests."
+  exit 33
+fi

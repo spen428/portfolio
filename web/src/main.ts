@@ -15,6 +15,9 @@ import { messages } from "@/services/locale.service";
 
 const router = createRouter({
   history: createWebHistory(),
+  scrollBehavior: (_to, _from, savedPosition) => {
+    return savedPosition ?? { top: 0 };
+  },
   routes: [
     { path: "/", redirect: "/portfolio" },
     { path: "/cv", component: CvPage },
