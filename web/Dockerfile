@@ -8,7 +8,9 @@ FROM pnpm
 COPY package.json pnpm-lock.yaml /opt/app/
 RUN pnpm install
 
-COPY . .
+COPY *.json *.ts *.cjs *.html ./
+COPY src src
+COPY public public
 ENV NODE_ENV=production
 ENV VITE_API_URL=http://api:15000
 RUN pnpm run build:prod

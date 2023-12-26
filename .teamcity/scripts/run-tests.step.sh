@@ -11,7 +11,7 @@ export VR_VOLUME_NAME=$(< /proc/sys/kernel/random/uuid)
 
 dc build
 docker volume rm "$VR_VOLUME_NAME" || true
-dc up --abort-on-container-exit vr || true
+dc up --abort-on-container-exit vr
 container=$(dc run --rm --detach --volume="$VR_VOLUME_NAME" --entrypoint "sleep infinity" vr)
 docker cp $container:/src/visual_regressions/ci_report    ../web/visual_regressions
 docker cp $container:/src/visual_regressions/html_report  ../web/visual_regressions

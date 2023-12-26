@@ -8,7 +8,9 @@ FROM pnpm
 COPY package.json pnpm-lock.yaml /opt/app/
 RUN pnpm install
 
-COPY . .
+COPY tsconfig.json .
+COPY src src
+COPY res res
 ENV NODE_ENV=production
 ENV CORS_ORIGINS=http://web:5173
 ENV SERVER_HOSTNAME=0.0.0.0

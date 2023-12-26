@@ -4,6 +4,8 @@ services:
   api:
     image: api
     build: ../api
+    environment:
+      - DATA_PATH=$DATA_PATH
   web:
     image: web
     build: ../web
