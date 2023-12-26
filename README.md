@@ -5,6 +5,10 @@ This is an SPA and backend for my portfolio and CV (curriculum vitae; résumé),
 
 <div style="text-align: center"><img alt="Home page preview" src="doc/landing-page-loading.png" /></div>
 
+**Responsive** - Developed with mobile, tablet, and desktop in mind. _NB: Dummy data is used in previews._
+
+<div style="text-align: center"><img alt="Responsivity preview" src="doc/portfolio-responsivity-demo.gif" /></div>
+
 ## Getting started
 
 This software expects you to have **Node 20.x** and uses the **pnpm** package manager.

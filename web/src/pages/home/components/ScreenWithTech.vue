@@ -10,7 +10,18 @@
         'md:mr-4': imagePosition === 'right',
       }"
     >
+      <video
+        v-if="imageUrl.endsWith('.webm')"
+        class="rounded-lg border-2 border-cv-white"
+        width="480"
+        height="270"
+        loop
+        :autoplay="autoplayVideos"
+      >
+        <source :src="imageUrl" type="video/webm" />
+      </video>
       <img
+        v-else
         :src="imageUrl"
         alt=""
         class="rounded-lg border-2 border-cv-white object-cover"
@@ -48,11 +59,15 @@
 </template>
 
 <script setup lang="ts">
+import ConfigurationService from "@/services/configuration.service";
+
 export type TechnologyWithIcon = {
   name: string;
   logoUrl: string;
   color?: string;
 };
+
+const autoplayVideos = ConfigurationService.isAnimationEnabled();
 
 defineProps<{
   imagePosition: "left" | "right";

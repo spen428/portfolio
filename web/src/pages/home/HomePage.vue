@@ -64,7 +64,7 @@
       title-html="<em>Responsive</em> and <em>reactive</em> web pages"
       subtitle-html="using tried and tested <em>industry-favourite</em> technologies."
       :image-urls="[
-        '/animated/portfolio-responsivity-demo.gif',
+        '/animated/portfolio-responsivity-demo.webm',
         '/projects/raffld-270.jpg',
       ]"
       :technologies="[
