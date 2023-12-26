@@ -1,17 +1,16 @@
 {
   "name": "web",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite --host",
     "prod": "NODE_ENV=production vite --host",
     "build:prod": "NODE_ENV=production vue-tsc --noEmit && vite build",
-    "pdf": "node scripts/export-pdf.js --url=http://localhost:5173",
     "lint": "prettier --check . && eslint . --ext .vue,.js,.ts",
     "lint:fix": "prettier --write . && eslint . --ext .vue,.js,.ts --fix",
     "test": "bash ../.teamcity/scripts/run-tests.step.sh",
-    "test-local": "backstop test --configPath=backstop.cjs",
+    "test:without-docker": "backstop test --configPath=backstop.cjs",
     "approve": "backstop approve --configPath=backstop.cjs"
   },
   "dependencies": {
