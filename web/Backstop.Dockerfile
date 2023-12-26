@@ -10,7 +10,8 @@ VOLUME /src
 COPY package.json pnpm-lock.yaml ./
 RUN pnpm install
 COPY backstop.cjs .
-COPY visual_regressions/ visual_regressions/
+COPY visual_regressions/bitmaps_reference visual_regressions/bitmaps_reference
+COPY visual_regressions/engine_scripts visual_regressions/engine_scripts
 COPY scripts/ scripts/
 
 ENV BASE_URL=http://web:5173
