@@ -1,40 +1,46 @@
 <template>
   <div
     class="flex w-full flex-col items-center justify-center gap-10 overflow-hidden md:h-72 md:flex-row md:gap-4 lg:mx-8 lg:gap-16"
-    :class="{ 'md:flex-row-reverse': imagePosition === 'right' }"
+    :class="{ 'md:flex-row-reverse': mediaPosition === 'right' }"
   >
     <div
       class="mx-4 md:static md:w-1/2"
       :class="{
-        'md:ml-4': imagePosition === 'left',
-        'md:mr-4': imagePosition === 'right',
+        'md:ml-4': mediaPosition === 'left',
+        'md:mr-4': mediaPosition === 'right',
       }"
     >
+      <LoadingSkeleton v-if="mediaLoading" class="h-[270px] w-[480px]" />
       <video
-        v-if="imageUrl.endsWith('.webm')"
+        v-if="mediaUrl.endsWith('.webm')"
+        v-show="!mediaLoading"
+        @canplaythrough="mediaLoading = false"
         class="rounded-lg border-2 border-cv-white"
         width="480"
         height="270"
         loop
         :autoplay="autoplayVideos"
       >
-        <source :src="imageUrl" type="video/webm" />
+        <source :src="mediaUrl" type="video/webm" />
       </video>
       <img
         v-else
-        :src="imageUrl"
+        v-show="!mediaLoading"
+        height="270"
+        @load="mediaLoading = false"
+        @error="mediaLoading = false"
+        :src="mediaUrl"
         alt=""
         class="rounded-lg border-2 border-cv-white object-cover"
         width="480"
-        height="270"
       />
     </div>
 
     <div
       class="flex h-full w-9/12 grow flex-wrap justify-between gap-4 xs:w-3/5 md:static md:w-auto md:shrink md:flex-col md:flex-nowrap"
       :class="{
-        'md:mr-8': imagePosition === 'left',
-        'md:ml-8': imagePosition === 'right',
+        'md:mr-8': mediaPosition === 'left',
+        'md:ml-8': mediaPosition === 'right',
       }"
     >
       <div
@@ -60,6 +66,8 @@
 
 <script setup lang="ts">
 import ConfigurationService from "@/services/configuration.service";
+import { ref } from "vue";
+import LoadingSkeleton from "@/components/LoadingSkeleton.vue";
 
 export type TechnologyWithIcon = {
   name: string;
@@ -68,10 +76,11 @@ export type TechnologyWithIcon = {
 };
 
 const autoplayVideos = ConfigurationService.isAnimationEnabled();
+const mediaLoading = ref(true);
 
 defineProps<{
-  imagePosition: "left" | "right";
-  imageUrl: string;
+  mediaPosition: "left" | "right";
+  mediaUrl: string;
   technologies: TechnologyWithIcon[];
 }>();
 </script>

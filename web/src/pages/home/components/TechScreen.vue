@@ -5,13 +5,13 @@
       <h2 class="mx-4 self-end text-right" v-html="subtitleHtml" />
     </div>
     <ScreenWithTech
-      image-position="left"
-      :image-url="imageUrls[0]"
+      media-position="left"
+      :media-url="mediaUrls[0]"
       :technologies="technologies.slice(0, 4)"
     />
     <ScreenWithTech
-      image-position="right"
-      :image-url="imageUrls[1]"
+      media-position="right"
+      :media-url="mediaUrls[1]"
       :technologies="technologies.slice(4, 8)"
     />
   </div>
@@ -26,6 +26,6 @@ defineProps<{
   titleHtml: string;
   subtitleHtml: string;
   technologies: TechnologyWithIcon[];
-  imageUrls: string[];
+  mediaUrls: string[];
 }>();
 </script>

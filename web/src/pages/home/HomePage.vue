@@ -63,7 +63,7 @@
       class="mx-auto"
       title-html="<em>Responsive</em> and <em>reactive</em> web pages"
       subtitle-html="using tried and tested <em>industry-favourite</em> technologies."
-      :image-urls="[
+      :media-urls="[
         '/animated/portfolio-responsivity-demo.webm',
         '/projects/raffld-270.jpg',
       ]"
@@ -87,7 +87,7 @@
       class="mx-auto"
       title-html="<em>Robust</em> client-server applications"
       subtitle-html="crafted with care using <em>test-driven development</em>."
-      :image-urls="['/projects/jbooru-270.jpg', '/projects/tenhou.png']"
+      :media-urls="['/projects/jbooru-270.jpg', '/projects/tenhou.png']"
       :technologies="[
         { name: 'Kotlin', logoUrl: '/tech-logos/kotlin.svg' },
         { name: 'Java', logoUrl: '/tech-logos/java.svg' },
@@ -108,7 +108,7 @@
       class="mx-auto"
       title-html="Cloud configuration and system administration"
       subtitle-html="for continuous build and release pipelines, on-demand scaling, and disaster recovery."
-      :image-urls="['/projects/portainer.jpg', '/projects/pipelines.png']"
+      :media-urls="['/projects/portainer.jpg', '/projects/pipelines.png']"
       :technologies="[
         { name: 'Amazon Web Services', logoUrl: '/tech-logos/aws.svg' },
         { name: 'Microsoft Azure', logoUrl: '/tech-logos/azure.svg' },

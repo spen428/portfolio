@@ -10,8 +10,7 @@
     "pdf": "node scripts/export-pdf.js --url=http://localhost:5173",
     "lint": "prettier --check . && eslint . --ext .vue,.js,.ts",
     "lint:fix": "prettier --write . && eslint . --ext .vue,.js,.ts --fix",
-    "test-local": "pnpm run pdf && bash scripts/generate-pngs-from-pdf.sh && BASE_URL=foo backstop test --configPath=backstop.cjs",
-    "test": "docker-compose -f ../docker/compose.test.yml build && docker-compose -f ../docker/compose.test.yml up --abort-on-container-exit vr; docker-compose -f ../docker/compose.test.yml down",
+    "test": "bash ../.teamcity/scripts/run-tests.step.sh",
     "approve": "backstop approve --configPath=backstop.cjs"
   },
   "dependencies": {
