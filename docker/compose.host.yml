@@ -5,9 +5,13 @@ services:
     environment:
       - DATA_PATH=$DATA_PATH
       - CORS_ORIGINS=$CORS_ORIGINS
+    networks:
+      - cv
   web:
     image: portfolio-web:${IMAGE_TAG}
     container_name: portfolio-web
+    networks:
+      - cv
 networks:
   cv:
     external: true
