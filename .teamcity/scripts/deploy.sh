@@ -8,6 +8,11 @@ if [ -z "$PORTAINER_ACCESS_TOKEN" ]; then
   exit 1
 fi
 
+if [ -z "$CORS_ORIGINS" ]; then
+  echo "You must export the CORS_ORIGINS environment variable."
+  exit 1
+fi
+
 echo "Getting endpoints..."
 endpoints="$(curl -X GET "https://portainer.lykat.co.uk/api/endpoints?excludeSnapshots=true" -H "X-API-Key: $PORTAINER_ACCESS_TOKEN")"
 echo "$endpoints"
@@ -35,7 +40,8 @@ fi
 echo "Creating stack '$PORTAINER_STACK_NAME' on endpoint $PORTAINER_ENDPOINT_ID..."
 
 sed 's/$DATA_PATH/'"$DATA_PATH/" "$(dirname "$0")/../../docker/compose.host.yml" \
-  | sed 's/${IMAGE_TAG}/'"$IMAGE_TAG/" > compose.yml
+  | sed 's/${IMAGE_TAG}/'"$IMAGE_TAG/" \
+  | sed 's/$CORS_ORIGINS/'"$CORS_ORIGINS/" > compose.yml
 
 echo "Deploying the following docker-compose body:"
 cat compose.yml
