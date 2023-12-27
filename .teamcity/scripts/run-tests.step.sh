@@ -31,8 +31,6 @@ export VR_VOLUME_NAME="$(< /proc/sys/kernel/random/uuid)"
 export DATA_PATH="${DATA_PATH:-"dummy"}"
 export IMAGE_TAG="${IMAGE_TAG:-"$COMMIT_HASH-test"}"
 
-echo "$IMAGE_TAG" > "$(dirname "$0")/../../image-tag.txt"
-
 cd "$(dirname "$0")/../../docker" || exit 4
 
 start_stack
