@@ -33,13 +33,19 @@ if [ "$stacks" != "[]" ]; then
 fi
 
 echo "Creating stack '$PORTAINER_STACK_NAME' on endpoint $PORTAINER_ENDPOINT_ID..."
+
 sed 's/$DATA_PATH/'"$DATA_PATH/" "$(dirname "$0")/../../docker/compose.host.yml" \
   | sed 's/${IMAGE_TAG}/'"$IMAGE_TAG/" > compose.yml
+
+echo "Deploying the following docker-compose body:"
+cat compose.yml
+
 status_code=$(curl -w '%{http_code}' -o body.txt -X POST "https://portainer.lykat.co.uk/api/stacks/create/standalone/file?endpointId=$PORTAINER_ENDPOINT_ID" \
    -H "X-API-Key: $PORTAINER_ACCESS_TOKEN" \
    -F "Name=$PORTAINER_STACK_NAME" \
    -F "Env=[{\"name\":\"DATA_PATH\",\"value\":\"$DATA_PATH\"},{\"name\":\"IMAGE_TAG\",\"value\":\"$IMAGE_TAG\"}]" \
    -F "file=@compose.yml")
+
 rm compose.yml
 cat body.txt && rm body.txt
 if [ $status_code -ge 400 ]; then
