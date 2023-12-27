@@ -2,6 +2,8 @@
 source "$(dirname "$0")/common.sh"
 export DATA_PATH="data"
 export IMAGE_TAG="$COMMIT_HASH"
+echo "$IMAGE_TAG" > "$(dirname "$0")/../../image-tag.txt"
+
 source "$(dirname "$0")/run-tests.step.sh"
 
 cd "$(dirname "$0")../.." || exit 76
