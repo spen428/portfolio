@@ -5,22 +5,22 @@ IMAGE_TAG="${IMAGE_TAG:-$(< image-tag.txt)}"
 
 if [ -z "$PORTAINER_ACCESS_TOKEN" ]; then
   echo "You must export the PORTAINER_ACCESS_TOKEN environment variable."
-  exit 1
+  exit 19
 fi
 
 if [ -z "$CORS_ORIGINS" ]; then
   echo "You must export the CORS_ORIGINS environment variable."
-  exit 1
+  exit 18
 fi
 
 if [ -z "$VITE_API_URL" ]; then
   echo "You must export the VITE_API_URL environment variable."
-  exit 1
+  exit 17
 fi
 
 if [ -z "$IMAGE_TAG" ]; then
   echo "You must export the IMAGE_TAG environment variable."
-  exit 1
+  exit 16
 fi
 
 echo "Getting endpoints..."
