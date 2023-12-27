@@ -10,6 +10,8 @@ services:
   web:
     image: portfolio-web:${IMAGE_TAG}
     container_name: portfolio-web
+    environment:
+      - VITE_API_URL=$VITE_API_URL
     networks:
       - cv
 networks:
