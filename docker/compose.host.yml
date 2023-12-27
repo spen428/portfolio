@@ -1,10 +1,13 @@
 services:
   api:
     image: portfolio-api:${IMAGE_TAG}
+    container_name: portfolio-api
     environment:
       - DATA_PATH=$DATA_PATH
+      - CORS_ORIGINS=$CORS_ORIGINS
   web:
     image: portfolio-web:${IMAGE_TAG}
+    container_name: portfolio-web
 networks:
   cv:
     external: true

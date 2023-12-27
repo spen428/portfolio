@@ -1,3 +1,4 @@
+#!/bin/bash
 PORTAINER_STACK_NAME="portfolio"
 DATA_PATH="${DATA_PATH:-"data"}"
 IMAGE_TAG="$(< image-tag.txt)"
@@ -38,9 +39,9 @@ fi
 
 echo "Creating stack '$PORTAINER_STACK_NAME' on endpoint $PORTAINER_ENDPOINT_ID..."
 
-sed 's/$DATA_PATH/'"$DATA_PATH/" "$(dirname "$0")/../../docker/compose.host.yml" \
-  | sed 's/${IMAGE_TAG}/'"$IMAGE_TAG/" \
-  | sed 's/$CORS_ORIGINS/'"$CORS_ORIGINS/" > compose.yml
+sed 's#$DATA_PATH#'"${DATA_PATH}#" "$(dirname "$0")/../../docker/compose.host.yml" \
+  | sed 's#${IMAGE_TAG}#'"${IMAGE_TAG}#" \
+  | sed 's#$CORS_ORIGINS#'"${CORS_ORIGINS}#" > compose.yml
 
 echo "Deploying the following docker-compose body:"
 cat compose.yml
