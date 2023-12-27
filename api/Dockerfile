@@ -12,7 +12,7 @@ COPY tsconfig.json .
 COPY src src
 COPY res res
 ENV NODE_ENV=production
-ENV ORIGINS=http://web:5173
+ENV CORS_ORIGINS=http://web:5173
 ENV SERVER_HOSTNAME=0.0.0.0
 ENV SERVER_PORT=15000
 ENV DEBUG=express:router
