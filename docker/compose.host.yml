@@ -1,12 +1,14 @@
 services:
   api:
     image: portfolio-api:${IMAGE_TAG}
+    container_name: portfolio-api
     environment:
       - DATA_PATH=$DATA_PATH
     networks:
       - cv
   web:
     image: portfolio-web:${IMAGE_TAG}
+    container_name: portfolio-web
     networks:
       - cv
 networks:
