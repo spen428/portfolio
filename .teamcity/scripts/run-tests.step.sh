@@ -1,4 +1,5 @@
 #!/bin/bash
+source "$(dirname "$0")/common.sh"
 
 dc() {
   docker-compose --project-name "$PROJECT_NAME" -f compose.test.yml "$@"
@@ -25,11 +26,10 @@ copy_results_to_host() {
     docker cp $container:/src/bin ../web || exit 8
 }
 
-# shellcheck disable=SC2155
 export PROJECT_NAME="$(< /proc/sys/kernel/random/uuid)"
-# shellcheck disable=SC2155
 export VR_VOLUME_NAME="$(< /proc/sys/kernel/random/uuid)"
-export DATA_PATH="${DATA_PATH:-dummy}"
+export DATA_PATH="${DATA_PATH:-"dummy"}"
+export IMAGE_TAG="${IMAGE_TAG:-"$COMMIT_HASH-test"}"
 
 cd "$(dirname "$0")/../../docker" || exit 4
 
