@@ -1,6 +1,5 @@
 #!/bin/bash
 source "$(dirname "$0")/common.sh"
-PORTAINER_ACCESS_TOKEN="ptr_NykXmtGTIcypnRvukiwC42rJUO66M5vDwsBZvsRx6Uo="
 PORTAINER_STACK_NAME="portfolio"
 DATA_PATH="${DATA_PATH:-"data"}"
 IMAGE_TAG="$COMMIT_HASH"
