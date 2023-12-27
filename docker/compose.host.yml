@@ -4,6 +4,7 @@ services:
     container_name: portfolio-api
     environment:
       - DATA_PATH=$DATA_PATH
+      - CORS_ORIGINS=$CORS_ORIGINS
     networks:
       - cv
   web:
