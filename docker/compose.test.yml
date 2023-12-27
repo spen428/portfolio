@@ -1,13 +1,11 @@
-version: '3.9'
-
 services:
   api:
-    image: api
+    image: portfolio-api:${IMAGE_TAG}
     build: ../api
     environment:
       - DATA_PATH=$DATA_PATH
   web:
-    image: web
+    image: portfolio-web:${IMAGE_TAG}
     build: ../web
   vr:
     image: vr
