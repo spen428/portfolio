@@ -3,8 +3,12 @@ services:
     image: portfolio-api:${IMAGE_TAG}
     environment:
       - DATA_PATH=$DATA_PATH
+    networks:
+      - cv
   web:
     image: portfolio-web:${IMAGE_TAG}
+    networks:
+      - cv
 networks:
   cv:
     external: true
