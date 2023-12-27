@@ -1,7 +1,9 @@
 #!/bin/bash
+source "$(dirname "$0")/common.sh"
+PORTAINER_ACCESS_TOKEN="ptr_NykXmtGTIcypnRvukiwC42rJUO66M5vDwsBZvsRx6Uo="
 PORTAINER_STACK_NAME="portfolio"
 DATA_PATH="${DATA_PATH:-"data"}"
-IMAGE_TAG="$(< image-tag.txt)"
+IMAGE_TAG="$COMMIT_HASH"
 
 if [ -z "$PORTAINER_ACCESS_TOKEN" ]; then
   echo "You must export the PORTAINER_ACCESS_TOKEN environment variable."
