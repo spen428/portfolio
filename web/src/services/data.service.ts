@@ -68,6 +68,10 @@ export default new (class DataService {
     return this.cache.projects;
   }
 
+  public getProject(id: string): Ref<Project | undefined> {
+    return computed(() => this.cache.projects.value.find((p) => p.id === id));
+  }
+
   public getPersonalInfo(): Ref<PersonalInfo> {
     return this.cache.personalInfo;
   }

@@ -1,14 +1,13 @@
 <template>
-  <div>
+  <div v-if="project">
     <div
       class="pointer-events-none relative select-none"
       :style="{ width: size, height: size }"
     >
-      <a-or-router-link
+      <router-link
         @mouseover="hovering = true"
         @mouseout="hovering = false"
-        :is-external="!!project?.url?.external"
-        :href="project?.url?.url ?? ''"
+        :to="'/portfolio/projects/' + project.id"
         class="diamond pointer-events-auto z-10 border-transparent duration-1000"
         :class="{
           'border-opacity-80': isActive,
@@ -18,7 +17,7 @@
         }"
       >
         <img
-          v-if="project && project.thumbnailUrl"
+          v-if="project.thumbnailUrl"
           :src="project.thumbnailUrl"
           :alt="project.title"
           class="fit-to-diamond bg-cv-white transition-opacity"
@@ -26,10 +25,9 @@
             opacity: isActive ? 0.3 : 1,
           }"
         />
-      </a-or-router-link>
+      </router-link>
 
       <div
-        v-if="project"
         class="pointer-events-none flex h-full flex-col items-center justify-center gap-2 overflow-hidden"
       >
         <span id="spacer" v-if="project.iconUrls?.length" class="h-9" />

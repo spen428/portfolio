@@ -1,6 +1,6 @@
 [
   {
-    "id": 0,
+    "id": "0",
     "thumbnailUrl": "/projects/helix.jpg",
     "title": "HELIX Digital Twin",
     "url": {
@@ -26,7 +26,7 @@
     ]
   },
   {
-    "id": 1,
+    "id": "1",
     "thumbnailUrl": "/projects/footsteps2.png",
     "title": "Parenta EYFS Tracker",
     "url": {
@@ -48,7 +48,7 @@
     ]
   },
   {
-    "id": 2,
+    "id": "2",
     "thumbnailUrl": "/projects/regexp-vis.png",
     "title": "Regular Language Visualizer",
     "url": {
@@ -61,7 +61,7 @@
     ]
   },
   {
-    "id": 3,
+    "id": "3",
     "thumbnailUrl": "/projects/cv.thumb.jpg",
     "title": "CV & Portfolio Website",
     "url": {
@@ -79,7 +79,7 @@
     ]
   },
   {
-    "id": 4,
+    "id": "4",
     "thumbnailUrl": "/projects/jong.png",
     "title": "Jong",
     "url": {
@@ -91,7 +91,7 @@
     ]
   },
   {
-    "id": 5,
+    "id": "5",
     "thumbnailUrl": "/projects/ancolle.png",
     "title": "AnColle",
     "url": {
@@ -103,7 +103,7 @@
     ]
   },
   {
-    "id": 6,
+    "id": "6",
     "thumbnailUrl": "/projects/tenhou.png",
     "title": "Custom Tenhou.net Client",
     "url": {
@@ -115,7 +115,7 @@
     ]
   },
   {
-    "id": 7,
+    "id": "7",
     "thumbnailUrl": "/projects/raffld.png",
     "title": "Raffl'd: The Experience Lottery",
     "url": {

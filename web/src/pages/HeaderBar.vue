@@ -87,7 +87,12 @@ const { t, te } = useI18n();
 const currentRoute = computed(() => useRouter().currentRoute.value);
 const pageTitle = computed(() => {
   const routeName = currentRoute.value.name?.toString();
-  if (!routeName) return props.fullName;
+  if (!routeName) {
+    if (currentRoute.value.path === "/portfolio") {
+      return props.fullName;
+    }
+    return "";
+  }
   const key = `routes.${routeName}`;
   return te(key) ? t(key) : routeName;
 });
