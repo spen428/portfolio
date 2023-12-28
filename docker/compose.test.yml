@@ -8,7 +8,7 @@ services:
     image: portfolio-web:${IMAGE_TAG}
     build: ../web
   vr:
-    image: vr
+    image: vr:${IMAGE_TAG}
     build:
       context: ../web
       dockerfile: Backstop.Dockerfile

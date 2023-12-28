@@ -10,8 +10,8 @@ start_stack() {
 }
 
 stop_stack() {
-  dc down || exit 9
-  docker volume rm "$VR_VOLUME_NAME" || exit 10
+  dc down --volumes --remove-orphans || exit 9
+  docker image rm "vr:$IMAGE_TAG" || exit 10
 }
 
 copy_results_to_host() {
@@ -23,6 +23,11 @@ copy_results_to_host() {
     docker cp $container:/src/visual_regressions/pdf_test ../web/visual_regressions && \
     docker cp $container:/src/bin ../web || exit 8
 }
+
+if [ -z "$IMAGE_TAG" ]; then
+  echo "You must export the IMAGE_TAG environment variable."
+  exit 16
+fi
 
 export PROJECT_NAME="$(< /proc/sys/kernel/random/uuid)"
 export VR_VOLUME_NAME="$(< /proc/sys/kernel/random/uuid)"
