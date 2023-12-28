@@ -32,21 +32,26 @@
         v-if="project"
         class="pointer-events-none flex h-full flex-col items-center justify-center gap-2 overflow-hidden"
       >
+        <span id="spacer" v-if="project.iconUrls?.length" class="h-9" />
         <h2
           class="text-shadow z-10 h-6 text-sm text-cv-white duration-500"
           :style="{ opacity: isActive ? 1 : 0 }"
-          :class="{ 'mt-10': project.iconUrls?.length }"
         >
           {{ project.title }}
         </h2>
-        <img
-          v-for="iconUrl in project.iconUrls ?? []"
-          :key="iconUrl"
-          :src="iconUrl"
-          alt=""
-          class="z-10 h-6 w-6 duration-500"
-          :style="{ opacity: isActive ? 1 : 0 }"
-        />
+        <div
+          v-if="project.iconUrls?.length"
+          class="z-10 flex w-3/5 flex-wrap justify-center gap-2"
+        >
+          <img
+            v-for="iconUrl in project.iconUrls"
+            :key="iconUrl"
+            :src="iconUrl"
+            alt=""
+            class="h-6 w-6 duration-500"
+            :style="{ opacity: isActive ? 1 : 0 }"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -106,6 +111,6 @@ const props = defineProps<{
   active: boolean;
 }>();
 
-const hovering = ref(true);
+const hovering = ref(false);
 const isActive = computed(() => hovering.value || props.active);
 </script>

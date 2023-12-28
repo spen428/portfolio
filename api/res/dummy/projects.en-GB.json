@@ -7,7 +7,23 @@
       "url": "https://binnies.com/sectors/digital/digital-products/helix/",
       "external": true
     },
-    "iconUrls": [ "/tech-logos/angular.svg" ]
+    "iconUrls": [
+      "/tech-logos/angular.svg",
+      "/tech-logos/csharp.svg",
+      "/tech-logos/netcore.svg",
+      "/tech-logos/postgresql.svg",
+      "/tech-logos/docker.svg",
+      "/tech-logos/azure.svg",
+      "/tech-logos/xunit.svg",
+      "/tech-logos/swagger.svg",
+      "/tech-logos/typescript.svg",
+      "/tech-logos/javascript.svg",
+      "/tech-logos/ngrx.svg",
+      "/tech-logos/rxjs.svg",
+      "/tech-logos/primeng.svg",
+      "/tech-logos/windows-server.svg",
+      "/tech-logos/mssql.svg"
+    ]
   },
   {
     "id": 1,
@@ -16,7 +32,20 @@
     "url": {
       "url": "https://www.parenta.com/eyfs-tracker/",
       "external": true
-    }
+    },
+    "iconUrls": [
+      "/tech-logos/angular.svg",
+      "/tech-logos/csharp.svg",
+      "/tech-logos/netcore.svg",
+      "/tech-logos/aws.svg",
+      "/tech-logos/xunit.svg",
+      "/tech-logos/swagger.svg",
+      "/tech-logos/typescript.svg",
+      "/tech-logos/javascript.svg",
+      "/tech-logos/windows-server.svg",
+      "/tech-logos/mssql.svg",
+      "/tech-logos/bamboo.svg"
+    ]
   },
   {
     "id": 2,
@@ -25,7 +54,11 @@
     "url": {
       "url": "https://github.com/spen428/regexp-vis",
       "external": true
-    }
+    },
+    "iconUrls": [
+      "/tech-logos/java.svg",
+      "/tech-logos/python.svg"
+    ]
   },
   {
     "id": 3,
@@ -35,7 +68,15 @@
       "url": "https://github.com/spen428/portfolio",
       "external": true
     },
-    "iconUrls": [ "/tech-logos/vue.svg" ]
+    "iconUrls": [
+      "/tech-logos/vue.svg",
+      "/tech-logos/typescript.svg",
+      "/tech-logos/javascript.svg",
+      "/tech-logos/docker.svg",
+      "/tech-logos/portainer.svg",
+      "/tech-logos/linux.svg",
+      "/tech-logos/teamcity.svg"
+    ]
   },
   {
     "id": 4,
@@ -44,7 +85,10 @@
     "url": {
       "url": "https://github.com/spen428/jong",
       "external": true
-    }
+    },
+    "iconUrls": [
+      "/tech-logos/java.svg"
+    ]
   },
   {
     "id": 5,
@@ -53,7 +97,10 @@
     "url": {
       "url": "https://github.com/spen428/ancolle",
       "external": true
-    }
+    },
+    "iconUrls": [
+      "/tech-logos/java.svg"
+    ]
   },
   {
     "id": 6,
@@ -62,7 +109,10 @@
     "url": {
       "url": "https://github.com/spen428/custom_tenhou_client",
       "external": true
-    }
+    },
+    "iconUrls": [
+      "/tech-logos/python.svg"
+    ]
   },
   {
     "id": 7,
@@ -71,6 +121,18 @@
     "url": {
       "url": "#",
       "external": false
-    }
+    },
+    "iconUrls": [
+      "/tech-logos/react.svg",
+      "/tech-logos/java.svg",
+      "/tech-logos/spring.svg",
+      "/tech-logos/postgresql.svg",
+      "/tech-logos/docker.svg",
+      "/tech-logos/xunit.svg",
+      "/tech-logos/swagger.svg",
+      "/tech-logos/javascript.svg",
+      "/tech-logos/linux.svg",
+      "/tech-logos/jenkins.svg"
+    ]
   }
 ]
