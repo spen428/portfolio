@@ -20,6 +20,7 @@ export interface Project {
   title: string;
   url: { url: string; external: boolean };
   thumbnailUrl: string;
+  iconUrls?: string[];
 }
 
 export interface PersonalInfo {

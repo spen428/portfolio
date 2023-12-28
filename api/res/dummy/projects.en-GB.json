@@ -6,7 +6,8 @@
     "url": {
       "url": "https://binnies.com/sectors/digital/digital-products/helix/",
       "external": true
-    }
+    },
+    "iconUrls": [ "/tech-logos/angular.svg" ]
   },
   {
     "id": 1,
@@ -33,7 +34,8 @@
     "url": {
       "url": "https://github.com/spen428/portfolio",
       "external": true
-    }
+    },
+    "iconUrls": [ "/tech-logos/vue.svg" ]
   },
   {
     "id": 4,

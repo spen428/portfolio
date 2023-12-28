@@ -28,17 +28,26 @@
         />
       </a-or-router-link>
 
-      <h2
+      <div
         v-if="project"
-        class="pointer-events-none flex h-full items-center justify-center overflow-hidden"
+        class="pointer-events-none flex h-full flex-col items-center justify-center gap-2 overflow-hidden"
       >
-        <span
-          class="text-shadow z-10 p-12 text-center text-sm text-cv-white duration-500"
+        <h2
+          class="text-shadow z-10 h-6 text-sm text-cv-white duration-500"
           :style="{ opacity: isActive ? 1 : 0 }"
+          :class="{ 'mt-10': project.iconUrls?.length }"
         >
           {{ project.title }}
-        </span>
-      </h2>
+        </h2>
+        <img
+          v-for="iconUrl in project.iconUrls ?? []"
+          :key="iconUrl"
+          :src="iconUrl"
+          alt=""
+          class="z-10 h-6 w-6 duration-500"
+          :style="{ opacity: isActive ? 1 : 0 }"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -97,6 +106,6 @@ const props = defineProps<{
   active: boolean;
 }>();
 
-const hovering = ref(false);
+const hovering = ref(true);
 const isActive = computed(() => hovering.value || props.active);
 </script>
