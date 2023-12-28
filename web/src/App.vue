@@ -8,16 +8,19 @@
 import LocaleService from "@/services/locale.service";
 import DataService from "@/services/data.service";
 import { onBeforeMount, watch } from "vue";
+import { useI18n } from "vue-i18n";
 
 LocaleService.setCurrentLocale(
   LocaleService.getDefaultLocaleFromLocalStorage()
 );
 DataService.initializeWatches();
 
+const { t } = useI18n();
+
 const fullName = DataService.getFullName();
 onBeforeMount(() =>
   watch(fullName, () => {
-    document.title = `${fullName.value} ― CV & Portfolio`;
+    document.title = `${fullName.value} ― ${t("webpage_title")}`;
   })
 );
 </script>
