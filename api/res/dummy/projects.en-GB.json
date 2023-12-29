@@ -23,7 +23,8 @@
       "/tech-logos/primeng.svg",
       "/tech-logos/windows-server.svg",
       "/tech-logos/mssql.svg"
-    ]
+    ],
+    "abstract": "HELIX is a digital twin platform"
   },
   {
     "id": "1",
@@ -76,7 +77,9 @@
       "/tech-logos/portainer.svg",
       "/tech-logos/linux.svg",
       "/tech-logos/teamcity.svg"
-    ]
+    ],
+    "abstract": "A Vue.js website that hosts my CV in web, mobile, and printable formats and showcases the hardware and software projects I have taken part in over the years. It is written like a detailed blog but should be treated more as a tool for self-reference and demonstration because nobody would bother to read through it leisurely.",
+    "articleBody": "<img src='/projects/cv.thumb.jpg' style='height: 16rem;' />"
   },
   {
     "id": "4",

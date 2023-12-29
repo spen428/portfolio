@@ -8,33 +8,54 @@ import * as fs from "fs";
 import { dataPath, fallbackLocale } from "./config";
 
 export default new (class DataService {
-  public getCvData(locale: string): CvData {
-    return this.readFileForLocale("cv-data", locale);
+  public async getCvData(locale: string): Promise<CvData> {
+    return await this.readFileForLocale("cv-data", locale);
   }
 
-  public getProjects(locale: string): Project[] {
-    return this.readFileForLocale("projects", locale);
+  public async getProjects(locale: string): Promise<Project[]> {
+    return await this.readFileForLocale("projects", locale);
   }
 
-  public getPersonalInfo(locale: string): PersonalInfo {
-    return this.readFileForLocale("personal-info", locale);
+  public async getPersonalInfo(locale: string): Promise<PersonalInfo> {
+    return await this.readFileForLocale("personal-info", locale);
   }
 
-  public getCommercialExperience(locale: string): CommercialExperience {
-    return this.readFileForLocale("commercial-experience", locale);
+  public async getCommercialExperience(
+    locale: string
+  ): Promise<CommercialExperience> {
+    return await this.readFileForLocale("commercial-experience", locale);
   }
 
-  private readFileForLocale<T>(path: string, locale: string): T {
-    let fullPath = `${dataPath}/${path}.${locale}.json`;
-    if (!fs.existsSync(fullPath)) {
-      console.warn(`File does not exist: ${fullPath}`);
-      fullPath = `${dataPath}/${path}.${fallbackLocale}.json`;
-      if (!fs.existsSync(fullPath)) {
-        throw new Error(`No data for ${path}`);
-      }
+  private async readFileForLocale<T>(
+    subPath: string,
+    locale: string
+  ): Promise<T> {
+    const filePath = this.firstExtantFileOrNull([
+      `${dataPath}/${subPath}.${locale}.js`,
+      `${dataPath}/${subPath}.${locale}.json`,
+      `${dataPath}/${subPath}.${fallbackLocale}.js`,
+      `${dataPath}/${subPath}.${fallbackLocale}.json`,
+    ]);
+    if (!filePath) {
+      throw new Error(`No data for ${subPath}`);
     }
 
-    const buffer = fs.readFileSync(fullPath);
-    return JSON.parse(buffer.toString()) as T;
+    if (filePath.endsWith(".json")) {
+      const buffer = fs.readFileSync(filePath);
+      return JSON.parse(buffer.toString()) as T;
+    }
+    if (filePath.endsWith(".js")) {
+      const module = await import(filePath);
+      return module.default as T;
+    }
+    throw new Error(`File has an unhandled file extension: ${filePath}`);
+  }
+
+  private firstExtantFileOrNull(paths: string[]): string | null {
+    for (const path of paths) {
+      if (fs.existsSync(path)) return path;
+      console.debug(`[DataService] File does not exist: ${path}`);
+    }
+    return null;
   }
 })();
