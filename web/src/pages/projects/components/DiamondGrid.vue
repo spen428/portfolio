@@ -25,7 +25,7 @@
 import ProjectDiamond from "@/pages/projects/components/ProjectDiamond.vue";
 import type { Ref } from "vue";
 import { computed, onBeforeUnmount, onMounted, ref } from "vue";
-import type { Project } from "@/services/data.model";
+import type { Project } from "@shared/data.model";
 
 defineProps<{ projects: Project[] }>();
 

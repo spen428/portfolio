@@ -55,7 +55,7 @@
 <script setup lang="ts">
 import CvArticle from "@/pages/cv/components/CvArticle.vue";
 import CvSection from "@/pages/cv/components/CvSection.vue";
-import type { CvData } from "@/services/data.model";
+import type { CvData } from "@shared/data.model";
 import LoadingSkeleton from "@/components/LoadingSkeleton.vue";
 
 defineProps<{ cvData: CvData }>();

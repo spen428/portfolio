@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-import type { PersonalInfo } from "@/services/data.model";
+import type { PersonalInfo } from "@shared/data.model";
 
 defineProps<{ personalInfo: PersonalInfo }>();
 </script>

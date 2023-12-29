@@ -54,7 +54,7 @@
 </template>
 
 <script setup lang="ts">
-import type { PersonalInfo } from "@/services/data.model";
+import type { PersonalInfo } from "@shared/data.model";
 import LoadingSkeleton from "@/components/LoadingSkeleton.vue";
 
 defineProps<{ personalInfo: PersonalInfo }>();
