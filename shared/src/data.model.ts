@@ -16,10 +16,13 @@ interface Section {
 }
 
 export interface Project {
-  id: number;
+  id: string;
   title: string;
   url: { url: string; external: boolean };
   thumbnailUrl: string;
+  iconUrls?: string[];
+  abstract?: string;
+  articleBody?: string;
 }
 
 export interface PersonalInfo {

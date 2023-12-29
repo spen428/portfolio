@@ -3,7 +3,7 @@ import type {
   CvData,
   PersonalInfo,
   Project,
-} from "./data.model";
+} from "@shared/data.model";
 import * as fs from "fs";
 import { dataPath, fallbackLocale } from "./config";
 

@@ -1,4 +1,4 @@
-import type { CvData, PersonalInfo, Project } from "@/services/data.model";
+import type { CvData, PersonalInfo, Project } from "@shared/data.model";
 import axios from "axios";
 import {
   computed,
