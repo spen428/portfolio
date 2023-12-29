@@ -27,18 +27,13 @@
         <router-link to="/portfolio/projects" class="text-cv-white">
           {{ $t("portfolio") }}
         </router-link>
-        <a
-          class="group inline-flex items-center gap-1 text-cv-white"
+        <a-or-router-link
           href="https://github.com/spen428"
-          target="_blank"
+          color="white"
+          external
         >
           GitHub
-          <img
-            src="/icons/external-link.svg"
-            :alt="$t('opens_an_external_site')"
-            class="h-4 w-0 brightness-0 invert duration-200 group-hover:w-4"
-          />
-        </a>
+        </a-or-router-link>
       </div>
       <!--<button class="aspect-square h-full w-8 py-6 xs:hidden">-->
       <!--  <img-->
@@ -81,6 +76,7 @@ import { computed, onBeforeUnmount, onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
 import { useI18n } from "vue-i18n";
 import LocaleSwitcher from "@/pages/LocaleSwitcher.vue";
+import AOrRouterLink from "@/components/AOrRouterLink.vue";
 
 const { t, te } = useI18n();
 

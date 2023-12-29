@@ -70,21 +70,20 @@
 
 <script setup lang="ts">
 import ConfigurationService from "@/services/configuration.service";
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import LoadingSkeleton from "@/components/LoadingSkeleton.vue";
-
-export type TechnologyWithIcon = {
-  name: string;
-  logoUrl: string;
-  color?: string;
-};
+import DataService from "@/services/data.service";
 
 const autoplayVideos = ConfigurationService.isAnimationEnabled();
 const mediaLoading = ref(true);
 
-defineProps<{
+const technologies = computed(() =>
+  DataService.getTechnologiesById(props.technologyIds)
+);
+
+const props = defineProps<{
   mediaPosition: "left" | "right";
   mediaUrl: string;
-  technologies: TechnologyWithIcon[];
+  technologyIds: string[];
 }>();
 </script>

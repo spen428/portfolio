@@ -20,7 +20,7 @@ export interface Project {
   title: string;
   url: { url: string; external: boolean };
   thumbnailUrl: string;
-  iconUrls?: string[];
+  technologyIds?: string[];
   abstract?: string;
   articleBody?: string;
 }
@@ -50,4 +50,11 @@ export interface CommercialExperience {
     introduction: string;
     sections: { title: string; body: string }[];
   }[];
+}
+
+export interface TechnologyWithIcon {
+  id: string;
+  name: string;
+  logoUrl: string;
+  color?: string;
 }

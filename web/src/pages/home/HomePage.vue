@@ -67,15 +67,15 @@
         '/animated/portfolio-responsivity-demo.webm',
         '/projects/raffld-270.jpg',
       ]"
-      :technologies="[
-        { name: 'Angular', logoUrl: '/tech-logos/angular.svg' },
-        { name: 'Vue.js', logoUrl: '/tech-logos/vue.svg' },
-        { name: 'JavaScript', logoUrl: '/tech-logos/javascript.svg' },
-        { name: 'TypeScript', logoUrl: '/tech-logos/typescript.svg' },
-        { name: 'RxJS', logoUrl: '/tech-logos/rxjs.svg' },
-        { name: 'NgRx', logoUrl: '/tech-logos/ngrx.svg' },
-        { name: 'Tailwind CSS', logoUrl: '/tech-logos/tailwind.svg' },
-        { name: 'PrimeFaces', logoUrl: '/tech-logos/primeng.svg' },
+      :technologyIds="[
+        'angular',
+        'vue',
+        'javascript',
+        'typescript',
+        'rxjs',
+        'ngrx',
+        'tailwind',
+        'primeng',
       ]"
     />
     <img
@@ -88,15 +88,15 @@
       title-html="<em>Robust</em> client-server applications"
       subtitle-html="crafted with care using <em>test-driven development</em>."
       :media-urls="['/projects/jbooru-270.jpg', '/projects/tenhou.png']"
-      :technologies="[
-        { name: 'Kotlin', logoUrl: '/tech-logos/kotlin.svg' },
-        { name: 'Java', logoUrl: '/tech-logos/java.svg' },
-        { name: 'Python', logoUrl: '/tech-logos/python.svg' },
-        { name: 'C#', logoUrl: '/tech-logos/csharp.svg' },
-        { name: '.NET Core', logoUrl: '/tech-logos/netcore.svg' },
-        { name: 'Spring', logoUrl: '/tech-logos/spring.svg' },
-        { name: 'Swagger', logoUrl: '/tech-logos/swagger.svg' },
-        { name: 'xUnit', logoUrl: '/tech-logos/xunit.svg' },
+      :technologyIds="[
+        'kotlin',
+        'java',
+        'python',
+        'csharp',
+        'netcore',
+        'spring',
+        'swagger',
+        'xunit',
       ]"
     />
     <img
@@ -109,15 +109,15 @@
       title-html="Cloud configuration and system administration"
       subtitle-html="for continuous build and release pipelines, on-demand scaling, and disaster recovery."
       :media-urls="['/projects/portainer.jpg', '/projects/pipelines.png']"
-      :technologies="[
-        { name: 'Amazon Web Services', logoUrl: '/tech-logos/aws.svg' },
-        { name: 'Microsoft Azure', logoUrl: '/tech-logos/azure.svg' },
-        { name: 'Linux', logoUrl: '/tech-logos/linux.svg' },
-        { name: 'Windows Server', logoUrl: '/tech-logos/windows-server.svg' },
-        { name: 'Docker', logoUrl: '/tech-logos/docker.svg' },
-        { name: 'PostgreSQL', logoUrl: '/tech-logos/postgresql.svg' },
-        { name: 'Portainer', logoUrl: '/tech-logos/portainer.svg' },
-        { name: 'Proxmox', logoUrl: '/tech-logos/proxmox.png' },
+      :technologyIds="[
+        'aws',
+        'azure',
+        'linux',
+        'windows-server',
+        'docker',
+        'psql',
+        'portainer',
+        'proxmox',
       ]"
     />
     <LandingPageLinks />

@@ -21,16 +21,14 @@
           :src="project.thumbnailUrl"
           :alt="project.title"
           class="fit-to-diamond bg-cv-white transition-opacity"
-          :style="{
-            opacity: isActive ? 0.3 : 1,
-          }"
+          :style="{ opacity: isActive ? 0.3 : 1 }"
         />
       </router-link>
 
       <div
         class="pointer-events-none flex h-full flex-col items-center justify-center gap-2 overflow-hidden"
       >
-        <span id="spacer" v-if="project.iconUrls?.length" class="h-9" />
+        <span id="spacer" v-if="project.technologyIds?.length" class="h-9" />
         <h2
           class="text-shadow z-10 h-6 text-sm text-cv-white duration-500"
           :style="{ opacity: isActive ? 1 : 0 }"
@@ -38,13 +36,13 @@
           {{ project.title }}
         </h2>
         <div
-          v-if="project.iconUrls?.length"
+          v-if="technologies.length"
           class="z-10 flex w-3/5 flex-wrap justify-center gap-2"
         >
           <img
-            v-for="iconUrl in project.iconUrls"
-            :key="iconUrl"
-            :src="iconUrl"
+            v-for="tech in technologies"
+            :key="tech.id"
+            :src="tech.logoUrl"
             alt=""
             class="h-6 w-6 duration-500"
             :style="{ opacity: isActive ? 1 : 0 }"
@@ -100,14 +98,18 @@
 
 <script setup lang="ts">
 import { ref, computed } from "vue";
-import AOrRouterLink from "@/components/AOrRouterLink.vue";
-import type { Project } from "@/services/data.model";
+import type { Project } from "@shared/data.model";
+import DataService from "@/services/data.service";
 
 const props = defineProps<{
   size: string;
   project: Project | null;
   active: boolean;
 }>();
+
+const technologies = computed(() =>
+  DataService.getTechnologiesById(props.project?.technologyIds ?? [])
+);
 
 const hovering = ref(false);
 const isActive = computed(() => hovering.value || props.active);

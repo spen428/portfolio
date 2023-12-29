@@ -7,25 +7,23 @@
     <ScreenWithTech
       media-position="left"
       :media-url="mediaUrls[0]"
-      :technologies="technologies.slice(0, 4)"
+      :technologyIds="technologyIds.slice(0, 4)"
     />
     <ScreenWithTech
       media-position="right"
       :media-url="mediaUrls[1]"
-      :technologies="technologies.slice(4, 8)"
+      :technologyIds="technologyIds.slice(4, 8)"
     />
   </div>
 </template>
 
 <script setup lang="ts">
-import ScreenWithTech, {
-  type TechnologyWithIcon,
-} from "@/pages/home/components/ScreenWithTech.vue";
+import ScreenWithTech from "@/pages/home/components/ScreenWithTech.vue";
 
 defineProps<{
   titleHtml: string;
   subtitleHtml: string;
-  technologies: TechnologyWithIcon[];
+  technologyIds: string[];
   mediaUrls: string[];
 }>();
 </script>
