@@ -33,7 +33,11 @@
           <div class="flex grow flex-col gap-[inherit] py-2">
             <h2 class="!text-base">Learning objectives</h2>
             <ul class="list-disc text-sm">
-              <li v-for="lo in project.learningObjectives ?? []" v-html="lo" />
+              <li
+                v-for="lo in project.learningObjectives ?? []"
+                :key="lo"
+                v-html="lo"
+              />
             </ul>
           </div>
           <div class="w-0.5 bg-cv-light-grey sm:w-1 md:w-0" />
@@ -43,7 +47,11 @@
           <div class="flex grow flex-col gap-[inherit] py-2">
             <h2 class="!text-base">Learning outcomes</h2>
             <ul class="list-disc text-sm">
-              <li v-for="lo in project.learningOutcomes ?? []" v-html="lo" />
+              <li
+                v-for="lo in project.learningOutcomes ?? []"
+                :key="lo"
+                v-html="lo"
+              />
             </ul>
           </div>
           <div class="w-0.5 shrink-0 bg-cv-light-grey sm:w-1" />
@@ -77,6 +85,7 @@
 <script setup lang="ts">
 import DataService from "@/services/data.service";
 import { computed } from "vue";
+import LoadingSkeleton from "@/components/LoadingSkeleton.vue";
 
 const props = defineProps<{ projectId: string }>();
 
