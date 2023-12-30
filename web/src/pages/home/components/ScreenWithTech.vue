@@ -10,33 +10,10 @@
         'md:mr-4': mediaPosition === 'right',
       }"
     >
-      <LoadingSkeleton
-        v-if="mediaLoading"
-        class="h-[270px] w-[480px] rounded-lg"
-      />
-      <video
-        v-if="mediaUrl.endsWith('.webm')"
-        v-show="!mediaLoading"
-        @canplaythrough="mediaLoading = false"
-        class="h-[270px] w-[480px] rounded-lg border-2 border-cv-white object-cover"
-        loop
-        muted
-        playsinline
+      <MediaWithLoadingSkeleton
+        :media-url="mediaUrl"
         :autoplay="autoplayVideos"
-      >
-        <source
-          :src="autoplayVideos ? mediaUrl : `${mediaUrl}#t=0.01`"
-          type="video/webm"
-        />
-      </video>
-      <img
-        v-else
-        v-show="!mediaLoading"
-        @load="mediaLoading = false"
-        @error="mediaLoading = false"
-        :src="mediaUrl"
-        alt=""
-        class="h-[270px] w-[480px] rounded-lg border-2 border-cv-white object-cover"
+        class="h-[270px] w-[480px] rounded-lg border-2 border-cv-white"
       />
     </div>
 
@@ -70,12 +47,11 @@
 
 <script setup lang="ts">
 import ConfigurationService from "@/services/configuration.service";
-import { computed, ref } from "vue";
-import LoadingSkeleton from "@/components/LoadingSkeleton.vue";
+import { computed } from "vue";
 import DataService from "@/services/data.service";
+import MediaWithLoadingSkeleton from "@/components/MediaWithLoadingSkeleton.vue";
 
 const autoplayVideos = ConfigurationService.isAnimationEnabled();
-const mediaLoading = ref(true);
 
 const technologies = computed(() =>
   DataService.getTechnologiesById(props.technologyIds)
