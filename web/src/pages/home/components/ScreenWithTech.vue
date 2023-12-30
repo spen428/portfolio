@@ -11,7 +11,7 @@
       }"
     >
       <MediaWithLoadingSkeleton
-        :media-url="mediaUrl"
+        :src="mediaUrl"
         :autoplay="autoplayVideos"
         class="h-[270px] w-[480px] rounded-lg border-2 border-cv-white"
       />
@@ -30,9 +30,8 @@
         class="inline-flex basis-[calc(50%-1rem)] items-center gap-4"
         :class="{ 'md:self-end': index % 2 == 1 }"
       >
-        <img
+        <MediaWithLoadingSkeleton
           :src="tech.logoUrl"
-          alt=""
           class="h-[min(3rem,8vw)] w-[min(3rem,8vw)]"
         />
         <span

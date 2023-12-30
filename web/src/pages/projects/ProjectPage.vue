@@ -15,7 +15,7 @@
         v-else
         class="flex flex-wrap justify-evenly sm:my-4 sm:justify-start sm:gap-4"
       >
-        <img
+        <MediaWithLoadingSkeleton
           v-for="tech in technologies"
           :key="tech.id"
           :src="tech.logoUrl"
@@ -92,6 +92,7 @@
 import DataService from "@/services/data.service";
 import { computed } from "vue";
 import LoadingSkeleton from "@/components/LoadingSkeleton.vue";
+import MediaWithLoadingSkeleton from "@/components/MediaWithLoadingSkeleton.vue";
 
 const props = defineProps<{ projectId: string }>();
 
