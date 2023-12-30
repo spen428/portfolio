@@ -1,16 +1,18 @@
 <template>
   <div class="mx-auto w-full max-w-5xl bg-cv-white py-4 sm:py-8 lg:py-16">
     <article
-      v-if="project"
       class="project-content mx-4 flex flex-col gap-4 lg:mx-auto lg:max-w-4xl"
     >
-      <span class="flex flex-col justify-between xs:flex-row">
-        <h1 class="text-2xl text-cv-dark-purple">{{ project.title }}</h1>
-        <span>{{ project.type }}</span>
-      </span>
+      <div class="flex flex-col justify-between xs:flex-row">
+        <LoadingSkeleton v-if="!project" class="h-8 w-96 !bg-cv-dark-purple" />
+        <h1 v-else class="text-2xl text-cv-dark-purple">{{ project.title }}</h1>
+        <LoadingSkeleton v-if="!project" class="h-6 w-48" />
+        <span v-else>{{ project.type }}</span>
+      </div>
 
+      <LoadingSkeleton v-if="!technologies.length" class="h-24 w-full" />
       <div
-        v-if="technologies.length"
+        v-else
         class="flex flex-wrap justify-evenly sm:my-4 sm:justify-start sm:gap-4"
       >
         <img
@@ -22,12 +24,14 @@
         />
       </div>
 
-      <p class="text-justify text-sm italic">
+      <LoadingSkeleton v-if="!project" class="h-16 w-full" />
+      <p v-else class="text-justify text-sm italic">
         <b>Abstract:</b>
         {{ project.abstract ?? "None." }}
       </p>
 
-      <section class="flex flex-col justify-around md:flex-row">
+      <LoadingSkeleton v-if="!project" class="h-48 w-full !bg-cv-light-grey" />
+      <section v-else class="flex flex-col justify-around md:flex-row">
         <div class="flex gap-2 md:gap-4">
           <div class="w-0.5 shrink-0 bg-cv-light-grey sm:w-1" />
           <div class="flex grow flex-col gap-[inherit] py-2">
@@ -58,7 +62,9 @@
         </div>
       </section>
 
+      <LoadingSkeleton v-if="!project" class="h-96 w-full" />
       <section
+        v-else
         v-html="project.articleBody ?? ''"
         class="flex flex-col gap-[inherit]"
       />
