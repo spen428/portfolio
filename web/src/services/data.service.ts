@@ -148,6 +148,17 @@ export default new (class DataService {
       { id: "teamcity", name: "TeamCity", logoUrl: "/tech-logos/teamcity.svg" },
       { id: "jenkins", name: "Jenkins", logoUrl: "/tech-logos/jenkins.svg" },
       {
+        id: "backstopjs",
+        name: "BackstopJS",
+        logoUrl: "/tech-logos/backstopjs.png",
+      },
+      { id: "node", name: "Node.js", logoUrl: "/tech-logos/node.svg" },
+      {
+        id: "puppeteer",
+        name: "Puppeteer",
+        logoUrl: "/tech-logos/puppeteer.svg",
+      },
+      {
         id: "mssql",
         name: "Microsoft SQL Server",
         logoUrl: "/tech-logos/mssql.svg",

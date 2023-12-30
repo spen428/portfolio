@@ -3,81 +3,86 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --cv-dark-purple: 66 28 82;
-    --cv-purple: 115 44 123;
-    --cv-grey: 156 138 165;
-    --cv-light-grey: 189 174 198;
-    --cv-white: 255 255 255;
-    --default-text: 105 105 105;
-  }
+    :root {
+        --cv-dark-purple: 66 28 82;
+        --cv-purple: 115 44 123;
+        --cv-grey: 156 138 165;
+        --cv-light-grey: 189 174 198;
+        --cv-white: 255 255 255;
+        --default-text: 105 105 105;
+    }
 
-  a {
-    color: rgb(var(--cv-dark-purple));
-    text-decoration: none;
-    transition: text-shadow 250ms ease-in-out;
-  }
+    a {
+        @apply text-cv-dark-purple;
+        text-decoration: none;
+        transition: text-shadow 250ms ease-in-out;
+    }
 
-  a:hover {
-    cursor: pointer;
-    text-shadow: 0 0 2rem rgb(var(--cv-white));
-  }
+    a:hover {
+        @apply cursor-pointer;
+        text-shadow: 0 0 2rem rgb(var(--cv-white));
+    }
 
-  ruby {
-    display: inline-flex;
-    flex-direction: column-reverse;
-  }
+    ruby {
+        @apply inline-flex flex-col-reverse;
+    }
 
-  rt {
-    display: inline;
-    line-height: 1.25rem;
-  }
+    rt {
+        @apply inline leading-5;
+    }
 
-  em {
-    font-style: normal;
-    font-weight: bold;
-  }
+    em {
+        @apply not-italic font-bold;
+    }
+
+    ul {
+        @apply my-2 list-disc pl-8 text-left;
+    }
+
+    li {
+        @apply my-2 lg:my-0;
+    }
 }
 
 @layer components {
-  .small-caps {
-    font-variant-caps: small-caps;
-  }
+    .small-caps {
+        font-variant-caps: small-caps;
+    }
 
-  .all-small-caps {
-    font-variant-caps: all-small-caps;
-  }
+    .all-small-caps {
+        font-variant-caps: all-small-caps;
+    }
 
-  .all-caps {
-    text-transform: uppercase;
-  }
+    .all-caps {
+        text-transform: uppercase;
+    }
 
-  .disable-animation * {
-    animation: none !important;
-    transition: none !important;
-  }
+    .disable-animation * {
+        animation: none !important;
+        transition: none !important;
+    }
 
-  .balance {
-    /*noinspection CssInvalidPropertyValue*/
-    text-wrap: balance;
-  }
+    .balance {
+        /*noinspection CssInvalidPropertyValue*/
+        text-wrap: balance;
+    }
 }
 
 @media print {
-  a {
-    text-decoration: none;
-  }
+    a {
+        text-decoration: none;
+    }
 
-  /* Color overrides for printing in CMYK */
-  :root {
-    --default-text: 42 42 42 !important;
-  }
+    /* Color overrides for printing in CMYK */
+    :root {
+        --default-text: 42 42 42 !important;
+    }
 
-  .text-default-text {
-    color: #2a2a2a !important;
-  }
+    .text-default-text {
+        color: #2a2a2a !important;
+    }
 
-  .text-cv-grey {
-    color: #e7bdff !important;
-  }
+    .text-cv-grey {
+        color: #e7bdff !important;
+    }
 }

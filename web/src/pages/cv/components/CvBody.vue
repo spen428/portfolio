@@ -37,18 +37,6 @@
   & p {
     @apply mb-2;
   }
-
-  & em {
-    @apply font-bold not-italic;
-  }
-
-  & ul {
-    @apply my-2 list-disc pl-8 text-left;
-  }
-
-  & li {
-    @apply my-2 lg:my-0;
-  }
 }
 </style>
 

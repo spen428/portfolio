@@ -22,6 +22,8 @@ export interface Project {
   thumbnailUrl: string;
   technologyIds?: string[];
   abstract?: string;
+  learningObjectives?: string[];
+  learningOutcomes?: string[];
   articleBody?: string;
 }
 
