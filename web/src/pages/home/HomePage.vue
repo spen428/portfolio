@@ -115,7 +115,7 @@
         'linux',
         'windows-server',
         'docker',
-        'psql',
+        'postgresql',
         'portainer',
         'proxmox',
       ]"

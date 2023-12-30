@@ -17,6 +17,7 @@ interface Section {
 
 export interface Project {
   id: string;
+  type: string;
   title: string;
   url: { url: string; external: boolean };
   thumbnailUrl: string;

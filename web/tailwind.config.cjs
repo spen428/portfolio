@@ -15,6 +15,7 @@ module.exports = {
       cursive: "Brush Script MT",
     },
     screens: {
+      '2xs': "425px",
       xs: "576px",
       sm: "640px",
       md: "768px",

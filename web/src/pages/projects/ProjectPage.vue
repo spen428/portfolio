@@ -4,7 +4,10 @@
       v-if="project"
       class="project-content mx-4 flex flex-col gap-4 lg:mx-auto lg:max-w-4xl"
     >
-      <h1 class="text-2xl text-cv-dark-purple">{{ project.title }}</h1>
+      <span class="flex flex-col justify-between xs:flex-row">
+        <h1 class="text-2xl text-cv-dark-purple">{{ project.title }}</h1>
+        <span>{{ project.type }}</span>
+      </span>
 
       <div
         v-if="technologies.length"
@@ -15,7 +18,7 @@
           :key="tech.id"
           :src="tech.logoUrl"
           :alt="tech.name"
-          class="h-[min(2.5rem,8vw)] w-[min(2.5rem,8vw)]"
+          class="h-[min(2.5rem,10vw)] w-[min(2.5rem,10vw)]"
         />
       </div>
 
@@ -26,24 +29,24 @@
 
       <section class="flex flex-col justify-around md:flex-row">
         <div class="flex gap-2 md:gap-4">
-          <div class="w-[1px] bg-cv-purple xs:w-0.5 sm:w-1" />
+          <div class="w-0.5 shrink-0 bg-cv-light-grey sm:w-1" />
           <div class="flex grow flex-col gap-[inherit] py-2">
             <h2 class="!text-base">Learning objectives</h2>
             <ul class="list-disc text-sm">
               <li v-for="lo in project.learningObjectives ?? []" v-html="lo" />
             </ul>
           </div>
-          <div class="w-[1px] bg-cv-purple xs:w-0.5 sm:w-1 md:w-0" />
+          <div class="w-0.5 bg-cv-light-grey sm:w-1 md:w-0" />
         </div>
         <div class="flex gap-2 md:gap-4">
-          <div class="w-[1px] bg-cv-purple xs:w-0.5 sm:w-1 md:w-0" />
+          <div class="w-0.5 bg-cv-light-grey sm:w-1 md:w-0" />
           <div class="flex grow flex-col gap-[inherit] py-2">
             <h2 class="!text-base">Learning outcomes</h2>
             <ul class="list-disc text-sm">
               <li v-for="lo in project.learningOutcomes ?? []" v-html="lo" />
             </ul>
           </div>
-          <div class="w-[1px] bg-cv-purple xs:w-0.5 sm:w-1" />
+          <div class="w-0.5 shrink-0 bg-cv-light-grey sm:w-1" />
         </div>
       </section>
 
