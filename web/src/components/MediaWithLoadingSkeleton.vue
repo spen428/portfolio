@@ -5,7 +5,6 @@
     v-show="!mediaLoading"
     v-bind="$attrs"
     @canplaythrough="mediaLoading = false"
-    class="object-cover"
     loop
     muted
     playsinline
@@ -21,7 +20,6 @@
     @error="mediaLoading = false"
     :src="src"
     :alt="alt ?? ''"
-    class="object-cover"
   />
 </template>
 
