@@ -15,7 +15,7 @@
         />
         <h1
           v-else
-          class="text-shadow-primary-950 font-serif text-[min(1.5rem,5vw)] font-bold text-primary-950 text-opacity-80"
+          class="font-serif text-[min(1.5rem,5vw)] font-bold text-primary-950 text-opacity-80 shadow-primary-950 text-shadow"
         >
           <ruby v-if="personalInfo.fullNameRuby">
             &centerdot; {{ personalInfo.fullName }} &centerdot;
@@ -29,7 +29,7 @@
         <LoadingSkeleton v-if="!personalInfo.tagLine" class="!h-10 !w-[45vw]" />
         <h2
           v-else
-          class="text-shadow-primary-950 font-serif text-[min(1.85rem,5vw)] font-bold italic text-white"
+          class="font-serif text-[min(1.85rem,5vw)] font-bold italic text-white shadow-primary-950 text-shadow"
         >
           {{ personalInfo.tagLine }}
         </h2>
@@ -54,7 +54,7 @@
     </div>
     <div class="">
       <h1
-        class="text-shadow-primary-950 pb-16 text-center font-serif text-[min(1.85rem,5vw)] font-bold italic text-white"
+        class="pb-16 text-center font-serif text-[min(1.85rem,5vw)] font-bold italic text-white shadow-primary-950 text-shadow"
       >
         So, what can you do?
       </h1>
@@ -133,12 +133,6 @@
     </button>
   </div>
 </template>
-
-<style scoped>
-.text-shadow-primary-950 {
-  text-shadow: 0 0 2rem rgb(var(--primary-950));
-}
-</style>
 
 <script setup lang="ts">
 import DataService from "@/services/data.service";

@@ -1,4 +1,5 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
+const plugin = require("tailwindcss/plugin.js");
 
 function printOrMinWidth(minWidth) {
   return { raw: `print,(min-width: ${minWidth})` };
@@ -26,7 +27,6 @@ module.exports = {
     colors: {
       transparent: "transparent",
       white: "#ffffff",
-      "default-text": "#696969",
       primary: {
         "50": "#faf7fc",
         "100": "#f4edfa",
@@ -53,18 +53,31 @@ module.exports = {
         "900": "#1e4921",
         "950": "#0b280d"
       },
+      "primary-toned": {
+        "50": "#faf9fa",
+        "100": "#f4f2f5",
+        "200": "#e7e3eb",
+        "300": "#d6cdda",
+        "400": "#bdafc3",
+        "500": "#a08da8",
+        "600": "#826f8a",
+        "700": "#715f78",
+        "800": "#594b5d",
+        "900": "#4b404f",
+        "950": "#2c232f"
+      },
       gray: {
-        '50': '#faf9fa',
-        '100': '#f4f2f5',
-        '200': '#e7e3eb',
-        '300': '#d6cdda',
-        '400': '#bdafc3',
-        '500': '#a08da8',
-        '600': '#826f8a',
-        '700': '#715f78',
-        '800': '#594b5d',
-        '900': '#4b404f',
-        '950': '#2c232f',
+        "50": "#f7f7f7",
+        "100": "#efefef",
+        "200": "#dfdfdf",
+        "300": "#cfcfcf",
+        "400": "#bfbfbf",
+        "500": "#696969",
+        "600": "#5b5b5b",
+        "700": "#4d4d4d",
+        "800": "#3f3f3f",
+        "900": "#313131",
+        "950": "#2a2a2a"
       }
     },
     extend: {
@@ -103,8 +116,19 @@ module.exports = {
           "12%": { rotate: "5deg", translate: "0.25rem" },
           "15%": { rotate: "0deg", translate: "0rem" }
         }
+      },
+      textShadow: {
+        xs: "1px 1px 0.25rem var(--tw-shadow-color), -1px -1px 0.25rem var(--tw-shadow-color), 1px -1px 0.25rem var(--tw-shadow-color), -1px 1px 0.25rem var(--tw-shadow-color)",
+        DEFAULT: "0 0 2rem var(--tw-shadow-color)"
       }
     }
   },
-  plugins: []
+  plugins: [
+    plugin(function({ matchUtilities, theme }) {
+      matchUtilities(
+        { "text-shadow": (value) => ({ textShadow: value }) },
+        { values: theme("textShadow") }
+      );
+    })
+  ]
 };

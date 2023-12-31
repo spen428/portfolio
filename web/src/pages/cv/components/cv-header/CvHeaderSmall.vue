@@ -23,7 +23,7 @@
           v-if="!personalInfo.longerTagLine"
           class="mb-4 mt-8 h-8 w-full"
         />
-        <span v-else class="balance mb-4 mt-8">
+        <span v-else class="text-balance mb-4 mt-8">
           {{ personalInfo.longerTagLine }}
         </span>
       </div>

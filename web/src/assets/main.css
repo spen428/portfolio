@@ -3,21 +3,12 @@
 @tailwind utilities;
 
 @layer base {
-    :root {
-        --primary-950: 66 28 82;
-        --primary-700: 115 44 123;
-        --gray-700: 156 138 165;
-    }
-
     a {
-        @apply text-primary-950;
-        text-decoration: none;
-        transition: text-shadow 250ms ease-in-out;
+        @apply text-primary-950 duration-300 ease-in-out transition-[text-shadow] no-underline;
     }
 
     a:hover {
-        @apply cursor-pointer;
-        text-shadow: 0 0 2rem white;
+        @apply cursor-pointer text-shadow shadow-white;
     }
 
     ruby {
@@ -59,7 +50,7 @@
         transition: none !important;
     }
 
-    .balance {
+    .text-balance {
         /*noinspection CssInvalidPropertyValue*/
         text-wrap: balance;
     }

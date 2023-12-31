@@ -8,7 +8,7 @@
         @mouseover="hovering = true"
         @mouseout="hovering = false"
         :to="'/portfolio/projects/' + project.id"
-        class="diamond border-transparent pointer-events-auto z-10 duration-1000"
+        class="diamond pointer-events-auto z-10 border-transparent duration-1000"
         :class="{
           'border-opacity-80': isActive,
           'bg-black': !project,
@@ -30,7 +30,7 @@
       >
         <span id="spacer" v-if="project.technologyIds?.length" class="h-9" />
         <h2
-          class="text-shadow z-10 h-6 text-sm text-white duration-500"
+          class="z-10 h-6 text-sm text-white shadow-primary-950 duration-500 text-shadow-xs"
           :style="{ opacity: isActive ? 1 : 0 }"
         >
           {{ project.title }}
@@ -54,14 +54,6 @@
 </template>
 
 <style scoped>
-.text-shadow {
-  --text-shadow-length: 0.25rem;
-  text-shadow: 1px 1px var(--text-shadow-length) rgb(var(--primary-950)),
-    -1px -1px var(--text-shadow-length) rgb(var(--primary-950)),
-    1px -1px var(--text-shadow-length) rgb(var(--primary-950)),
-    -1px 1px var(--text-shadow-length) rgb(var(--primary-950));
-}
-
 .diamond {
   --diamond-ratio: 70.71067812%; /* x / (x sqrt 2) */
   --border-width: 0.125rem;
@@ -97,7 +89,7 @@
 </style>
 
 <script setup lang="ts">
-import { ref, computed } from "vue";
+import { computed, ref } from "vue";
 import type { Project } from "@shared/data.model";
 import DataService from "@/services/data.service";
 
