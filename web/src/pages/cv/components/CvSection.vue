@@ -1,5 +1,5 @@
 <template>
-  <section class="mt-0 xs:text-xl lg:text-base">
+  <section class="mt-0 break-inside-avoid-page xs:text-xl lg:text-base">
     <div class="text-center lg:text-left">
       <div
         class="justify-content-between mb-1 mt-6 flex w-full items-center font-bold text-primary-toned-700 print:!m-0 print:!text-sm lg:mb-2 lg:mt-0 lg:block"
