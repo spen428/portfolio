@@ -1,11 +1,11 @@
-import type {
+import * as fs from "fs";
+import { dataPath, fallbackLocale } from "./config";
+import {
   CommercialExperience,
   CvData,
   PersonalInfo,
   Project,
 } from "@shared/data.model";
-import * as fs from "fs";
-import { dataPath, fallbackLocale } from "./config";
 
 export default new (class DataService {
   public async getCvData(locale: string): Promise<CvData> {

@@ -4,23 +4,20 @@
 
 @layer base {
     :root {
-        --cv-dark-purple: 66 28 82;
-        --cv-purple: 115 44 123;
-        --cv-grey: 156 138 165;
-        --cv-light-grey: 189 174 198;
-        --cv-white: 255 255 255;
-        --default-text: 105 105 105;
+        --primary-950: 66 28 82;
+        --primary-700: 115 44 123;
+        --gray-700: 156 138 165;
     }
 
     a {
-        @apply text-cv-dark-purple;
+        @apply text-primary-950;
         text-decoration: none;
         transition: text-shadow 250ms ease-in-out;
     }
 
     a:hover {
         @apply cursor-pointer;
-        text-shadow: 0 0 2rem rgb(var(--cv-white));
+        text-shadow: 0 0 2rem white;
     }
 
     ruby {
@@ -71,18 +68,5 @@
 @media print {
     a {
         text-decoration: none;
-    }
-
-    /* Color overrides for printing in CMYK */
-    :root {
-        --default-text: 42 42 42 !important;
-    }
-
-    .text-default-text {
-        color: #2a2a2a !important;
-    }
-
-    .text-cv-grey {
-        color: #e7bdff !important;
     }
 }

@@ -8,19 +8,19 @@
         @mouseover="hovering = true"
         @mouseout="hovering = false"
         :to="'/portfolio/projects/' + project.id"
-        class="diamond pointer-events-auto z-10 border-transparent duration-1000"
+        class="diamond border-transparent pointer-events-auto z-10 duration-1000"
         :class="{
           'border-opacity-80': isActive,
           'bg-black': !project,
           'bg-opacity-10': !project,
-          '!border-cv-dark-purple': isActive,
+          '!border-primary-950': isActive,
         }"
       >
         <img
           v-if="project.thumbnailUrl"
           :src="project.thumbnailUrl"
           :alt="project.title"
-          class="fit-to-diamond bg-cv-white transition-opacity"
+          class="fit-to-diamond bg-white transition-opacity"
           :style="{ opacity: isActive ? 0.3 : 1 }"
         />
       </router-link>
@@ -30,7 +30,7 @@
       >
         <span id="spacer" v-if="project.technologyIds?.length" class="h-9" />
         <h2
-          class="text-shadow z-10 h-6 text-sm text-cv-white duration-500"
+          class="text-shadow z-10 h-6 text-sm text-white duration-500"
           :style="{ opacity: isActive ? 1 : 0 }"
         >
           {{ project.title }}
@@ -56,10 +56,10 @@
 <style scoped>
 .text-shadow {
   --text-shadow-length: 0.25rem;
-  text-shadow: 1px 1px var(--text-shadow-length) rgb(var(--cv-dark-purple)),
-    -1px -1px var(--text-shadow-length) rgb(var(--cv-dark-purple)),
-    1px -1px var(--text-shadow-length) rgb(var(--cv-dark-purple)),
-    -1px 1px var(--text-shadow-length) rgb(var(--cv-dark-purple));
+  text-shadow: 1px 1px var(--text-shadow-length) rgb(var(--primary-950)),
+    -1px -1px var(--text-shadow-length) rgb(var(--primary-950)),
+    1px -1px var(--text-shadow-length) rgb(var(--primary-950)),
+    -1px 1px var(--text-shadow-length) rgb(var(--primary-950));
 }
 
 .diamond {

@@ -1,11 +1,11 @@
 <template>
-  <div class="mx-auto w-full max-w-5xl bg-cv-white py-4 sm:py-8 lg:py-16">
+  <div class="mx-auto w-full max-w-5xl bg-white py-4 sm:py-8 lg:py-16">
     <article
       class="project-content mx-4 flex flex-col gap-4 lg:mx-auto lg:max-w-4xl"
     >
       <div class="flex flex-col justify-between xs:flex-row">
-        <LoadingSkeleton v-if="!project" class="h-8 w-96 !bg-cv-dark-purple" />
-        <h1 v-else class="text-2xl text-cv-dark-purple">{{ project.title }}</h1>
+        <LoadingSkeleton v-if="!project" class="h-8 w-96 !bg-primary-950" />
+        <h1 v-else class="text-2xl text-primary-950">{{ project.title }}</h1>
         <LoadingSkeleton v-if="!project" class="h-6 w-48" />
         <span v-else>{{ project.type }}</span>
       </div>
@@ -34,10 +34,10 @@
         "
       />
 
-      <LoadingSkeleton v-if="!project" class="h-48 w-full !bg-cv-light-grey" />
+      <LoadingSkeleton v-if="!project" class="h-48 w-full !bg-primary-200" />
       <section v-else class="flex flex-col justify-between md:flex-row">
         <div class="flex gap-2 md:gap-4">
-          <div class="w-0.5 shrink-0 bg-cv-light-grey sm:w-1" />
+          <div class="w-0.5 shrink-0 bg-primary-200 sm:w-1" />
           <div class="flex grow flex-col gap-[inherit] py-2">
             <h2 class="!text-base">Learning objectives</h2>
             <ul class="list-disc text-sm">
@@ -48,10 +48,10 @@
               />
             </ul>
           </div>
-          <div class="w-0.5 bg-cv-light-grey sm:w-1 md:w-0" />
+          <div class="w-0.5 bg-primary-200 sm:w-1 md:w-0" />
         </div>
         <div class="flex gap-2 md:gap-4">
-          <div class="w-0.5 bg-cv-light-grey sm:w-1 md:w-0" />
+          <div class="w-0.5 bg-primary-200 sm:w-1 md:w-0" />
           <div class="flex grow flex-col gap-[inherit] py-2">
             <h2 class="!text-base">Learning outcomes</h2>
             <ul class="list-disc text-sm">
@@ -62,7 +62,7 @@
               />
             </ul>
           </div>
-          <div class="w-0.5 shrink-0 bg-cv-light-grey sm:w-1" />
+          <div class="w-0.5 shrink-0 bg-primary-200 sm:w-1" />
         </div>
       </section>
 
@@ -88,7 +88,7 @@
 <style>
 .project-content {
   & h2 {
-    @apply text-lg text-cv-purple;
+    @apply text-lg text-primary-700;
   }
 
   & p {
@@ -96,7 +96,7 @@
   }
 
   & pre {
-    @apply overflow-x-scroll rounded border border-cv-dark-purple bg-cv-light-grey p-2;
+    @apply overflow-x-scroll rounded border border-primary-950 bg-primary-200 p-2;
   }
 }
 </style>

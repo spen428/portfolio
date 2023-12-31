@@ -23,7 +23,7 @@
       <polygon
         id="outerLeft"
         points="0.25,0 1,0 0.75,1 0,1"
-        class="fill-cv-dark-purple"
+        class="fill-primary-950"
       />
       <polygon
         id="outerMiddle"
@@ -33,7 +33,7 @@
       <polygon
         id="outerRight"
         points="2.25,0 3,0 2.75,1 2,1"
-        class="fill-cv-purple"
+        class="fill-primary-700"
       />
 
       <polygon
@@ -81,7 +81,7 @@
         }"
       ></div>
       <CenterRibbonTileText
-        class="w-3/5 text-cv-white"
+        class="w-3/5 text-white"
         :style="{
           opacity: getOpacity(0, 1, 0),
         }"
@@ -103,7 +103,7 @@
         }"
       ></div>
       <CenterRibbonTileText
-        class="text-cv-purple"
+        class="text-primary-700"
         :style="{
           opacity: getOpacity(1, 1, 0),
         }"
@@ -125,7 +125,7 @@
         }"
       ></div>
       <CenterRibbonTileText
-        class="w-3/5 text-cv-white"
+        class="w-3/5 text-white"
         :style="{
           opacity: getOpacity(2, 1, 0),
         }"
@@ -134,7 +134,7 @@
       </CenterRibbonTileText>
     </router-link>
   </div>
-  <div class="mt-2 accent-cv-dark-purple">
+  <div class="mt-2 accent-primary-950">
     <DiamondRadioButton
       v-for="(ordinal, index) in numBannerPages"
       :key="ordinal"

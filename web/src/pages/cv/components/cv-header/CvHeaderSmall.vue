@@ -10,7 +10,7 @@
         />
         <h1
           v-else
-          class="mx-0 mt-3 font-serif text-3xl font-bold text-cv-dark-purple xs:text-4xl"
+          class="mx-0 mt-3 font-serif text-3xl font-bold text-primary-950 xs:text-4xl"
         >
           <ruby v-if="personalInfo.fullNameRuby">
             {{ personalInfo.fullName }}
@@ -30,7 +30,7 @@
 
       <LoadingSkeleton
         v-if="!personalInfo.emailAddress"
-        class="h-12 w-full !bg-cv-dark-purple"
+        class="h-12 w-full !bg-primary-950"
       />
       <div v-else class="my-2 flex w-full items-center justify-evenly md:my-4">
         <a :href="`tel:${personalInfo.phoneNumber.intl}`">

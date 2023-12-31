@@ -13,7 +13,7 @@
       <MediaWithLoadingSkeleton
         :src="mediaUrl"
         :autoplay="autoplayVideos"
-        class="h-[270px] w-[480px] rounded-lg border-2 border-cv-white object-cover"
+        class="h-[270px] w-[480px] rounded-lg border-2 border-white object-cover"
       />
     </div>
 

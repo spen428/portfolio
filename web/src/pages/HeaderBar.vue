@@ -1,7 +1,7 @@
 <template>
   <div id="headerBarSpacer" class="print:!hidden lg:h-20"></div>
   <header
-    class="w-full print:!hidden lg:fixed lg:bg-gradient-to-t lg:from-transparent"
+    class="lg:from-transparent w-full print:!hidden lg:fixed lg:bg-gradient-to-t"
     :class="{ 'lg:to-gray-900': hasScrolled }"
   >
     <div
@@ -15,16 +15,16 @@
         />
       </router-link>
       <router-link to="/portfolio">
-        <h1 class="text-xl text-cv-white lg:text-lg">
+        <h1 class="text-xl text-white lg:text-lg">
           {{ pageTitle }}
         </h1>
       </router-link>
       <div id="spacer" class="grow"></div>
       <div class="hidden h-full items-center gap-4 py-6 xs:flex lg:py-2">
-        <router-link to="/portfolio/cv" class="text-cv-white">
+        <router-link to="/portfolio/cv" class="text-white">
           {{ $t("cv") }}
         </router-link>
-        <router-link to="/portfolio/projects" class="text-cv-white">
+        <router-link to="/portfolio/projects" class="text-white">
           {{ $t("portfolio") }}
         </router-link>
         <a-or-router-link

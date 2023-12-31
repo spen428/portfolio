@@ -8,7 +8,7 @@
       :href="href"
       target="_blank"
       class="group inline-flex items-center gap-1"
-      :class="{ 'text-cv-white': color === 'white' }"
+      :class="{ 'text-white': color === 'white' }"
     >
       <slot></slot>
       <img

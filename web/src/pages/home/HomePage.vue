@@ -11,11 +11,11 @@
       >
         <LoadingSkeleton
           v-if="!personalInfo.fullName"
-          class="!h-9 !w-[30vw] !bg-cv-dark-purple"
+          class="!h-9 !w-[30vw] !bg-primary-950"
         />
         <h1
           v-else
-          class="text-shadow-cv-dark-purple font-serif text-[min(1.5rem,5vw)] font-bold text-cv-dark-purple text-opacity-80"
+          class="text-shadow-primary-950 font-serif text-[min(1.5rem,5vw)] font-bold text-primary-950 text-opacity-80"
         >
           <ruby v-if="personalInfo.fullNameRuby">
             &centerdot; {{ personalInfo.fullName }} &centerdot;
@@ -29,7 +29,7 @@
         <LoadingSkeleton v-if="!personalInfo.tagLine" class="!h-10 !w-[45vw]" />
         <h2
           v-else
-          class="text-shadow-cv-dark-purple font-serif text-[min(1.85rem,5vw)] font-bold italic text-cv-white"
+          class="text-shadow-primary-950 font-serif text-[min(1.85rem,5vw)] font-bold italic text-white"
         >
           {{ personalInfo.tagLine }}
         </h2>
@@ -54,7 +54,7 @@
     </div>
     <div class="">
       <h1
-        class="text-shadow-cv-dark-purple pb-16 text-center font-serif text-[min(1.85rem,5vw)] font-bold italic text-cv-white"
+        class="text-shadow-primary-950 pb-16 text-center font-serif text-[min(1.85rem,5vw)] font-bold italic text-white"
       >
         So, what can you do?
       </h1>
@@ -135,8 +135,8 @@
 </template>
 
 <style scoped>
-.text-shadow-cv-dark-purple {
-  text-shadow: 0 0 2rem rgb(var(--cv-dark-purple));
+.text-shadow-primary-950 {
+  text-shadow: 0 0 2rem rgb(var(--primary-950));
 }
 </style>
 

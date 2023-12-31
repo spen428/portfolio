@@ -13,7 +13,7 @@ input[type="radio"] {
   box-sizing: border-box;
   appearance: none;
   background: white;
-  outline: 2px solid rgb(var(--cv-grey));
+  outline: 2px solid rgb(var(--gray-700));
   border: 2px solid white;
   width: 0.75rem;
   height: 0.75rem;
@@ -22,8 +22,8 @@ input[type="radio"] {
 }
 
 input[type="radio"]:checked {
-  background: rgb(var(--cv-dark-purple));
-  outline: 2px solid rgb(var(--cv-purple));
+  background: rgb(var(--primary-950));
+  outline: 2px solid rgb(var(--primary-700));
 }
 </style>
 
