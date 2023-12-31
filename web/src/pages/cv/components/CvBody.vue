@@ -40,6 +40,10 @@
   & p {
     @apply mb-2;
   }
+
+  & li {
+    @apply pr-8 text-justify;
+  }
 }
 </style>
 
