@@ -1,7 +1,10 @@
 <template>
   <section class="mx-4 my-8 lg:m-8">
     <LoadingSkeleton v-if="!cvData.abstract" class="h-6 w-full" />
-    <p v-else class="text-center italic lg:text-justify lg:text-sm">
+    <p
+      v-else
+      class="text-center italic print:!text-xs lg:text-justify lg:text-sm"
+    >
       {{ cvData.abstract }}
     </p>
   </section>
