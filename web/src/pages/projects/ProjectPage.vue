@@ -25,20 +25,24 @@
       </div>
 
       <LoadingSkeleton v-if="!project" class="h-16 w-full" />
-      <p v-else class="text-justify text-sm italic">
-        <b>Abstract:</b>
-        {{ project.abstract ?? "None." }}
-      </p>
+      <p
+        v-else
+        class="text-justify text-sm italic"
+        v-html="
+          '<span class=\'font-bold\'>Abstract: </span>' +
+          (project.abstract ?? 'Todo.')
+        "
+      />
 
       <LoadingSkeleton v-if="!project" class="h-48 w-full !bg-cv-light-grey" />
-      <section v-else class="flex flex-col justify-around md:flex-row">
+      <section v-else class="flex flex-col justify-between md:flex-row">
         <div class="flex gap-2 md:gap-4">
           <div class="w-0.5 shrink-0 bg-cv-light-grey sm:w-1" />
           <div class="flex grow flex-col gap-[inherit] py-2">
             <h2 class="!text-base">Learning objectives</h2>
             <ul class="list-disc text-sm">
               <li
-                v-for="lo in project.learningObjectives ?? []"
+                v-for="lo in project.learningObjectives ?? ['Todo']"
                 :key="lo"
                 v-html="lo"
               />
@@ -52,7 +56,7 @@
             <h2 class="!text-base">Learning outcomes</h2>
             <ul class="list-disc text-sm">
               <li
-                v-for="lo in project.learningOutcomes ?? []"
+                v-for="lo in project.learningOutcomes ?? ['Todo']"
                 :key="lo"
                 v-html="lo"
               />
@@ -65,10 +69,19 @@
       <LoadingSkeleton v-if="!project" class="h-96 w-full" />
       <section
         v-else
-        v-html="project.articleBody ?? ''"
+        v-html="
+          project.articleBody ?? 'Sorry, I haven\'t written this up just yet!'
+        "
         class="flex flex-col gap-[inherit]"
       />
     </article>
+
+    <button
+      class="mx-auto mt-4 flex animate-tease justify-center print:!hidden lg:mt-16"
+      onclick="document.body.scrollTop = 0; document.documentElement.scrollTop = 0;"
+    >
+      <img src="/logo.svg" :alt="$t('logo')" class="h-16 w-16 select-none" />
+    </button>
   </div>
 </template>
 
