@@ -17,7 +17,7 @@
         <h3 v-if="dateRange" class="mx-2 shrink-0 font-bold lg:ml-0">
           {{ dateRange.from }} &ndash; {{ dateRange.to }}
         </h3>
-        <h4 v-if="subtitle" class="mx-2 shrink-0 italic lg:mx-0">
+        <h4 v-if="subtitle" class="mx-2 shrink-0 lg:mx-0">
           {{ subtitle }}
         </h4>
       </div>

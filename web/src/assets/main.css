@@ -23,6 +23,10 @@
         @apply not-italic font-bold;
     }
 
+    cite {
+        @apply font-serif not-italic;
+    }
+
     ul {
         @apply my-2 list-disc pl-8 text-left;
     }

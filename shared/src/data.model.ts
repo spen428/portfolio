@@ -1,6 +1,7 @@
 export interface CvData {
   articles: Article[];
   abstract: string;
+  lastModified: string;
 }
 
 interface Article {
