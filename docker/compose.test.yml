@@ -1,17 +1,21 @@
 services:
   api:
     image: portfolio-api:${IMAGE_TAG}
-    build: ../api
+    build:
+      context: ../
+      target: api
     environment:
       - DATA_PATH=$DATA_PATH
   web:
     image: portfolio-web:${IMAGE_TAG}
-    build: ../web
+    build:
+      context: ../
+      target: web
   vr:
     image: vr:${IMAGE_TAG}
     build:
-      context: ../web
-      dockerfile: Backstop.Dockerfile
+      context: ../
+      target: vr
     depends_on:
       web:
         condition: service_healthy

@@ -5,9 +5,7 @@
     "rootDir": "./src",
     "outDir": "./dist",
     "paths": {
-      "@shared/*": [
-        "../shared/dist/*"
-      ]
+      "@shared/*": ["./node_modules/shared/dist/*"]
     },
     "strict": true,
     "allowUnusedLabels": false,

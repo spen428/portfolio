@@ -33,6 +33,7 @@ export default new (class DataService {
     cvData: ref<CvData>({
       abstract: "",
       articles: [],
+      lastModified: "",
     }),
     projects: ref<Project[]>([]),
     personalInfo: ref<PersonalInfo>({
