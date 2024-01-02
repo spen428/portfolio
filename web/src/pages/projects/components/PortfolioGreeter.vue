@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fixed left-0 top-0 h-full w-full animate-fadeIn whitespace-nowrap bg-gradient-to-b from-cv-dark-purple to-cv-light-grey text-2xl italic text-cv-white"
+    class="fixed left-0 top-0 h-full w-full animate-fadeIn whitespace-nowrap bg-gradient-to-b from-primary-950 to-primary-200 text-2xl italic text-white"
   >
     <div class="step-1 animate-fade p-16 text-4xl opacity-0">Welcome.</div>
     <div class="step-2 animate-fade p-16 opacity-0">

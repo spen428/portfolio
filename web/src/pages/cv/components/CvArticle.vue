@@ -5,13 +5,13 @@
     <div
       class="flex shrink-0 items-center justify-between print:!mt-0.5 lg:mr-8 lg:w-28 lg:items-start lg:justify-end"
     >
-      <span class="h-1 w-full bg-cv-dark-purple lg:!hidden"></span>
+      <span class="h-1 w-full bg-primary-950 lg:!hidden"></span>
       <span
-        class="mx-4 text-center text-2xl font-bold text-cv-dark-purple print:!text-[14pt] lg:m-0 lg:text-lg"
+        class="mx-4 text-center text-2xl font-bold text-primary-950 print:!text-[14pt] lg:m-0 lg:text-lg"
       >
         {{ title }}
       </span>
-      <span class="h-1 w-full bg-cv-dark-purple lg:!hidden"></span>
+      <span class="h-1 w-full bg-primary-950 lg:!hidden"></span>
     </div>
     <div class="mt-2 lg:mt-1">
       <slot></slot>

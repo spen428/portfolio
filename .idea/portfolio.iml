@@ -10,6 +10,10 @@
       <excludeFolder url="file://$MODULE_DIR$/web/bin" />
       <excludeFolder url="file://$MODULE_DIR$/web/dist" />
       <excludeFolder url="file://$MODULE_DIR$/web/.pnpm-store" />
+      <excludeFolder url="file://$MODULE_DIR$/web/visual_regressions/bitmaps_test" />
+      <excludeFolder url="file://$MODULE_DIR$/web/visual_regressions/ci_report" />
+      <excludeFolder url="file://$MODULE_DIR$/web/visual_regressions/html_report" />
+      <excludeFolder url="file://$MODULE_DIR$/shared/dist" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

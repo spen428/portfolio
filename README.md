@@ -3,7 +3,7 @@
 This is an SPA and backend for my portfolio and CV (curriculum vitae; résumé), built with **Vue.js**,
 **Tailwind CSS**, **Vite** and **Express**.
 
-<div style="text-align: center"><img alt="Home page preview" src="doc/landing-page-loading.png" /></div>
+<div style="text-align: center"><img alt="Home page preview" src="web/public/projects/landing-page-loading.png" /></div>
 
 **Responsive** - Developed with mobile, tablet, and desktop in mind. _NB: Dummy data is used in previews._
 
@@ -72,7 +72,7 @@ Here's what a typical test report looks like:
 
 This is what the TeamCity pipelines for this project look like!
 
-<img alt="" src="doc/pipelines.png"/>
+<img alt="" src="web/public/projects/pipelines.png"/>
 
 ...and the artifact output...
 

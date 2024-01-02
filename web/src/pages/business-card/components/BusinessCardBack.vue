@@ -1,9 +1,9 @@
 <template>
   <div
-    class="flex flex-row items-center justify-between border-2 border-cv-dark-purple bg-cv-white p-4"
+    class="flex flex-row items-center justify-between border-2 border-primary-950 bg-white p-4"
   >
     <div class="w-full whitespace-nowrap text-sm font-bold">
-      <h1 class="text-lg text-cv-dark-purple">{{ personalInfo.fullName }}</h1>
+      <h1 class="text-lg text-primary-950">{{ personalInfo.fullName }}</h1>
       <h2 class="small-caps mb-4 text-xs italic">
         Software &amp; Devops engineer
       </h2>
@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-import type { PersonalInfo } from "@/services/data.model";
+import type { PersonalInfo } from "@shared/data.model";
 
 defineProps<{ personalInfo: PersonalInfo }>();
 </script>

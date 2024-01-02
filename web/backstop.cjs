@@ -95,7 +95,7 @@ function getDeviceScenarios() {
 
   return deviceScenarios.concat(japaneseLocaleScenarios);
 }
-
+// TODO: Add README tests
 module.exports = {
   id: "VR",
   viewports: [],

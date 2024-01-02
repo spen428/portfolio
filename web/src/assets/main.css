@@ -3,39 +3,36 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --cv-dark-purple: 66 28 82;
-    --cv-purple: 115 44 123;
-    --cv-grey: 156 138 165;
-    --cv-light-grey: 189 174 198;
-    --cv-white: 255 255 255;
-    --default-text: 105 105 105;
-  }
-
   a {
-    color: rgb(var(--cv-dark-purple));
-    text-decoration: none;
-    transition: text-shadow 250ms ease-in-out;
+    @apply text-primary-950 no-underline transition-[text-shadow] duration-300 ease-in-out;
   }
 
   a:hover {
-    cursor: pointer;
-    text-shadow: 0 0 2rem rgb(var(--cv-white));
+    @apply cursor-pointer shadow-white text-shadow;
   }
 
   ruby {
-    display: inline-flex;
-    flex-direction: column-reverse;
+    @apply inline-flex flex-col-reverse;
   }
 
   rt {
-    display: inline;
-    line-height: 1.25rem;
+    @apply inline leading-5;
   }
 
   em {
-    font-style: normal;
-    font-weight: bold;
+    @apply font-bold not-italic;
+  }
+
+  cite {
+    @apply font-serif not-italic;
+  }
+
+  ul {
+    @apply my-2 list-disc pl-8 text-left;
+  }
+
+  li {
+    @apply my-2 lg:my-0;
   }
 }
 
@@ -57,7 +54,7 @@
     transition: none !important;
   }
 
-  .balance {
+  .text-balance {
     /*noinspection CssInvalidPropertyValue*/
     text-wrap: balance;
   }
@@ -66,18 +63,5 @@
 @media print {
   a {
     text-decoration: none;
-  }
-
-  /* Color overrides for printing in CMYK */
-  :root {
-    --default-text: 42 42 42 !important;
-  }
-
-  .text-default-text {
-    color: #2a2a2a !important;
-  }
-
-  .text-cv-grey {
-    color: #e7bdff !important;
   }
 }

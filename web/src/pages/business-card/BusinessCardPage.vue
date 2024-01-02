@@ -1,6 +1,6 @@
 <template>
   <div
-    class="pointer-events-none mx-auto mt-8 flex w-fit select-none flex-col items-center bg-cv-light-grey p-8"
+    class="pointer-events-none mx-auto mt-8 flex w-fit select-none flex-col items-center bg-primary-200 p-8"
   >
     <BusinessCardFront class="card" :personal-info="personalInfo" />
     <span class="h-8"></span>

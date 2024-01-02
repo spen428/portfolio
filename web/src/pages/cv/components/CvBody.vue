@@ -1,7 +1,10 @@
 <template>
   <section class="mx-4 my-8 lg:m-8">
     <LoadingSkeleton v-if="!cvData.abstract" class="h-6 w-full" />
-    <p v-else class="text-center italic lg:text-justify lg:text-sm">
+    <p
+      v-else
+      class="text-center italic print:!text-xs lg:text-justify lg:text-sm"
+    >
       {{ cvData.abstract }}
     </p>
   </section>
@@ -24,6 +27,9 @@
       <div v-html="section.htmlContent" class="cv-section-content"></div>
     </CvSection>
   </CvArticle>
+  <div class="mt-4 text-center text-xs lg:text-right">
+    Last modified: {{ cvData.lastModified }}
+  </div>
   <button
     class="mx-auto mt-4 flex animate-tease justify-center print:!hidden lg:mt-8"
     onclick="document.body.scrollTop = 0; document.documentElement.scrollTop = 0;"
@@ -38,16 +44,8 @@
     @apply mb-2;
   }
 
-  & em {
-    @apply font-bold not-italic;
-  }
-
-  & ul {
-    @apply my-2 list-disc pl-8 text-left;
-  }
-
   & li {
-    @apply my-2 lg:my-0;
+    @apply pr-8 text-justify;
   }
 }
 </style>
@@ -55,7 +53,7 @@
 <script setup lang="ts">
 import CvArticle from "@/pages/cv/components/CvArticle.vue";
 import CvSection from "@/pages/cv/components/CvSection.vue";
-import type { CvData } from "@/services/data.model";
+import type { CvData } from "@shared/data.model";
 import LoadingSkeleton from "@/components/LoadingSkeleton.vue";
 
 defineProps<{ cvData: CvData }>();

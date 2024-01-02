@@ -1,74 +1,132 @@
 [
   {
-    "id": 0,
+    "id": "0",
     "thumbnailUrl": "/projects/helix.jpg",
     "title": "HELIX Digital Twin",
     "url": {
       "url": "https://binnies.com/sectors/digital/digital-products/helix/",
       "external": true
-    }
+    },
+    "technologyIds": [
+      "angular",
+      "csharp",
+      "netcore",
+      "postgresql",
+      "docker",
+      "azure",
+      "xunit",
+      "swagger",
+      "typescript",
+      "javascript",
+      "ngrx",
+      "rxjs",
+      "primeng",
+      "windows-server",
+      "mssql"
+    ],
+    "abstract": "HELIX is a digital twin platform"
   },
   {
-    "id": 1,
+    "id": "1",
     "thumbnailUrl": "/projects/footsteps2.png",
     "title": "Parenta EYFS Tracker",
     "url": {
       "url": "https://www.parenta.com/eyfs-tracker/",
       "external": true
-    }
+    },
+    "technologyIds": [
+      "angular",
+      "csharp",
+      "netcore",
+      "aws",
+      "xunit",
+      "swagger",
+      "typescript",
+      "javascript",
+      "windows-server",
+      "mssql",
+      "bamboo"
+    ]
   },
   {
-    "id": 2,
+    "id": "2",
     "thumbnailUrl": "/projects/regexp-vis.png",
     "title": "Regular Language Visualizer",
     "url": {
       "url": "https://github.com/spen428/regexp-vis",
       "external": true
-    }
+    },
+    "technologyIds": ["java", "python"]
   },
   {
-    "id": 3,
+    "id": "3",
     "thumbnailUrl": "/projects/cv.thumb.jpg",
     "title": "CV & Portfolio Website",
     "url": {
       "url": "https://github.com/spen428/portfolio",
       "external": true
-    }
+    },
+    "technologyIds": [
+      "vue",
+      "typescript",
+      "javascript",
+      "docker",
+      "portainer",
+      "linux",
+      "teamcity"
+    ],
+    "abstract": "A Vue.js website that hosts my CV in web, mobile, and printable formats and showcases the hardware and software projects I have taken part in over the years. It is written like a detailed blog but should be treated more as a tool for self-reference and demonstration because nobody would bother to read through it leisurely.",
+    "articleBody": "<img src='/projects/cv.thumb.jpg' style='height: 16rem;' />"
   },
   {
-    "id": 4,
+    "id": "4",
     "thumbnailUrl": "/projects/jong.png",
     "title": "Jong",
     "url": {
       "url": "https://github.com/spen428/jong",
       "external": true
-    }
+    },
+    "technologyIds": ["java"]
   },
   {
-    "id": 5,
+    "id": "5",
     "thumbnailUrl": "/projects/ancolle.png",
     "title": "AnColle",
     "url": {
       "url": "https://github.com/spen428/ancolle",
       "external": true
-    }
+    },
+    "technologyIds": ["java"]
   },
   {
-    "id": 6,
+    "id": "6",
     "thumbnailUrl": "/projects/tenhou.png",
     "title": "Custom Tenhou.net Client",
     "url": {
       "url": "https://github.com/spen428/custom_tenhou_client",
       "external": true
-    }
+    },
+    "technologyIds": ["python"]
   },
   {
-    "id": 7,
+    "id": "7",
     "thumbnailUrl": "/projects/raffld.png",
     "title": "Raffl'd: The Experience Lottery",
     "url": {
       "url": "#",
       "external": false
-    }
+    },
+    "technologyIds": [
+      "react",
+      "java",
+      "spring",
+      "postgresql",
+      "docker",
+      "xunit",
+      "swagger",
+      "javascript",
+      "linux",
+      "jenkins"
+    ]
   }
 ]

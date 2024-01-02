@@ -1,6 +1,7 @@
 export interface CvData {
   articles: Article[];
   abstract: string;
+  lastModified: string;
 }
 
 interface Article {
@@ -16,10 +17,16 @@ interface Section {
 }
 
 export interface Project {
-  id: number;
+  id: string;
+  type: string;
   title: string;
   url: { url: string; external: boolean };
   thumbnailUrl: string;
+  technologyIds?: string[];
+  abstract?: string;
+  learningObjectives?: string[];
+  learningOutcomes?: string[];
+  articleBody?: string;
 }
 
 export interface PersonalInfo {
@@ -36,4 +43,22 @@ export interface PersonalInfo {
   github: { url: string; username: string };
   longerTagLine: string;
   linkedIn: { url: string };
+}
+
+export interface CommercialExperience {
+  introduction: string;
+  articles: {
+    title: string;
+    logoUrl: string;
+    tags: string[];
+    introduction: string;
+    sections: { title: string; body: string }[];
+  }[];
+}
+
+export interface TechnologyWithIcon {
+  id: string;
+  name: string;
+  logoUrl: string;
+  color?: string;
 }

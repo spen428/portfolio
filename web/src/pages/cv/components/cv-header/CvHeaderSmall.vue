@@ -10,7 +10,7 @@
         />
         <h1
           v-else
-          class="mx-0 mt-3 font-serif text-3xl font-bold text-cv-dark-purple xs:text-4xl"
+          class="mx-0 mt-3 font-serif text-3xl font-bold text-primary-950 xs:text-4xl"
         >
           <ruby v-if="personalInfo.fullNameRuby">
             {{ personalInfo.fullName }}
@@ -23,14 +23,14 @@
           v-if="!personalInfo.longerTagLine"
           class="mb-4 mt-8 h-8 w-full"
         />
-        <span v-else class="balance mb-4 mt-8">
+        <span v-else class="text-balance mb-4 mt-8">
           {{ personalInfo.longerTagLine }}
         </span>
       </div>
 
       <LoadingSkeleton
         v-if="!personalInfo.emailAddress"
-        class="h-12 w-full !bg-cv-dark-purple"
+        class="h-12 w-full !bg-primary-950"
       />
       <div v-else class="my-2 flex w-full items-center justify-evenly md:my-4">
         <a :href="`tel:${personalInfo.phoneNumber.intl}`">
@@ -54,7 +54,7 @@
 </template>
 
 <script setup lang="ts">
-import type { PersonalInfo } from "@/services/data.model";
+import type { PersonalInfo } from "@shared/data.model";
 import LoadingSkeleton from "@/components/LoadingSkeleton.vue";
 
 defineProps<{ personalInfo: PersonalInfo }>();

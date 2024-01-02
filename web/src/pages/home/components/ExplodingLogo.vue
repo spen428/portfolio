@@ -23,13 +23,13 @@
             y="0.35"
             font-size="0.1"
             transform="rotate(20)"
-            class="fill-cv-dark-purple"
+            class="fill-primary-950"
           >
             CV
           </text>
           <use
             id="outlineLeft"
-            class="fill-cv-dark-purple duration-[4s]"
+            class="fill-primary-950 duration-[4s]"
             href="logo-hollow.svg#logoLeft"
           ></use>
           <clipPath id="maskLeft" clipPathUnits="objectBoundingBox">
@@ -63,7 +63,7 @@
             y="0.35"
             font-size="0.05"
             transform="rotate(15)"
-            class="fill-cv-white"
+            class="fill-white"
           >
             Project
           </text>
@@ -72,13 +72,13 @@
             y="0.405"
             font-size="0.05"
             transform="rotate(15)"
-            class="fill-cv-white"
+            class="fill-white"
           >
             Showcase
           </text>
           <use
             id="outlineMiddle"
-            class="fill-cv-white duration-[4s]"
+            class="fill-white duration-[4s]"
             href="logo-hollow.svg#logoMiddle"
           ></use>
           <clipPath id="maskMiddle" clipPathUnits="objectBoundingBox">
@@ -112,13 +112,13 @@
             y="0.35"
             font-size="0.1"
             transform="rotate(20)"
-            class="fill-cv-purple"
+            class="fill-primary-700"
           >
             XP
           </text>
           <use
             id="outlineRight"
-            class="fill-cv-purple duration-[4s]"
+            class="fill-primary-700 duration-[4s]"
             href="logo-hollow.svg#logoRight"
           ></use>
           <clipPath id="maskRight" clipPathUnits="objectBoundingBox">

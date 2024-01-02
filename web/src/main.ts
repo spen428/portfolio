@@ -12,6 +12,7 @@ import HomePage from "@/pages/home/HomePage.vue";
 import ConfigurationService from "@/services/configuration.service";
 import { createI18n } from "vue-i18n";
 import { messages } from "@/services/locale.service";
+import ProjectPage from "@/pages/projects/ProjectPage.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -31,6 +32,12 @@ const router = createRouter({
           path: "projects",
           component: ProjectsIndexPage,
           name: "Project Showcase",
+        },
+        {
+          path: "projects/:projectId",
+          component: ProjectPage,
+          props: true,
+          meta: { isPrintable: true },
         },
         {
           path: "cv",

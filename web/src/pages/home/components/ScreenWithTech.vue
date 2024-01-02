@@ -10,33 +10,10 @@
         'md:mr-4': mediaPosition === 'right',
       }"
     >
-      <LoadingSkeleton
-        v-if="mediaLoading"
-        class="h-[270px] w-[480px] rounded-lg"
-      />
-      <video
-        v-if="mediaUrl.endsWith('.webm')"
-        v-show="!mediaLoading"
-        @canplaythrough="mediaLoading = false"
-        class="h-[270px] w-[480px] rounded-lg border-2 border-cv-white object-cover"
-        loop
-        muted
-        playsinline
-        :autoplay="autoplayVideos"
-      >
-        <source
-          :src="autoplayVideos ? mediaUrl : `${mediaUrl}#t=0.01`"
-          type="video/webm"
-        />
-      </video>
-      <img
-        v-else
-        v-show="!mediaLoading"
-        @load="mediaLoading = false"
-        @error="mediaLoading = false"
+      <MediaWithLoadingSkeleton
         :src="mediaUrl"
-        alt=""
-        class="h-[270px] w-[480px] rounded-lg border-2 border-cv-white object-cover"
+        :autoplay="autoplayVideos"
+        class="h-[270px] w-[480px] rounded-lg border-2 border-white object-cover"
       />
     </div>
 
@@ -53,9 +30,8 @@
         class="inline-flex basis-[calc(50%-1rem)] items-center gap-4"
         :class="{ 'md:self-end': index % 2 == 1 }"
       >
-        <img
+        <MediaWithLoadingSkeleton
           :src="tech.logoUrl"
-          alt=""
           class="h-[min(3rem,8vw)] w-[min(3rem,8vw)]"
         />
         <span
@@ -70,21 +46,19 @@
 
 <script setup lang="ts">
 import ConfigurationService from "@/services/configuration.service";
-import { ref } from "vue";
-import LoadingSkeleton from "@/components/LoadingSkeleton.vue";
-
-export type TechnologyWithIcon = {
-  name: string;
-  logoUrl: string;
-  color?: string;
-};
+import { computed } from "vue";
+import DataService from "@/services/data.service";
+import MediaWithLoadingSkeleton from "@/components/MediaWithLoadingSkeleton.vue";
 
 const autoplayVideos = ConfigurationService.isAnimationEnabled();
-const mediaLoading = ref(true);
 
-defineProps<{
+const technologies = computed(() =>
+  DataService.getTechnologiesById(props.technologyIds)
+);
+
+const props = defineProps<{
   mediaPosition: "left" | "right";
   mediaUrl: string;
-  technologies: TechnologyWithIcon[];
+  technologyIds: string[];
 }>();
 </script>

@@ -22,17 +22,17 @@ console.log(corsOrigins);
 
 app.get("/", (_: Request, res: Response) => res.send("OK"));
 
-app.get("/cv/data", (req: RequestWithLocale, res: Response) => {
+app.get("/cv/data", async (req: RequestWithLocale, res: Response) => {
   const locale = req.query.locale?.toString() ?? fallbackLocale;
-  return res.json(DataService.getCvData(locale));
+  return res.json(await DataService.getCvData(locale));
 });
-app.get("/cv/projects", (req: RequestWithLocale, res: Response) => {
+app.get("/cv/projects", async (req: RequestWithLocale, res: Response) => {
   const locale = req.query.locale?.toString() ?? fallbackLocale;
-  return res.json(DataService.getProjects(locale));
+  return res.json(await DataService.getProjects(locale));
 });
-app.get("/cv/personal-info", (req: RequestWithLocale, res: Response) => {
+app.get("/cv/personal-info", async (req: RequestWithLocale, res: Response) => {
   const locale = req.query.locale?.toString() ?? fallbackLocale;
-  return res.json(DataService.getPersonalInfo(locale));
+  return res.json(await DataService.getPersonalInfo(locale));
 });
 
 app.listen(port, hostname, () => {

@@ -8,7 +8,7 @@
       <span class="w-1/4 text-right">{{ b.name }}</span>
       <span
         :class="b.classes"
-        class="mx-4 grow bg-green-400 text-center"
+        class="mx-4 grow bg-secondary-400 text-center"
       ></span>
       <span :class="b.classes">"{{ b.classes }}"</span>
     </div>

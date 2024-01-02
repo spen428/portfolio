@@ -10,20 +10,11 @@
 
 <style scoped>
 input[type="radio"] {
-  box-sizing: border-box;
-  appearance: none;
-  background: white;
-  outline: 2px solid rgb(var(--cv-grey));
-  border: 2px solid white;
-  width: 0.75rem;
-  height: 0.75rem;
-  rotate: 45deg;
-  margin: 0.5rem;
+  @apply m-2 box-border h-3 w-3 rotate-45 appearance-none border-2 border-solid border-white bg-white outline outline-2 outline-gray-700;
 }
 
 input[type="radio"]:checked {
-  background: rgb(var(--cv-dark-purple));
-  outline: 2px solid rgb(var(--cv-purple));
+  @apply bg-primary-950 outline outline-2 outline-primary-700;
 }
 </style>
 

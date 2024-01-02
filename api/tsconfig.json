@@ -4,6 +4,9 @@
     "module": "commonjs",
     "rootDir": "./src",
     "outDir": "./dist",
+    "paths": {
+      "@shared/*": ["./node_modules/shared/dist/*"]
+    },
     "strict": true,
     "allowUnusedLabels": false,
     "allowUnreachableCode": false,

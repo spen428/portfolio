@@ -6,7 +6,8 @@
     "module": "es2022",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@shared/*": ["./node_modules/shared/dist/*"]
     }
   },
   "references": [
