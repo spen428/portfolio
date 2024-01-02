@@ -15,8 +15,8 @@
 
     <MediaWithLoadingSkeleton src="/logo.svg" class="h-[18mm] w-[18mm]" />
 
-    <div class="z-10 flex flex-col items-center justify-center gap-6">
-      <div class="flex flex-col items-center gap-1">
+    <div class="z-10 flex flex-col items-center justify-center gap-4">
+      <div class="flex flex-col items-center gap-2">
         <LoadingSkeleton
           v-if="!personalInfo.fullName"
           class="h-7 w-48 !bg-primary-950"
