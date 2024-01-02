@@ -2,6 +2,9 @@ node_modules/
 dist/
 docker/
 doc/
+.teamcity/
+.git/
+.idea/
 .dockerignore
 .gitignore
 .gitmodules

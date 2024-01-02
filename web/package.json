@@ -9,7 +9,8 @@
     "build:prod": "NODE_ENV=production vue-tsc --noEmit && vite build",
     "lint": "prettier --check . && eslint . --ext .vue,.js,.ts",
     "lint:fix": "prettier --write . && eslint . --ext .vue,.js,.ts --fix",
-    "test": "bash ../.teamcity/scripts/run-tests.step.sh",
+    "test": "true",
+    "test:local": "PROJECT_NAME=portfolio-test-local IMAGE_TAG=local bash ../.teamcity/scripts/test-with-dummy-data.sh",
     "test:without-docker": "backstop test --configPath=backstop.cjs",
     "approve": "backstop approve --configPath=backstop.cjs"
   },

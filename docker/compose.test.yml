@@ -6,11 +6,16 @@ services:
       target: api
     environment:
       - DATA_PATH=$DATA_PATH
+      - CORS_ORIGINS=http://web:5173,http://localhost:5173
+    ports:
+      - 15000:15000
   web:
     image: portfolio-web:${IMAGE_TAG}
     build:
       context: ../
       target: web
+    ports:
+      - 5173:5173
   vr:
     image: vr:${IMAGE_TAG}
     build:

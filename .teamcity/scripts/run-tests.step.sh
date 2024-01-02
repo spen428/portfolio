@@ -21,7 +21,7 @@ copy_results_to_host() {
     docker cp $container:/src/visual_regressions/html_report ../web/visual_regressions && \
     docker cp $container:/src/visual_regressions/bitmaps_test ../web/visual_regressions && \
     docker cp $container:/src/visual_regressions/pdf_test ../web/visual_regressions && \
-    docker cp $container:/src/bin ../web || exit 8
+    docker cp $container:/src/bin ../web || stop_stack && exit 8
 }
 
 if [ -z "$IMAGE_TAG" ]; then
@@ -29,7 +29,7 @@ if [ -z "$IMAGE_TAG" ]; then
   exit 16
 fi
 
-export PROJECT_NAME="$(< /proc/sys/kernel/random/uuid)"
+export PROJECT_NAME="${PROJECT_NAME:-$(< /proc/sys/kernel/random/uuid)}"
 export VR_VOLUME_NAME="$(< /proc/sys/kernel/random/uuid)"
 
 cd "$(dirname "$0")/../../docker" || exit 4

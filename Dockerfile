@@ -43,12 +43,15 @@ FROM backstopjs/backstopjs:6.3.2 as vr-base
 RUN apt-get update && \
     apt-get install -y ghostscript bash && \
     npm install -g pnpm
-WORKDIR /src
-VOLUME /src
 
 
 FROM vr-base as vr
-COPY --from=web /app ./
+VOLUME /src
+WORKDIR /src
+COPY --from=base /app/web /src/
+COPY --from=base /src/web/visual_regressions /src/visual_regressions/
+COPY --from=base /src/web/scripts /src/scripts/
+COPY --from=base /src/web/backstop.cjs /src/
 ENV BASE_URL=http://web:5173
 ENTRYPOINT node scripts/export-pdf.js --url="$BASE_URL" && \
     bash scripts/generate-pngs-from-pdf.sh && \
