@@ -34,6 +34,9 @@ export VR_VOLUME_NAME="$(< /proc/sys/kernel/random/uuid)"
 
 cd "$(dirname "$0")/../../docker" || exit 4
 
+trap 'stop_stack; exit 99' SIGINT
+trap 'stop_stack; exit 99' SIGQUIT
+
 start_stack
 copy_results_to_host
 stop_stack

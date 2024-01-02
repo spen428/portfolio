@@ -1,30 +1,35 @@
-FROM node:20.10 as pnpm
+FROM node:20.10 as base
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+ENV PUPPETEER_SKIP_DOWNLOAD="true"
+RUN corepack enable
 USER root
-RUN npm install -g pnpm
 
 
-FROM pnpm as base
+FROM base as build
 WORKDIR /src
+
 COPY . .
-ENV VITE_API_URL=abc
-RUN PUPPETEER_SKIP_DOWNLOAD=true \
-    pnpm install && \
-    pnpm run build:prod
-RUN mkdir /app && \
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
+    pnpm install --frozen-lockfile
+
+ENV VITE_API_URL=http://api:15000
+RUN pnpm run build:prod && \
+    mkdir /app && \
     pnpm deploy --filter web /app/web && \
     pnpm deploy --prod --filter api /app/api
 
 
-FROM pnpm as web
+FROM base as web
 WORKDIR /app
-COPY --from=base /app/web .
+COPY --from=build /app/web .
 HEALTHCHECK --interval=10s --timeout=5s \
     CMD curl -f http://localhost:5173 || exit 1
 EXPOSE 5173
 ENTRYPOINT pnpm run prod
 
 
-FROM pnpm as api
+FROM base as api
 ENV NODE_ENV=production
 ENV CORS_ORIGINS=http://web:5173
 ENV SERVER_HOSTNAME=0.0.0.0
@@ -32,26 +37,26 @@ ENV SERVER_PORT=15000
 ENV DEBUG=express:router
 ENV DATA_PATH=dummy
 WORKDIR /app
-COPY --from=base /app/api .
+COPY --from=build /app/api .
 HEALTHCHECK --interval=10s --timeout=5s \
     CMD curl -s http://localhost:$SERVER_PORT | grep 'OK' || exit 1
 EXPOSE $SERVER_PORT
 ENTRYPOINT pnpm run prod
 
 
-FROM backstopjs/backstopjs:6.3.2 as vr-base
-RUN apt-get update && \
-    apt-get install -y ghostscript bash && \
-    npm install -g pnpm
-
-
-FROM vr-base as vr
+FROM backstopjs/backstopjs:6.3.3 as vr-base
 VOLUME /src
 WORKDIR /src
-COPY --from=base /app/web /src/
-COPY --from=base /src/web/visual_regressions /src/visual_regressions/
-COPY --from=base /src/web/scripts /src/scripts/
-COPY --from=base /src/web/backstop.cjs /src/
+RUN apt-get update && \
+    apt-get install -y ghostscript bash && \
+    chown -R node /src
+USER node
+
+FROM vr-base as vr
+COPY --from=build --chown=node /app/web /src/
+COPY --from=build --chown=node /src/web/visual_regressions /src/visual_regressions/
+COPY --from=build --chown=node /src/web/scripts /src/scripts/
+COPY --from=build --chown=node /src/web/backstop.cjs /src/
 ENV BASE_URL=http://web:5173
 ENTRYPOINT node scripts/export-pdf.js --url="$BASE_URL" && \
     bash scripts/generate-pngs-from-pdf.sh && \
