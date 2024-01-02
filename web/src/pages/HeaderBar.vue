@@ -1,7 +1,7 @@
 <template>
   <div id="headerBarSpacer" class="print:!hidden lg:h-20"></div>
   <header
-    class="lg:from-transparent w-full print:!hidden lg:fixed lg:bg-gradient-to-t"
+    class="w-full print:!hidden lg:fixed lg:bg-gradient-to-t lg:from-transparent"
     :class="{ 'lg:to-gray-900': hasScrolled }"
   >
     <div

@@ -3,65 +3,65 @@
 @tailwind utilities;
 
 @layer base {
-    a {
-        @apply text-primary-950 duration-300 ease-in-out transition-[text-shadow] no-underline;
-    }
+  a {
+    @apply text-primary-950 no-underline transition-[text-shadow] duration-300 ease-in-out;
+  }
 
-    a:hover {
-        @apply cursor-pointer text-shadow shadow-white;
-    }
+  a:hover {
+    @apply cursor-pointer shadow-white text-shadow;
+  }
 
-    ruby {
-        @apply inline-flex flex-col-reverse;
-    }
+  ruby {
+    @apply inline-flex flex-col-reverse;
+  }
 
-    rt {
-        @apply inline leading-5;
-    }
+  rt {
+    @apply inline leading-5;
+  }
 
-    em {
-        @apply not-italic font-bold;
-    }
+  em {
+    @apply font-bold not-italic;
+  }
 
-    cite {
-        @apply font-serif not-italic;
-    }
+  cite {
+    @apply font-serif not-italic;
+  }
 
-    ul {
-        @apply my-2 list-disc pl-8 text-left;
-    }
+  ul {
+    @apply my-2 list-disc pl-8 text-left;
+  }
 
-    li {
-        @apply my-2 lg:my-0;
-    }
+  li {
+    @apply my-2 lg:my-0;
+  }
 }
 
 @layer components {
-    .small-caps {
-        font-variant-caps: small-caps;
-    }
+  .small-caps {
+    font-variant-caps: small-caps;
+  }
 
-    .all-small-caps {
-        font-variant-caps: all-small-caps;
-    }
+  .all-small-caps {
+    font-variant-caps: all-small-caps;
+  }
 
-    .all-caps {
-        text-transform: uppercase;
-    }
+  .all-caps {
+    text-transform: uppercase;
+  }
 
-    .disable-animation * {
-        animation: none !important;
-        transition: none !important;
-    }
+  .disable-animation * {
+    animation: none !important;
+    transition: none !important;
+  }
 
-    .text-balance {
-        /*noinspection CssInvalidPropertyValue*/
-        text-wrap: balance;
-    }
+  .text-balance {
+    /*noinspection CssInvalidPropertyValue*/
+    text-wrap: balance;
+  }
 }
 
 @media print {
-    a {
-        text-decoration: none;
-    }
+  a {
+    text-decoration: none;
+  }
 }

@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-gray-800 w-full bg-opacity-20 opacity-70">
+  <footer class="w-full bg-gray-800 bg-opacity-20 opacity-70">
     <div class="mx-auto max-w-7xl px-2 lg:px-8">
       <p class="all-caps p-4 text-justify text-[0.6rem] text-white">
         <i18n-t keypath="copyright_notice">
