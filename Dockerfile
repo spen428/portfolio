@@ -13,7 +13,6 @@ COPY . .
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
     pnpm install --frozen-lockfile
 
-ENV VITE_API_URL=http://api:15000
 RUN pnpm run build:prod && \
     mkdir /app && \
     pnpm deploy --filter web /app/web && \
@@ -21,6 +20,7 @@ RUN pnpm run build:prod && \
 
 
 FROM base as web
+ENV VITE_API_URL=http://api:15000
 WORKDIR /app
 COPY --from=build /app/web .
 HEALTHCHECK --interval=10s --timeout=5s \

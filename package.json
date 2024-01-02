@@ -11,6 +11,6 @@
     "test": "pnpm run -r test"
   },
   "devDependencies": {
-    "backstopjs": "6.2.2"
+    "backstopjs": "6.3.3"
   }
 }

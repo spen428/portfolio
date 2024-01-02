@@ -2,8 +2,10 @@ import fs from "fs";
 import puppeteer from "puppeteer";
 
 async function pageToPdf(page, url, filename, browser) {
+  console.log("Visiting " + url);
   await page.goto(url, { waitUntil: "networkidle0" });
   await page.waitForFunction(() => !document.querySelector("#skeleton"));
+  console.log("Loading has finished");
 
   if (!fs.existsSync("./bin")) {
     fs.mkdirSync("./bin");
