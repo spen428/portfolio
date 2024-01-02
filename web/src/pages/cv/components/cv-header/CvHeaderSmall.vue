@@ -12,11 +12,10 @@
           v-else
           class="mx-0 mt-3 font-serif text-3xl font-bold text-primary-950 xs:text-4xl"
         >
-          <ruby v-if="personalInfo.fullNameRuby">
-            {{ personalInfo.fullName }}
-            <rt> {{ personalInfo.fullNameRuby }}</rt>
-          </ruby>
-          <span v-else>{{ personalInfo.fullName }}</span>
+          <TextWithRuby
+            :text="personalInfo.fullName"
+            :ruby="personalInfo.fullNameRuby"
+          />
         </h1>
 
         <LoadingSkeleton
@@ -56,6 +55,7 @@
 <script setup lang="ts">
 import type { PersonalInfo } from "@shared/data.model";
 import LoadingSkeleton from "@/components/LoadingSkeleton.vue";
+import TextWithRuby from "@/components/TextWithRuby.vue";
 
 defineProps<{ personalInfo: PersonalInfo }>();
 </script>

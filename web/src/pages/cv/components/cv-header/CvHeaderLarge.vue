@@ -32,11 +32,10 @@
       class="mb-0 flex h-full w-3/5 flex-col items-center justify-center text-center"
     >
       <h1 class="font-serif text-3xl font-bold text-primary-950 print:!mt-3">
-        <ruby v-if="personalInfo.fullNameRuby">
-          {{ personalInfo.fullName }}
-          <rt> {{ personalInfo.fullNameRuby }}</rt>
-        </ruby>
-        <span v-else>{{ personalInfo.fullName }}</span>
+        <TextWithRuby
+          :text="personalInfo.fullName"
+          :ruby="personalInfo.fullNameRuby"
+        />
       </h1>
       <span class="small-caps mt-4 text-base leading-4 print:!text-sm">
         {{ personalInfo.longerTagLine }}
@@ -61,6 +60,7 @@
 <script setup lang="ts">
 import type { PersonalInfo } from "@shared/data.model";
 import LoadingSkeleton from "@/components/LoadingSkeleton.vue";
+import TextWithRuby from "@/components/TextWithRuby.vue";
 
 defineProps<{ personalInfo: PersonalInfo }>();
 </script>
