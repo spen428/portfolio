@@ -5,6 +5,7 @@
       :personal-info="personalInfo"
     />
     <BusinessCardBack
+      v-show="false"
       :style="{ height: '55mm', width: cardWidth }"
       :cv-data="cvData"
     />
