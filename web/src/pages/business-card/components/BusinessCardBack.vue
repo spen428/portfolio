@@ -13,9 +13,7 @@
       <polygon points="1,1 1,0.9 0,0.95 0,1" class="fill-primary-700" />
     </svg>
 
-    <div class="flex h-full w-full items-center px-2 py-8">
-      <img src="/logo.svg" alt="" class="mx-auto h-1/2" />
-    </div>
+    <div class="flex h-full w-full items-center px-2 py-8"></div>
   </div>
 </template>
 

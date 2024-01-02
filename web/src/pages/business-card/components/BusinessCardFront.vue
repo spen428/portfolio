@@ -15,26 +15,30 @@
 
     <img src="/logo.svg" alt="" class="h-1/3" />
 
-    <div class="flex flex-col items-center justify-center gap-2">
+    <div class="z-10 flex flex-col items-center justify-center gap-6">
       <div class="text-center">
-        <h1 class="mt-1 text-lg text-primary-950">
-          {{ personalInfo.fullName }}
+        <h1 class="flex font-serif text-lg font-bold text-primary-950">
+          <ruby v-if="personalInfo.fullNameRuby">
+            {{ personalInfo.fullName }}
+            <rt class="leading-3"> {{ personalInfo.fullNameRuby }}</rt>
+          </ruby>
+          <span v-else>{{ personalInfo.fullName }}</span>
         </h1>
-        <h2 class="mb-4 mt-1 font-serif text-xs italic">
+        <h2 class="font-serif text-xs">
           {{ personalInfo.tagLine }}
         </h2>
       </div>
       <div class="flex flex-col items-center gap-1">
-        <span class="flex text-xs">
-          <img src="/icons/globe.svg" alt="Web:" class="mr-1 inline w-4" />
+        <span class="flex gap-[inherit] text-xs">
+          <img src="/icons/globe.svg" alt="Web:" class="inline w-4" />
           {{ personalInfo.cvUrl.short }}
         </span>
-        <span class="flex text-xs">
-          <img src="/icons/mail.svg" alt="Email:" class="mr-1 inline w-4" />
+        <span class="flex gap-[inherit] text-xs">
+          <img src="/icons/mail.svg" alt="Email:" class="inline w-4" />
           {{ personalInfo.emailAddress }}
         </span>
-        <span class="flex text-xs">
-          <img src="/icons/phone.svg" alt="Phone:" class="mr-1 inline w-4" />
+        <span class="flex gap-[inherit] text-xs">
+          <img src="/icons/phone.svg" alt="Phone:" class="inline w-4" />
           {{ personalInfo.phoneNumber.intl }}
         </span>
       </div>
