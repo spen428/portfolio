@@ -30,8 +30,7 @@ copy_results_to_host() {
 
 get_dev_dep_version() {
   local pkg="$1"
-  local json="$2"
-  node -e "console.log(require('${json}').devDependencies['${pkg}'])"
+  node -e "console.log(require('../package.json').devDependencies['${pkg}'])"
 }
 
 if [ -z "$IMAGE_TAG" ]; then
@@ -43,8 +42,8 @@ cd "$(dirname "$0")/../../docker" || exit 4
 
 export PROJECT_NAME="${PROJECT_NAME:-$(< /proc/sys/kernel/random/uuid)}"
 export VR_VOLUME_NAME="$(< /proc/sys/kernel/random/uuid)"
-export NODE_VERSION="$(get_dev_dep_version "@types/node" "../web/package.json")"
-export BACKSTOP_VERSION="$(get_dev_dep_version "backstopjs" "../package.json")"
+export NODE_VERSION="$(get_dev_dep_version "@types/node")"
+export BACKSTOP_VERSION="$(get_dev_dep_version "backstopjs")"
 
 trap 'stop_stack; exit 99' SIGINT
 trap 'stop_stack; exit 99' SIGQUIT

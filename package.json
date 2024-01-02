@@ -1,6 +1,6 @@
 {
   "name": "curriculum-vitae",
-  "version": "1.0.0",
+  "version": "2.0.1",
   "private": true,
   "scripts": {
     "build": "pnpm run -r build",
@@ -11,6 +11,12 @@
     "test": "pnpm run -r test"
   },
   "devDependencies": {
-    "backstopjs": "6.3.3"
+    "@types/node": "20.10.0",
+    "@typescript-eslint/eslint-plugin": "6.14.0",
+    "@typescript-eslint/parser": "6.14.0",
+    "backstopjs": "6.3.3",
+    "eslint": "8.42.0",
+    "prettier": "2.8.8",
+    "typescript": "5.1.3"
   }
 }
