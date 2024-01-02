@@ -7,15 +7,12 @@
       preserveAspectRatio="none"
       class="absolute inset-0 z-0"
     >
-      <polygon
-        points="0,0 0,0.3 1,0.1 1,0"
-        class="fill-cv-dark-purple"
-      ></polygon>
-      <polygon points="1,1 1,0.7 0,0.9 0,1" class="fill-cv-purple"></polygon>
+      <polygon points="0,0 0,0.3 1,0.1 1,0" class="fill-primary-950"></polygon>
+      <polygon points="1,1 1,0.7 0,0.9 0,1" class="fill-primary-700"></polygon>
     </svg>
 
     <div class="flex h-full w-full items-center justify-center">
-      <img src="/logo.svg" alt="Logo" class="h-1/3" />
+      <img src="/logo.svg" :alt="$t('logo')" class="h-1/3" />
     </div>
   </div>
 </template>
