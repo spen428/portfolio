@@ -5,7 +5,6 @@ dc() {
 
 start_stack() {
   dc build || exit 5
-  docker volume rm "$VR_VOLUME_NAME" || echo "It is safe to ignore the above error."
   dc up --abort-on-container-exit vr || exit 6
 }
 
@@ -21,7 +20,10 @@ copy_results_to_host() {
     docker cp $container:/src/visual_regressions/html_report ../web/visual_regressions && \
     docker cp $container:/src/visual_regressions/bitmaps_test ../web/visual_regressions && \
     docker cp $container:/src/visual_regressions/pdf_test ../web/visual_regressions && \
-    docker cp $container:/src/bin ../web || stop_stack && exit 8
+    docker cp $container:/src/bin ../web
+  if [ $? -ne 0 ]; then
+     stop_stack && exit 8
+  fi
 }
 
 if [ -z "$IMAGE_TAG" ]; then
