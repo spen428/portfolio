@@ -4,7 +4,9 @@ dc() {
 }
 
 start_stack() {
-  dc build || exit 5
+  dc build \
+    --build-arg NODE_VERSION="$NODE_VERSION" \
+    --build-arg BACKSTOP_VERSION="$BACKSTOP_VERSION" || exit 5
   dc up --abort-on-container-exit vr || exit 6
 }
 
@@ -26,15 +28,23 @@ copy_results_to_host() {
   fi
 }
 
+get_dev_dep_version() {
+  local pkg="$1"
+  local json="$2"
+  node -e "console.log(require('${json}').devDependencies['${pkg}'])"
+}
+
 if [ -z "$IMAGE_TAG" ]; then
   echo "You must export the IMAGE_TAG environment variable."
   exit 16
 fi
 
+cd "$(dirname "$0")/../../docker" || exit 4
+
 export PROJECT_NAME="${PROJECT_NAME:-$(< /proc/sys/kernel/random/uuid)}"
 export VR_VOLUME_NAME="$(< /proc/sys/kernel/random/uuid)"
-
-cd "$(dirname "$0")/../../docker" || exit 4
+export NODE_VERSION="$(get_dev_dep_version "@types/node" "../web/package.json")"
+export BACKSTOP_VERSION="$(get_dev_dep_version "backstopjs" "../package.json")"
 
 trap 'stop_stack; exit 99' SIGINT
 trap 'stop_stack; exit 99' SIGQUIT

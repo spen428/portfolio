@@ -1,4 +1,7 @@
-FROM node:20.10 as base
+ARG NODE_VERSION
+ARG BACKSTOP_VERSION
+
+FROM node:${NODE_VERSION} as base
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 ENV PUPPETEER_SKIP_DOWNLOAD="true"
@@ -44,7 +47,7 @@ EXPOSE $SERVER_PORT
 ENTRYPOINT pnpm run prod
 
 
-FROM backstopjs/backstopjs:6.3.3 as vr-base
+FROM backstopjs/backstopjs:${BACKSTOP_VERSION} as vr-base
 VOLUME /src
 WORKDIR /src
 RUN apt-get update && \
