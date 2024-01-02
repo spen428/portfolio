@@ -29,27 +29,31 @@ export default new (class DataService {
     cvData: Ref<CvData>;
     projects: Ref<Project[]>;
     fullName: ComputedRef<string>;
-  } = {
-    cvData: ref<CvData>({
-      abstract: "",
-      articles: [],
-      lastModified: "",
-    }),
-    projects: ref<Project[]>([]),
-    personalInfo: ref<PersonalInfo>({
-      cvUrl: { full: "", short: "" },
-      emailAddress: "",
-      fullName: "",
-      fullNameRuby: "",
-      github: { url: "", username: "" },
-      linkedIn: { url: "" },
-      location: { lines: [], url: "" },
-      longerTagLine: "",
-      phoneNumber: { intl: "", local: "" },
-      tagLine: "",
-    }),
-    fullName: computed(() => this.cache.personalInfo.value.fullName),
-  };
+  } = this.getDefaults();
+
+  private getDefaults() {
+    return {
+      cvData: ref<CvData>({
+        abstract: "",
+        articles: [],
+        lastModified: "",
+      }),
+      projects: ref<Project[]>([]),
+      personalInfo: ref<PersonalInfo>({
+        cvUrl: { full: "", short: "" },
+        emailAddress: "",
+        fullName: "",
+        fullNameRuby: "",
+        github: { url: "", username: "" },
+        linkedIn: { url: "" },
+        location: { lines: [], url: "" },
+        longerTagLine: "",
+        phoneNumber: { intl: "", local: "" },
+        tagLine: "",
+      }),
+      fullName: computed(() => this.cache.personalInfo.value.fullName),
+    };
+  }
 
   constructor() {}
 
@@ -58,9 +62,11 @@ export default new (class DataService {
     watch(
       locale,
       async () => {
-        await this.fetchAndCache("cvData", "/cv/data", locale);
-        await this.fetchAndCache("projects", "/cv/projects", locale);
-        await this.fetchAndCache("personalInfo", "/cv/personal-info", locale);
+        await Promise.all([
+          this.fetchAndCache("cvData", "/cv/data", locale),
+          this.fetchAndCache("projects", "/cv/projects", locale),
+          this.fetchAndCache("personalInfo", "/cv/personal-info", locale),
+        ]);
       },
       { immediate: true }
     );
@@ -200,9 +206,15 @@ export default new (class DataService {
       return this.cache[key] as Ref<T>;
     }
 
+    this.setIntermediateValue(key, this.getDefaults()[key]);
+
     const response = await this.httpClient.get(`${url}?locale=${locale}`);
     this.cacheForLocale[key] = locale;
     this.cache[key].value = response.data as any;
     return this.cache[key] as Ref<T>;
+  }
+
+  private setIntermediateValue<T>(key: keyof CacheContainer, value: T) {
+    this.cache[key].value = value as any;
   }
 })();
