@@ -16,7 +16,7 @@
     <img src="/logo.svg" alt="" class="h-1/3" />
 
     <div class="z-10 flex flex-col items-center justify-center gap-6">
-      <div class="text-center">
+      <div class="flex flex-col items-center gap-1">
         <h1 class="flex font-serif text-lg font-bold text-primary-950">
           <ruby v-if="personalInfo.fullNameRuby">
             {{ personalInfo.fullName }}
