@@ -7,22 +7,22 @@
         <LoadingSkeleton v-if="!project" class="h-8 w-96 !bg-primary-950" />
         <h1 v-else class="text-2xl text-primary-950">{{ project.title }}</h1>
         <LoadingSkeleton v-if="!project" class="h-6 w-48" />
-        <span v-else class="rounded border p-2 text-sm">{{
-          project.type
-        }}</span>
+        <span v-else class="text-sm xs:rounded xs:border xs:p-2">
+          {{ project.type }}
+        </span>
       </div>
 
       <LoadingSkeleton v-if="!technologies.length" class="h-24 w-full" />
       <div
         v-else
-        class="flex flex-wrap justify-evenly sm:my-4 sm:justify-start sm:gap-4"
+        class="flex flex-wrap justify-evenly gap-2 sm:my-4 sm:justify-start sm:gap-4"
       >
         <MediaWithLoadingSkeleton
           v-for="tech in technologies"
           :key="tech.id"
           :src="tech.logoUrl"
           :alt="tech.name"
-          class="h-[min(2.5rem,10vw)] w-[min(2.5rem,10vw)]"
+          class="h-[min(2.5rem,10vw)] w-[min(2.5rem,10vw)] basis-[12%] object-contain xs:basis-[unset]"
         />
       </div>
 
