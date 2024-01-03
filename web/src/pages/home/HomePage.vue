@@ -17,13 +17,10 @@
           v-else
           class="font-serif text-[min(1.5rem,5vw)] font-bold text-primary-950 text-opacity-80 shadow-primary-950 text-shadow"
         >
-          <ruby v-if="personalInfo.fullNameRuby">
-            &centerdot; {{ personalInfo.fullName }} &centerdot;
-            <rt>{{ personalInfo.fullNameRuby }}</rt>
-          </ruby>
-          <span v-else
-            >&centerdot; {{ personalInfo.fullName }} &centerdot;</span
-          >
+          <TextWithRuby
+            :text="`&centerdot; ${personalInfo.fullName} &centerdot;`"
+            :ruby="personalInfo.fullNameRuby"
+          />
         </h1>
 
         <LoadingSkeleton v-if="!personalInfo.tagLine" class="!h-10 !w-[45vw]" />
@@ -140,6 +137,7 @@ import { onBeforeUnmount, onMounted, ref } from "vue";
 import TechScreen from "@/pages/home/components/TechScreen.vue";
 import LoadingSkeleton from "@/components/LoadingSkeleton.vue";
 import LandingPageLinks from "@/pages/home/LandingPageLinks.vue";
+import TextWithRuby from "@/components/TextWithRuby.vue";
 
 const personalInfo = DataService.getPersonalInfo();
 

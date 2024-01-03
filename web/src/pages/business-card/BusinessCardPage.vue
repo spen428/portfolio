@@ -1,24 +1,21 @@
 <template>
-  <div
-    class="pointer-events-none mx-auto mt-8 flex w-fit select-none flex-col items-center bg-primary-200 p-8"
-  >
-    <BusinessCardFront class="card" :personal-info="personalInfo" />
-    <span class="h-8"></span>
-    <BusinessCardBack class="card" :personal-info="personalInfo" />
+  <div class="mx-auto mt-8 flex w-fit select-none flex-col items-center gap-8">
+    <BusinessCardFront
+      :style="{ height: '55mm', width: cardWidth }"
+      :personal-info="personalInfo"
+    />
   </div>
 </template>
 
-<style scoped>
-.card {
-  width: 85mm; /* 91mm in Japan */
-  height: 55mm;
-}
-</style>
-
 <script setup lang="ts">
 import BusinessCardFront from "@/pages/business-card/components/BusinessCardFront.vue";
-import BusinessCardBack from "@/pages/business-card/components/BusinessCardBack.vue";
 import DataService from "@/services/data.service";
+import LocaleService from "@/services/locale.service";
+import { computed } from "vue";
 
 const personalInfo = DataService.getPersonalInfo();
+const cardWidth = computed(() => {
+  const locale = LocaleService.getCurrentLocale();
+  return locale.value === "ja-JP" ? "99mm" : "85mm";
+});
 </script>
