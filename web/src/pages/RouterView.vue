@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-rgb-blur flex min-h-screen flex-col items-center print:!bg-none"
+    class="flex min-h-screen flex-col items-center bg-primary-toned-600 bg-[url('/rgb-blur.jpg')] bg-repeat print:!bg-none"
   >
     <HeaderBar :full-name="fullName" />
 
@@ -11,13 +11,6 @@
     <FooterBar class="print:hidden" :full-name="fullName" />
   </div>
 </template>
-
-<style>
-.bg-rgb-blur {
-  background-image: url("/rgb-blur.jpg");
-  background-repeat: repeat;
-}
-</style>
 
 <script setup lang="ts">
 import FooterBar from "@/pages/FooterBar.vue";
