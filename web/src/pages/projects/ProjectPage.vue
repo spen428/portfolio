@@ -7,7 +7,9 @@
         <LoadingSkeleton v-if="!project" class="h-8 w-96 !bg-primary-950" />
         <h1 v-else class="text-2xl text-primary-950">{{ project.title }}</h1>
         <LoadingSkeleton v-if="!project" class="h-6 w-48" />
-        <span v-else>{{ project.type }}</span>
+        <span v-else class="rounded border p-2 text-sm">{{
+          project.type
+        }}</span>
       </div>
 
       <LoadingSkeleton v-if="!technologies.length" class="h-24 w-full" />
@@ -35,35 +37,36 @@
       />
 
       <LoadingSkeleton v-if="!project" class="h-48 w-full !bg-primary-200" />
-      <section v-else class="flex flex-col justify-between md:flex-row">
-        <div class="flex gap-2 md:gap-4">
-          <div class="w-0.5 shrink-0 bg-primary-200 sm:w-1" />
-          <div class="flex grow flex-col gap-[inherit] py-2">
-            <h2 class="!text-base">Learning objectives</h2>
+      <section v-else class="flex justify-between gap-2 md:gap-4">
+        <div class="w-0.5 shrink-0 bg-primary-200 sm:w-1" />
+        <div class="flex grow flex-col gap-[inherit] md:flex-row">
+          <div
+            v-if="project.learningObjectives"
+            class="flex basis-1/2 flex-col py-2"
+          >
+            <h2 class="!text-base font-semibold">Learning objectives</h2>
             <ul class="list-disc text-sm">
               <li
-                v-for="lo in project.learningObjectives ?? ['Todo']"
+                v-for="lo in project.learningObjectives"
                 :key="lo"
                 v-html="lo"
+                class="my-2"
               />
             </ul>
           </div>
-          <div class="w-0.5 bg-primary-200 sm:w-1 md:w-0" />
-        </div>
-        <div class="flex gap-2 md:gap-4">
-          <div class="w-0.5 bg-primary-200 sm:w-1 md:w-0" />
-          <div class="flex grow flex-col gap-[inherit] py-2">
-            <h2 class="!text-base">Learning outcomes</h2>
+          <div class="flex basis-1/2 flex-col py-2">
+            <h2 class="!text-base font-semibold">Learning outcomes</h2>
             <ul class="list-disc text-sm">
               <li
                 v-for="lo in project.learningOutcomes ?? ['Todo']"
                 :key="lo"
                 v-html="lo"
+                class="my-2"
               />
             </ul>
           </div>
-          <div class="w-0.5 shrink-0 bg-primary-200 sm:w-1" />
         </div>
+        <div class="w-0.5 shrink-0 bg-primary-200 sm:w-1" />
       </section>
 
       <LoadingSkeleton v-if="!project" class="h-96 w-full" />
