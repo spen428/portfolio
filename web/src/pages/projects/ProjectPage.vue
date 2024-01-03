@@ -99,7 +99,7 @@
   }
 
   & pre {
-    @apply overflow-x-scroll rounded border border-primary-950 bg-primary-200 p-2;
+    @apply overflow-x-auto rounded-md border-primary-950 bg-primary-toned-200 p-2 text-primary-toned-900;
   }
 }
 </style>
