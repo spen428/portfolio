@@ -27,6 +27,7 @@ export interface Project {
   learningObjectives?: string[];
   learningOutcomes?: string[];
   articleBody?: string;
+  articleLastModified?: string;
 }
 
 export interface PersonalInfo {

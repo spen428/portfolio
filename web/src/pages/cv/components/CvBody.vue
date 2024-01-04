@@ -27,9 +27,13 @@
       <div v-html="section.htmlContent" class="cv-section-content"></div>
     </CvSection>
   </CvArticle>
+
   <div class="mt-4 text-center text-xs lg:text-right">
-    Last modified: {{ cvData.lastModified }}
+    <i18n-t keypath="lastModified">
+      {{ cvData.lastModified }}
+    </i18n-t>
   </div>
+
   <button
     class="mx-auto mt-4 flex animate-tease justify-center print:!hidden lg:mt-8"
     onclick="document.body.scrollTop = 0; document.documentElement.scrollTop = 0;"

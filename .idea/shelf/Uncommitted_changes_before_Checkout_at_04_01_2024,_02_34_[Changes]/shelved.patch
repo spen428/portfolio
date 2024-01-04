@@ -1,0 +1,88 @@
+Index: api/res/data/projects.en-GB.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// eslint-disable-next-line no-undef\nmodule.exports = [\n  {\n    \"id\": \"0\",\n    \"thumbnailUrl\": \"/projects/helix.jpg\",\n    \"title\": \"HELIX Digital Twin\",\n    \"type\": \"Commercial Work\",\n    \"url\": {\n      \"url\": \"https://binnies.com/sectors/digital/digital-products/helix/\",\n      \"external\": true\n    },\n    \"technologyIds\": [\n      \"angular\",\n      \"csharp\",\n      \"netcore\",\n      \"postgresql\",\n      \"docker\",\n      \"azure\",\n      \"xunit\",\n      \"swagger\",\n      \"typescript\",\n      \"javascript\",\n      \"ngrx\",\n      \"rxjs\",\n      \"primeng\",\n      \"windows-server\",\n      \"mssql\"\n    ],\n    \"abstract\": \"HELIX is a digital twin platform\"\n  },\n  {\n    \"id\": \"1\",\n    \"thumbnailUrl\": \"/projects/footsteps2.png\",\n    \"title\": \"Parenta EYFS Tracker\",\n    \"type\": \"Commercial Work\",\n    \"url\": {\n      \"url\": \"https://www.parenta.com/eyfs-tracker/\",\n      \"external\": true\n    },\n    \"technologyIds\": [\n      \"angular\",\n      \"csharp\",\n      \"netcore\",\n      \"aws\",\n      \"xunit\",\n      \"swagger\",\n      \"typescript\",\n      \"javascript\",\n      \"windows-server\",\n      \"mssql\",\n      \"bamboo\"\n    ]\n  },\n  {\n    \"id\": \"2\",\n    \"thumbnailUrl\": \"/projects/regexp-vis.png\",\n    \"title\": \"Regular Language Visualizer\",\n    \"type\": \"University Project\",\n    \"url\": {\n      \"url\": \"https://github.com/spen428/regexp-vis\",\n      \"external\": true\n    },\n    \"technologyIds\": [\"java\", \"python\"]\n  },\n  {\n    \"id\": \"3\",\n    \"thumbnailUrl\": \"/projects/cv.thumb.jpg\",\n    \"title\": \"CV & Portfolio Website\",\n    \"type\": \"Personal Project\",\n    \"url\": {\n      \"url\": \"https://github.com/spen428/portfolio\",\n      \"external\": true\n    },\n    \"technologyIds\": [\n      \"vue\",\n      \"tailwind\",\n      \"typescript\",\n      \"javascript\",\n      \"node\",\n      \"backstopjs\",\n      \"puppeteer\",\n      \"docker\",\n      \"portainer\",\n      \"teamcity\",\n      \"linux\"\n    ],\n    \"abstract\": \"A Vue.js website that hosts my CV in web, mobile, and printable formats and showcases the hardware and software projects I have taken part in, both personal and commercial. It is written like a detailed blog but should be treated more as a tool for demonstration and self-reference.\",\n    \"learningObjectives\": [\n      \"Create something practical with Vue and Tailwind.\",\n      \"Assemble a portfolio that I am proud of and can use.\",\n      \"Target all screen sizes <em>and printed paper</em> beautifully.\",\n      \"Utilise visual regression testing in a CI/CD pipeline.\"\n    ],\n    \"learningOutcomes\": [\n      \"<em>All of the above</em>, plus:\",\n      \"Automated deployment of Docker stacks with the Portainer API.\",\n      \"The <code>build</code> subsection of Compose files, and the quirks of Docker-in-Docker.\",\n      \"Exposure to Puppeteer, Express, and PNPM workspaces.\",\n      \"Many CSS features that I had previously not known about.\"\n    ],\n    \"articleBody\": \"<img src=\\\"/projects/landing-page-loading.png\\\" alt=\\\"\\\" /><h2>Pipelines</h2>\\n<p>\\n  I have used a number of CI/CD tools over the years and while TeamCity is not my favourite, I\\n  found it very easy to set it up on my build server, and the free licence covers all that my current requirements\\n  demand.\\n</p>\\n<img src=\\\"/projects/pipelines.png\\\" style=\\\"max-width: 32rem\\\" alt=\\\"\\\" />\\n<p>\\n  The project is split into four stages:\\n  <ul>\\n    <li>Build</li>\\n    <li>Test with dummy data</li>\\n    <li>Test with real data</li>\\n    <li>Deploy</li>\\n  </ul>\\n</p>\\n\\n<h2>Deployment</h2>\\n<img src=\\\"/projects/portainer.jpg\\\" style=\\\"max-width: 32rem\\\" alt=\\\"\\\" />\\n<p>\\n  An immensely satisfying <em>one-click deploy</em> process is facilitated by a Docker Compose file and the Portainer\\n  API. After a successful test with real data, tagged Docker images for each of the required services remains on the\\n  build server. Since we know the correct tag from the Git commit log, we can dynamically add these to the Compose file\\n  and then upload the file to Portainer using the API, creating or updating the stack programmatically. In my case, this\\n  is achieved using a Bash script and Curl commands.\\n</p>\\n<pre>\\ncurl -X POST \\\"$PORTAINER_URL/api/stacks/create/standalone/file?endpointId=$PORTAINER_ENDPOINT_ID\\\" \\\\\\n   -H \\\"X-API-Key: $PORTAINER_ACCESS_TOKEN\\\" \\\\\\n   -F \\\"Name=$PORTAINER_STACK_NAME\\\" \\\\\\n   -F \\\"Env=[{\\\\\\\"name\\\\\\\":\\\\\\\"DATA_PATH\\\\\\\",\\\\\\\"value\\\\\\\":\\\\\\\"$DATA_PATH\\\\\\\"},{\\\\\\\"name\\\\\\\":\\\\\\\"IMAGE_TAG\\\\\\\",\\\\\\\"value\\\\\\\":\\\\\\\"$IMAGE_TAG\\\\\\\"}]\\\" \\\\\\n   -F \\\"file=@compose.yml\\\"\\n</pre>\\n\"\n  },\n  {\n    \"id\": \"4\",\n    \"thumbnailUrl\": \"/projects/jong.png\",\n    \"title\": \"Jong\",\n    \"type\": \"Personal Project\",\n    \"url\": {\n      \"url\": \"https://github.com/spen428/jong\",\n      \"external\": true\n    },\n    \"technologyIds\": [\"java\"]\n  },\n  {\n    \"id\": \"5\",\n    \"thumbnailUrl\": \"/projects/ancolle.png\",\n    \"title\": \"AnColle\",\n    \"type\": \"Personal Project\",\n    \"url\": {\n      \"url\": \"https://github.com/spen428/ancolle\",\n      \"external\": true\n    },\n    \"technologyIds\": [\"java\"]\n  },\n  {\n    \"id\": \"6\",\n    \"thumbnailUrl\": \"/projects/tenhou.png\",\n    \"title\": \"Custom Tenhou.net Client\",\n    \"type\": \"Personal Project\",\n    \"url\": {\n      \"url\": \"https://github.com/spen428/custom_tenhou_client\",\n      \"external\": true\n    },\n    \"technologyIds\": [\"python\"]\n  },\n  {\n    \"id\": \"7\",\n    \"thumbnailUrl\": \"/projects/raffld.png\",\n    \"title\": \"Raffl'd: The Experience Lottery\",\n    \"type\": \"Commercial Work\",\n    \"url\": {\n      \"url\": \"#\",\n      \"external\": false\n    },\n    \"technologyIds\": [\n      \"react\",\n      \"java\",\n      \"spring\",\n      \"postgresql\",\n      \"docker\",\n      \"xunit\",\n      \"swagger\",\n      \"javascript\",\n      \"linux\",\n      \"jenkins\"\n    ]\n  }\n];\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/api/res/data/projects.en-GB.js b/api/res/data/projects.en-GB.js
+--- a/api/res/data/projects.en-GB.js	(revision 5ecb25dab681e3293cc90c0b2c055ab033400437)
++++ b/api/res/data/projects.en-GB.js	(date 1704335529152)
+@@ -1,7 +1,8 @@
++// noinspection HtmlUnknownTarget
+ // eslint-disable-next-line no-undef
+ module.exports = [
+   {
+-    "id": "0",
++    "id": "674a96cd-57fc-4e35-9c5a-3c7fd3a3d6e2",
+     "thumbnailUrl": "/projects/helix.jpg",
+     "title": "HELIX Digital Twin",
+     "type": "Commercial Work",
+@@ -29,7 +30,7 @@
+     "abstract": "HELIX is a digital twin platform"
+   },
+   {
+-    "id": "1",
++    "id": "6e48a8d5-3eb8-4e87-b91f-40efe0a2a106",
+     "thumbnailUrl": "/projects/footsteps2.png",
+     "title": "Parenta EYFS Tracker",
+     "type": "Commercial Work",
+@@ -52,7 +53,7 @@
+     ]
+   },
+   {
+-    "id": "2",
++    "id": "31c7f9d8-a538-4921-9b14-6a28f5ca0339",
+     "thumbnailUrl": "/projects/regexp-vis.png",
+     "title": "Regular Language Visualizer",
+     "type": "University Project",
+@@ -63,7 +64,7 @@
+     "technologyIds": ["java", "python"]
+   },
+   {
+-    "id": "3",
++    "id": "c5b057c9-0322-4137-a027-bdd72a3d57e4",
+     "thumbnailUrl": "/projects/cv.thumb.jpg",
+     "title": "CV & Portfolio Website",
+     "type": "Personal Project",
+@@ -98,10 +99,11 @@
+       "Exposure to Puppeteer, Express, and PNPM workspaces.",
+       "Many CSS features that I had previously not known about."
+     ],
+-    "articleBody": "<img src=\"/projects/landing-page-loading.png\" alt=\"\" /><h2>Pipelines</h2>\n<p>\n  I have used a number of CI/CD tools over the years and while TeamCity is not my favourite, I\n  found it very easy to set it up on my build server, and the free licence covers all that my current requirements\n  demand.\n</p>\n<img src=\"/projects/pipelines.png\" style=\"max-width: 32rem\" alt=\"\" />\n<p>\n  The project is split into four stages:\n  <ul>\n    <li>Build</li>\n    <li>Test with dummy data</li>\n    <li>Test with real data</li>\n    <li>Deploy</li>\n  </ul>\n</p>\n\n<h2>Deployment</h2>\n<img src=\"/projects/portainer.jpg\" style=\"max-width: 32rem\" alt=\"\" />\n<p>\n  An immensely satisfying <em>one-click deploy</em> process is facilitated by a Docker Compose file and the Portainer\n  API. After a successful test with real data, tagged Docker images for each of the required services remains on the\n  build server. Since we know the correct tag from the Git commit log, we can dynamically add these to the Compose file\n  and then upload the file to Portainer using the API, creating or updating the stack programmatically. In my case, this\n  is achieved using a Bash script and Curl commands.\n</p>\n<pre>\ncurl -X POST \"$PORTAINER_URL/api/stacks/create/standalone/file?endpointId=$PORTAINER_ENDPOINT_ID\" \\\n   -H \"X-API-Key: $PORTAINER_ACCESS_TOKEN\" \\\n   -F \"Name=$PORTAINER_STACK_NAME\" \\\n   -F \"Env=[{\\\"name\\\":\\\"DATA_PATH\\\",\\\"value\\\":\\\"$DATA_PATH\\\"},{\\\"name\\\":\\\"IMAGE_TAG\\\",\\\"value\\\":\\\"$IMAGE_TAG\\\"}]\" \\\n   -F \"file=@compose.yml\"\n</pre>\n"
++    "articleBody": "<img src=\"/projects/landing-page-loading.png\" alt=\"\" />\n\n<h2>Responsivity</h2>\n<p>\n  One of the primary goals was to focus on <em>responsivity</em>, that is to say ensuring the website is not only\n  legible but aesthetically pleasing on all common screen sizes. The way to approach this in general, and the way that\n  <em>Tailwind</em> encourages by design, is <em>mobile-first</em>: design for mobile and then make adjustments (for\n  example with media queries) as you increase the screen size. This is the approach I went with, and I targetted screens\n  with a viewport width ranging from 320px (labelled <cite>Mobile S</cite> in Chrome) to 1920px, the most common desktop\n  width. In addition, pages that are intended to be printable&mdash;as symbolised by the presence of a\n  <img src=\"/icons/printer.svg\" alt=\"\" style=\"display: inline; width: 1.25rem; height: 1.25rem;\" />\n  printer icon in the top menu&mdash;are designed to fit comfortably on ISO A4 sized paper (that is 210mm &times;\n  297mm).\n</p>\n<video loop muted playsinline autoplay controls>\n  <source src=\"/webm/portfolio-responsivity.mp4\" type=\"video/mp4\" />\n</video>\n\n<h2>Pipelines</h2>\n<p>\n  I have used a number of CI/CD tools over the years and while TeamCity is not my favourite, I\n  found it very easy to set it up on my build server, and the free licence covers all that my current requirements\n  demand.\n</p>\n<img src=\"/projects/pipelines.png\" alt=\"\" />\n\n<p>The project is split into four stages, which I will briefly describe:</p>\n<ul>\n  <li>\n    <h3>Build:</h3> Pretty self-explanatory: build and lint the project, transpiling any TypeScript to JavaScript.\n  </li>\n  <li>\n    <h3>Test with dummy data:</h3> Run the visual regression tests (see below) against a set of placeholder data.\n  </li>\n  <li>\n    <h3>Test with real data:</h3> Run the VR tests with production data. Because this project is open source (although\n    <em>not</em> with a liberal licence), the prod data&mdash;some of which is personal&mdash;is not committed to the\n    repository and is instead retrieved from elsewhere during testing and deployment.\n  </li>\n  <li>\n    <h3>Deploy:</h3> The Compose file is deployed to Portainer, replacing the stack that was already there. With the\n    images\n    available via a local Docker repository, pulling and deploying the stack generally takes <em>less than 30\n    seconds</em> from start to finish.\n  </li>\n</ul>\n\n<p>\n  <em>Visual regression testing</em> was something that I first used when working at <cite>Parenta</cite>, and our\n  team&mdash;both developers and QAs&mdash;found it incredibly valuable for catching unintended style changes and new\n  failures in user journeys. <cite>BackstopJS</cite> integrates with <cite>Puppeteer</cite> to visit pages or execute\n  intricate\n  end-to-end tests in order to gather screenshots for comparison. These test screenshots are compared pixel-wise with a\n  set of reference screenshots and an HTML report is generated for you to view. You can then elect to approve any\n  screenshots marked as failures, and those will become the new reference images.\n</p>\n<p>\n  I made it my mission to set up and use VR testing from the outset of this project, and it has given me the same\n  confidence to change CSS and HTML templates and to &quot;fail fast&quot; as much-loved unit tests do for non-visual\n  code. It has caught a <em>huge</em> number of real and potential issues, and caught them <em>early</em>.\n</p>\n<video loop muted playsinline autoplay controls>\n  <source src=\"/webm/portfolio-vr-test.mp4\" type=\"video/mp4\" />\n</video>\n<p>\n  The above video demonstrates viewing a failing VR test report produced by my test pipeline. One of these\n  failures, where text was missing, was due to a lack of loading indicators on a page that rendered data\n  from an API call. This was addressed by adding skeletons (animated placeholder boxes that disappear when the item\n  loads) which not only improved the reliability of the tests without any code smells like arbitrary waits, but\n  also bettered the user experience and added a modern feel to the site.\n</p>\n\n<h2>Deployment</h2>\n<video loop muted playsinline autoplay controls>\n  <source src=\"/webm/portfolio-portainer.mp4\" type=\"video/mp4\" />\n</video>\n<p>\n  An immensely satisfying <em>one-click deploy</em> process is facilitated by a Docker Compose file and the Portainer\n  API. After a successful test with real data, tagged Docker images for each of the required services remains on the\n  build server. Since we know the correct tag from the Git commit log, we can dynamically add these to the Compose file\n  and then upload the file to Portainer using the API, creating or updating the stack programmatically. In my case, this\n  is achieved using a Bash script and Curl commands.\n</p>\n<pre>\ncurl -X POST \"$PORTAINER_URL/api/stacks/create/standalone/file?endpointId=$PORTAINER_EID\" \\\n   -H \"X-API-Key: $PORTAINER_ACCESS_TOKEN\" \\\n   -F \"Name=$PORTAINER_STACK_NAME\" \\\n   -F \"Env=[{\\\"name\\\":\\\"IMAGE_TAG\\\",\\\"value\\\":\\\"$IMAGE_TAG\\\"}]\" \\\n   -F \"file=@compose.yml\"\n</pre>\n<video loop muted playsinline autoplay controls>\n  <source src=\"/webm/portfolio-deployment.mp4\" type=\"video/mp4\" />\n</video>\n\n<h2>Conclusion</h2>\n<p>\n  I have enjoyed every moment of working on this project, and it has produced something that I have always wanted to\n  have and really needed. I exceeded my learning expectations, fell in love with Vue and Tailwind, and <em>improved\n  my knowledge</em> in ways that I was almost <em>immediately able to use at work</em> to add value to our software and\n  train the team.\n</p>",
++    "articleLastModified": "2024-01-04"
+   },
+   {
+-    "id": "4",
++    "id": "6d114511-9e9d-4960-851c-1bb58bcd7505",
+     "thumbnailUrl": "/projects/jong.png",
+     "title": "Jong",
+     "type": "Personal Project",
+@@ -112,7 +114,7 @@
+     "technologyIds": ["java"]
+   },
+   {
+-    "id": "5",
++    "id": "ae32fe5c-e6c6-4f3a-a603-9532bcc697c6",
+     "thumbnailUrl": "/projects/ancolle.png",
+     "title": "AnColle",
+     "type": "Personal Project",
+@@ -123,7 +125,7 @@
+     "technologyIds": ["java"]
+   },
+   {
+-    "id": "6",
++    "id": "bdcc4d72-4208-42ca-80bc-9a6aa1436959",
+     "thumbnailUrl": "/projects/tenhou.png",
+     "title": "Custom Tenhou.net Client",
+     "type": "Personal Project",
+@@ -134,7 +136,7 @@
+     "technologyIds": ["python"]
+   },
+   {
+-    "id": "7",
++    "id": "40561976-b3af-49cc-904b-c2dd6db35dae",
+     "thumbnailUrl": "/projects/raffld.png",
+     "title": "Raffl'd: The Experience Lottery",
+     "type": "Commercial Work",

@@ -37,7 +37,7 @@ const router = createRouter({
           path: "projects/:projectId",
           component: ProjectPage,
           props: true,
-          meta: { isPrintable: true },
+          meta: { isPrintable: false },
         },
         {
           path: "cv",

@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto w-full max-w-5xl bg-white py-4 sm:py-8 lg:py-16">
+  <div class="mx-auto w-full max-w-5xl bg-white pt-4 sm:pt-8 lg:pt-16">
     <article
       class="project-content mx-4 flex flex-col gap-4 lg:mx-auto lg:max-w-4xl"
     >
@@ -42,10 +42,10 @@
         <div class="flex grow flex-col gap-[inherit] md:flex-row">
           <div
             v-if="project.learningObjectives"
-            class="flex basis-1/2 flex-col py-2"
+            class="flex basis-1/2 flex-col pt-2 md:py-2"
           >
-            <h2 class="!text-base font-semibold">Learning objectives</h2>
-            <ul class="list-disc text-sm">
+            <h2 class="mb-2 !text-base font-semibold">Learning objectives</h2>
+            <ul class="m-0 list-disc text-sm">
               <li
                 v-for="lo in project.learningObjectives"
                 :key="lo"
@@ -54,9 +54,9 @@
               />
             </ul>
           </div>
-          <div class="flex basis-1/2 flex-col py-2">
-            <h2 class="!text-base font-semibold">Learning outcomes</h2>
-            <ul class="list-disc text-sm">
+          <div class="flex basis-1/2 flex-col pb-2 md:py-2">
+            <h2 class="mb-2 !text-base font-semibold">Learning outcomes</h2>
+            <ul class="m-0 list-disc text-sm">
               <li
                 v-for="lo in project.learningOutcomes ?? ['Todo']"
                 :key="lo"
@@ -77,10 +77,17 @@
         "
         class="flex flex-col gap-[inherit]"
       />
+
+      <div class="mt-4 flex justify-center text-xs lg:justify-end">
+        <LoadingSkeleton v-if="!project" class="h-4 w-36" />
+        <i18n-t v-else keypath="lastModified">
+          {{ project.articleLastModified ?? "Unknown" }}
+        </i18n-t>
+      </div>
     </article>
 
     <button
-      class="mx-auto mt-4 flex animate-tease justify-center print:!hidden lg:mt-16"
+      class="mx-auto flex animate-tease justify-center py-4 print:!hidden sm:py-6 lg:py-8"
       onclick="document.body.scrollTop = 0; document.documentElement.scrollTop = 0;"
     >
       <img src="/logo.svg" :alt="$t('logo')" class="h-16 w-16 select-none" />
@@ -100,6 +107,18 @@
 
   & pre {
     @apply overflow-x-auto rounded-md border-primary-950 bg-primary-toned-200 p-2 text-primary-toned-900;
+  }
+
+  & h3 {
+    @apply inline font-bold;
+  }
+
+  & ul {
+    @apply m-0 text-justify;
+
+    & li {
+      @apply my-2;
+    }
   }
 }
 </style>
