@@ -51,7 +51,7 @@ export default new (class DataService {
         phoneNumber: { intl: "", local: "" },
         tagLine: "",
       }),
-      fullName: computed(() => this.cache.personalInfo.value.fullName),
+      fullName: computed(() => this.cache.personalInfo.value?.fullName ?? ""),
     };
   }
 
@@ -81,7 +81,13 @@ export default new (class DataService {
   }
 
   public getProject(id: string): Ref<Project | undefined> {
-    return computed(() => this.cache.projects.value.find((p) => p.id === id));
+    return computed(() => {
+      const projects = this.getProjects().value;
+      if (!projects.find) {
+        return undefined;
+      }
+      return projects.find((p) => p.id === id);
+    });
   }
 
   public getPersonalInfo(): Ref<PersonalInfo> {
