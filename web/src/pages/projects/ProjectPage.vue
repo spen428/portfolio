@@ -70,12 +70,12 @@
       </section>
 
       <LoadingSkeleton v-if="!project" class="h-96 w-full" />
-      <section
+      <Markdown
         v-else
-        v-html="
+        class="flex flex-col gap-[inherit]"
+        :source="
           project.articleBody ?? 'Sorry, I haven\'t written this up just yet!'
         "
-        class="flex flex-col gap-[inherit]"
       />
 
       <div class="mt-4 flex justify-center text-xs lg:justify-end">
@@ -128,6 +128,7 @@ import DataService from "@/services/data.service";
 import { computed } from "vue";
 import LoadingSkeleton from "@/components/LoadingSkeleton.vue";
 import MediaWithLoadingSkeleton from "@/components/MediaWithLoadingSkeleton.vue";
+import Markdown from "@/components/Markdown.vue";
 
 const props = defineProps<{ projectId: string }>();
 
