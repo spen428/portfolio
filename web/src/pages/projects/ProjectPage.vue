@@ -70,7 +70,7 @@
       </section>
 
       <LoadingSkeleton v-if="!project" class="h-96 w-full" />
-      <Markdown
+      <MarkdownRenderer
         v-else
         class="flex flex-col gap-[inherit]"
         :source="
@@ -128,7 +128,7 @@ import DataService from "@/services/data.service";
 import { computed } from "vue";
 import LoadingSkeleton from "@/components/LoadingSkeleton.vue";
 import MediaWithLoadingSkeleton from "@/components/MediaWithLoadingSkeleton.vue";
-import Markdown from "@/components/Markdown.vue";
+import MarkdownRenderer from "@/components/MarkdownRenderer.vue";
 
 const props = defineProps<{ projectId: string }>();
 
