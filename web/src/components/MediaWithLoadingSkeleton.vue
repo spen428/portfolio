@@ -9,12 +9,8 @@
     muted
     playsinline
     :autoplay="autoplay"
-  >
-    <source
-      :src="autoplay ? src : `${src}#t=0.01`"
-      :type="`video/${fileExt}`"
-    />
-  </video>
+    :src="autoplay ? src : `${src}#t=0.01`"
+  />
   <img
     v-else
     v-show="!mediaLoading"
