@@ -1,7 +1,7 @@
 <template>
   <LoadingSkeleton v-if="mediaLoading" v-bind="$attrs" />
   <video
-    v-if="src.endsWith('.webm')"
+    v-if="['webm', 'mp4'].includes(fileExt)"
     v-show="!mediaLoading"
     v-bind="$attrs"
     @canplaythrough="mediaLoading = false"
@@ -10,7 +10,10 @@
     playsinline
     :autoplay="autoplay"
   >
-    <source :src="autoplay ? src : `${src}#t=0.01`" type="video/webm" />
+    <source
+      :src="autoplay ? src : `${src}#t=0.01`"
+      :type="`video/${fileExt}`"
+    />
   </video>
   <img
     v-else
@@ -25,9 +28,15 @@
 
 <script setup lang="ts">
 import LoadingSkeleton from "@/components/LoadingSkeleton.vue";
-import { ref } from "vue";
+import { computed, ref } from "vue";
 
 const mediaLoading = ref(true);
 
-defineProps<{ src: string; alt?: string; autoplay?: boolean }>();
+const fileExt = computed(() => {
+  const split = (props.src ?? "").split(".");
+  if (split.length < 2) return "";
+  return split.pop()!;
+});
+
+const props = defineProps<{ src: string; alt?: string; autoplay?: boolean }>();
 </script>
