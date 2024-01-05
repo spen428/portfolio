@@ -15,28 +15,25 @@ import MarkdownIt, { type Token } from "markdown-it";
 import MediaWithLoadingSkeleton from "@/components/MediaWithLoadingSkeleton.vue";
 import type StateCore from "markdown-it/lib/rules_core/state_core";
 
-const opts = {
+const props = defineProps<{ source: string }>();
+
+const markdownInstance = new MarkdownIt({
   html: true,
   xhtmlOut: false,
   breaks: false,
   linkify: false,
-};
-const markdownInstance = new MarkdownIt(opts);
-
-markdownInstance.core.ruler.push("custom_media", (state: StateCore) => {
-  for (let i = 0; i < state.tokens.length; i++) {
-    const t = state.tokens[i];
-    if (!t.content.startsWith("#! ")) {
-      continue;
-    }
-    let token = new state.Token("media", "", 0);
-    let src = t.content.split("#! ", 2)[1];
-    token.attrSet("src", src);
-    state.tokens[i] = token;
-  }
 });
 
-const props = defineProps<{ source: string }>();
+markdownInstance.core.ruler.push("custom_media", (state: StateCore) => {
+  state.tokens.forEach((token, index) => {
+    if (token.content.startsWith("#! ")) {
+      const mediaToken = new state.Token("media", "", 0);
+      const src = token.content.split("#! ")[1];
+      mediaToken.attrSet("src", src);
+      state.tokens[index] = mediaToken;
+    }
+  });
+});
 
 type PartialToken = Pick<Token, "type" | "content" | "attrs">;
 
