@@ -2,7 +2,7 @@
   <template v-for="item in contentItems">
     <div v-if="item.type === 'html'" v-html="item.content" />
     <MediaWithLoadingSkeleton
-      v-if="item.type === 'video'"
+      v-if="item.type === 'media'"
       :src="item.attrs![0][1]"
       autoplay
     />
@@ -23,13 +23,13 @@ const opts = {
 };
 const markdownInstance = new MarkdownIt(opts);
 
-markdownInstance.core.ruler.push("custom_video", (state: StateCore) => {
+markdownInstance.core.ruler.push("custom_media", (state: StateCore) => {
   for (let i = 0; i < state.tokens.length; i++) {
     const t = state.tokens[i];
     if (!t.content.startsWith("#! ")) {
       continue;
     }
-    let token = new state.Token("video", "video", 0);
+    let token = new state.Token("media", "", 0);
     let src = t.content.split("#! ", 2)[1];
     token.attrSet("src", src);
     state.tokens[i] = token;
@@ -50,7 +50,7 @@ const contentItems: ComputedRef<PartialToken[]> = computed(() => {
     if (currentToken.type.endsWith("_open")) {
       if (
         i + 2 < tokens.length &&
-        tokens[i + 1].type === "video" &&
+        tokens[i + 1].type === "media" &&
         tokens[i + 2].type === "paragraph_close"
       ) {
         items.push(tokens[i + 1]);
@@ -74,7 +74,18 @@ const contentItems: ComputedRef<PartialToken[]> = computed(() => {
         content: `<${currentToken.tag}>${content}</${currentToken.tag}>`,
         attrs: [],
       });
+      continue;
     }
+
+    items.push({
+      type: "html",
+      content: markdownInstance.renderer.render(
+        [currentToken],
+        markdownInstance.options,
+        {}
+      ),
+      attrs: currentToken.attrs,
+    });
   }
 
   return items;
