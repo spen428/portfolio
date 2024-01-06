@@ -8,8 +8,8 @@
     loop
     muted
     playsinline
-    :autoplay="autoplay"
-    :src="autoplay ? src : `${src}#t=0.01`"
+    :autoplay="shouldAutoplay"
+    :src="shouldAutoplay ? src : `${src}#t=0.01`"
   />
   <img
     v-else
@@ -25,8 +25,13 @@
 <script setup lang="ts">
 import LoadingSkeleton from "@/components/LoadingSkeleton.vue";
 import { computed, ref } from "vue";
+import ConfigurationService from "@/services/configuration.service";
 
+const isAnimationEnabled = ConfigurationService.isAnimationEnabled();
 const mediaLoading = ref(true);
+const shouldAutoplay = computed(() =>
+  isAnimationEnabled ? props.autoplay : false
+);
 
 const fileExt = computed(() => {
   const split = (props.src ?? "").split(".");

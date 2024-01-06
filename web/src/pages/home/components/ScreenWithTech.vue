@@ -12,7 +12,7 @@
     >
       <MediaWithLoadingSkeleton
         :src="mediaUrl"
-        :autoplay="autoplayVideos"
+        autoplay
         class="h-[270px] w-[480px] rounded-lg border-2 border-white object-cover"
       />
     </div>
@@ -45,12 +45,9 @@
 </template>
 
 <script setup lang="ts">
-import ConfigurationService from "@/services/configuration.service";
 import { computed } from "vue";
 import DataService from "@/services/data.service";
 import MediaWithLoadingSkeleton from "@/components/MediaWithLoadingSkeleton.vue";
-
-const autoplayVideos = ConfigurationService.isAnimationEnabled();
 
 const technologies = computed(() =>
   DataService.getTechnologiesById(props.technologyIds)
