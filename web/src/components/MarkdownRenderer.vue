@@ -1,5 +1,5 @@
 <template>
-  <template v-for="item in contentItems" :key="item">
+  <template v-for="item in tokenGroups" :key="item">
     <div v-if="item.type === 'html'" v-html="item.content" />
     <MediaWithLoadingSkeleton
       v-if="item.type === 'media'"
@@ -38,51 +38,54 @@ markdownInstance.core.ruler.push("custom_media", (state: StateCore) => {
 
 type PartialToken = Pick<Token, "type" | "content" | "attrs">;
 
-const contentItems: ComputedRef<PartialToken[]> = computed(() => {
+function isMediaBlock(tokenStream: Token[]) {
+  return (
+    tokenStream.length === 3 &&
+    tokenStream[0].type === "paragraph_open" &&
+    tokenStream[1].type === "media" &&
+    tokenStream[2].type === "paragraph_close"
+  );
+}
+
+function readNextGroup(tokens: Token[]) {
+  const tokensInGroup = [tokens.shift()!];
+
+  const tokenType = tokensInGroup[0].type;
+  if (!tokenType.endsWith("_open")) {
+    return tokensInGroup;
+  }
+
+  const closingBlockType = tokenType.replace(/_open$/, "_close");
+  while (tokens.length > 0) {
+    const childToken = tokens.shift()!;
+    tokensInGroup.push(childToken);
+    if (childToken.type === closingBlockType) break;
+  }
+
+  return tokensInGroup;
+}
+
+const tokenGroups: ComputedRef<PartialToken[]> = computed(() => {
   const tokens = markdownInstance.parse(props.source, {});
   const items = [];
-  let currentToken, content;
-  for (let i = 0; i < tokens.length; i++) {
-    currentToken = tokens[i];
 
-    if (currentToken.type.endsWith("_open")) {
-      if (
-        i + 2 < tokens.length &&
-        tokens[i + 1].type === "media" &&
-        tokens[i + 2].type === "paragraph_close"
-      ) {
-        items.push(tokens[i + 1]);
-        i += 2;
-        continue;
-      }
+  while (tokens.length > 0) {
+    const tokensToRender = readNextGroup(tokens);
 
-      content = "";
-      i++;
-      while (i < tokens.length && !tokens[i].type.endsWith("_close")) {
-        content += markdownInstance.renderer.render(
-          [tokens[i]],
-          markdownInstance.options,
-          {}
-        );
-        i++;
-      }
-
-      items.push({
-        type: "html",
-        content: `<${currentToken.tag}>${content}</${currentToken.tag}>`,
-        attrs: [],
-      });
+    if (isMediaBlock(tokensToRender)) {
+      const mediaToken = tokensToRender[1];
+      items.push(mediaToken);
       continue;
     }
 
     items.push({
       type: "html",
       content: markdownInstance.renderer.render(
-        [currentToken],
+        tokensToRender,
         markdownInstance.options,
         {}
       ),
-      attrs: currentToken.attrs,
+      attrs: tokensToRender[0].attrs,
     });
   }
 
