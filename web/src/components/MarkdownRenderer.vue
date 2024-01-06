@@ -1,9 +1,10 @@
 <template>
-  <template v-for="item in contentItems">
+  <template v-for="item in contentItems" :key="item">
     <div v-if="item.type === 'html'" v-html="item.content" />
     <MediaWithLoadingSkeleton
       v-if="item.type === 'media'"
       :src="item.attrs![0][1]"
+      class="min-h-[10rem]"
       autoplay
     />
   </template>
