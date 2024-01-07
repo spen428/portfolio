@@ -3,13 +3,34 @@
     <article
       class="project-content mx-4 flex flex-col gap-4 lg:mx-auto lg:max-w-4xl"
     >
-      <div class="flex flex-col justify-between xs:flex-row">
+      <div class="flex flex-col justify-between gap-2 xs:flex-row">
         <LoadingSkeleton v-if="!project" class="h-8 w-96 !bg-primary-950" />
         <h1 v-else class="text-2xl text-primary-950">{{ project.title }}</h1>
         <LoadingSkeleton v-if="!project" class="h-6 w-48" />
-        <span v-else class="text-sm xs:rounded xs:border xs:p-2">
-          {{ project.type }}
-        </span>
+        <div
+          v-else
+          class="flex flex-col gap-[inherit] xs:flex-row-reverse xs:items-center"
+        >
+          <span class="text-sm xs:rounded xs:border xs:p-2">
+            {{ project.type }}
+          </span>
+          <AOrRouterLink external :href="project.url" class="h-5 text-sm">
+            <template v-if="project.url.startsWith('https://github.com/')">
+              <MediaWithLoadingSkeleton
+                class="h-5 w-5"
+                src="/icons/github.svg"
+              />
+              GitHub Repo
+            </template>
+            <template v-else>
+              <MediaWithLoadingSkeleton
+                class="h-5 w-5"
+                src="/icons/globe.svg"
+              />
+              Official Website
+            </template>
+          </AOrRouterLink>
+        </div>
       </div>
 
       <LoadingSkeleton v-if="!technologies.length" class="h-24 w-full" />
@@ -129,6 +150,7 @@ import { computed } from "vue";
 import LoadingSkeleton from "@/components/LoadingSkeleton.vue";
 import MediaWithLoadingSkeleton from "@/components/MediaWithLoadingSkeleton.vue";
 import MarkdownRenderer from "@/components/MarkdownRenderer.vue";
+import AOrRouterLink from "@/components/AOrRouterLink.vue";
 
 const props = defineProps<{ projectId: string }>();
 

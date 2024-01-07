@@ -20,7 +20,7 @@ export interface Project {
   id: string;
   type: string;
   title: string;
-  url: { url: string; external: boolean };
+  url: string;
   thumbnailUrl: string;
   technologyIds?: string[];
   abstract?: string;

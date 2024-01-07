@@ -3,10 +3,7 @@
     "id": "0",
     "thumbnailUrl": "/projects/helix.jpg",
     "title": "HELIX Digital Twin",
-    "url": {
-      "url": "https://binnies.com/sectors/digital/digital-products/helix/",
-      "external": true
-    },
+    "url": "https://binnies.com/sectors/digital/digital-products/helix/",
     "technologyIds": [
       "angular",
       "csharp",
@@ -30,10 +27,7 @@
     "id": "1",
     "thumbnailUrl": "/projects/footsteps2.png",
     "title": "Parenta EYFS Tracker",
-    "url": {
-      "url": "https://www.parenta.com/eyfs-tracker/",
-      "external": true
-    },
+    "url": "https://www.parenta.com/eyfs-tracker/",
     "technologyIds": [
       "angular",
       "csharp",
@@ -52,20 +46,14 @@
     "id": "2",
     "thumbnailUrl": "/projects/regexp-vis.png",
     "title": "Regular Language Visualizer",
-    "url": {
-      "url": "https://github.com/spen428/regexp-vis",
-      "external": true
-    },
+    "url": "https://github.com/spen428/regexp-vis",
     "technologyIds": ["java", "python"]
   },
   {
     "id": "3",
     "thumbnailUrl": "/projects/cv.thumb.jpg",
     "title": "CV & Portfolio Website",
-    "url": {
-      "url": "https://github.com/spen428/portfolio",
-      "external": true
-    },
+    "url": "https://github.com/spen428/portfolio",
     "technologyIds": [
       "vue",
       "typescript",
@@ -82,40 +70,28 @@
     "id": "4",
     "thumbnailUrl": "/projects/jong.png",
     "title": "Jong",
-    "url": {
-      "url": "https://github.com/spen428/jong",
-      "external": true
-    },
+    "url": "https://github.com/spen428/jong",
     "technologyIds": ["java"]
   },
   {
     "id": "5",
     "thumbnailUrl": "/projects/ancolle.png",
     "title": "AnColle",
-    "url": {
-      "url": "https://github.com/spen428/ancolle",
-      "external": true
-    },
+    "url": "https://github.com/spen428/ancolle",
     "technologyIds": ["java"]
   },
   {
     "id": "6",
     "thumbnailUrl": "/projects/tenhou.png",
     "title": "Custom Tenhou.net Client",
-    "url": {
-      "url": "https://github.com/spen428/custom_tenhou_client",
-      "external": true
-    },
+    "url": "https://github.com/spen428/custom_tenhou_client",
     "technologyIds": ["python"]
   },
   {
     "id": "7",
     "thumbnailUrl": "/projects/raffld.png",
     "title": "Raffl'd: The Experience Lottery",
-    "url": {
-      "url": "#",
-      "external": false
-    },
+    "url": "#",
     "technologyIds": [
       "react",
       "java",
