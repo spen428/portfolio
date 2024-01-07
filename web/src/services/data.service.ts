@@ -176,6 +176,19 @@ export default new (class DataService {
         name: "Microsoft SQL Server",
         logoUrl: "/tech-logos/mssql.svg",
       },
+      { id: "bash", name: "Bash", logoUrl: "/tech-logos/bash.svg" },
+      { id: "powershell", name: "PowerShell", logoUrl: "/tech-logos/pwsh.svg" },
+      { id: "cypress", name: "Cypress", logoUrl: "/tech-logos/cypress.svg" },
+      { id: "sass", name: "Sass", logoUrl: "/tech-logos/sass.svg" },
+      { id: "mobx", name: "MobX", logoUrl: "/tech-logos/mobx.svg" },
+      {
+        id: "thymeleaf",
+        name: "Thymeleaf",
+        logoUrl: "/tech-logos/thymeleaf.svg",
+      },
+      { id: "selenium", name: "Selenium", logoUrl: "/tech-logos/selenium.svg" },
+      { id: "chai", name: "Chai.js", logoUrl: "/tech-logos/chai.svg" },
+      { id: "mocha", name: "Mocha", logoUrl: "/tech-logos/mocha.svg" },
     ];
   }
 
