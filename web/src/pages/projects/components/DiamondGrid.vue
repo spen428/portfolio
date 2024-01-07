@@ -5,7 +5,9 @@
     :style="{ height: containerHeightPx + 'px' }"
     @scroll="updateScrollPosition()"
   >
+    <LoadingSkeleton v-if="!projects?.length" class="mx-8 my-8 h-4/5" />
     <ProjectDiamond
+      v-else
       v-for="(project, index) in projects"
       :id="`project-diamond-` + index"
       :key="project.id"
@@ -26,8 +28,9 @@ import ProjectDiamond from "@/pages/projects/components/ProjectDiamond.vue";
 import type { Ref } from "vue";
 import { computed, onBeforeUnmount, onMounted, ref } from "vue";
 import type { Project } from "@shared/data.model";
+import LoadingSkeleton from "@/components/LoadingSkeleton.vue";
 
-defineProps<{ projects: Project[] }>();
+defineProps<{ projects: Project[] | undefined }>();
 
 const leftOffsetRem = 6;
 const topOffsetRem = 1;
